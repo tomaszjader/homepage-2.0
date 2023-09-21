@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'homepage-2.0';
+  skillsArray: string[] = ['— Semantic HTML5', '— Semantic HTML5',
+    '— Semantic HTML5', '— Semantic HTML5', '— Semantic HTML5', '— Semantic HTML5',
+    '— Semantic HTML5'];
 }
