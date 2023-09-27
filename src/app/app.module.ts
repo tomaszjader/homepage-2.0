@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SkillsItemComponent } from './skills-item/skills-item.component';
 import { SkillsSectionComponent } from './skills-section/skills-section.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
+import { AboutSectionComponent } from './about-section/about-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkillsItemComponent,
     SkillsSectionComponent,
-    FooterSectionComponent
+    FooterSectionComponent,
+    AboutSectionComponent
   ],
   imports: [
     BrowserModule,
