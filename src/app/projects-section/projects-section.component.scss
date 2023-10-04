@@ -1,0 +1,44 @@
+.section-header {
+    font-family: DM Sans;
+    font-size: 20px;
+    color: #9CA3AF;
+    margin-left: auto;
+}
+
+.header {
+    color: #FFF;
+    font-family: DM Sans;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    width: 864px;
+    margin-bottom: 80px;
+
+}
+
+.section-header {
+    font-family: DM Sans;
+    font-size: 20px;
+    color: #9CA3AF;
+    margin-left: auto;
+}
+
+.github-cards {
+    display: flex;
+    gap: 16px;
+}
+
+.projects-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.github-card-2-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}

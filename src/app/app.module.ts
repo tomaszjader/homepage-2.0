@@ -8,6 +8,7 @@ import { SkillsSectionComponent } from './skills-section/skills-section.componen
 import { FooterSectionComponent } from './footer-section/footer-section.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
+import { GithubCardComponent } from './github-card/github-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
     SkillsSectionComponent,
     FooterSectionComponent,
     AboutSectionComponent,
-    ProjectsSectionComponent
+    ProjectsSectionComponent,
+    GithubCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,121 @@
+.github-card {
+    background-color: #1F2937;
+    width: 648px;
+   
+    border-radius: 20px 20px 20px 20px;
+}
+
+.github-card-top {
+    border-radius: 20px 20px 0 0px;
+    border: 1px solid #020916;
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.04) 100.02%);
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset;
+    backdrop-filter: blur(5px);
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 6px;
+    align-self: stretch;
+}
+
+.github-card-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    opacity: 0.5;
+    background: #020916;
+}
+
+.github-card-header {
+    font-weight: 700;
+    color: var(--White, #FFF);
+    font-family: DM Sans;
+    font-size: 24px;
+    margin: 0;
+}
+
+.github-card-content {
+    color: var(--Gray400, #9CA3AF);
+    font-family: DM Sans;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 16px 0;
+}
+
+.github-card-source-button {
+    display: flex;
+    padding: 16px 20px;
+    align-items: center;
+    gap: 8px;
+    color: #CEFF7E;
+    font-family: DM Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 1px solid #1F2937;
+    background: #020916;
+}
+
+.github-card-view-button {
+    display: flex;
+    padding: 16px 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid #1F2937;
+    background: #020916;
+    color: #CEFF7E;
+    font-family: DM Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.github-card-buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.github-card-technology {
+    color: var(--White, #FFF);
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 4px;
+    background: rgba(156, 163, 175, 0.10);
+    padding: 4px 8px;
+}
+
+.github-card-technologys {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 40px;
+}
+
+.github {
+
+    padding: 40px;
+
+}
+
+.github-card-star {
+    display: flex;
+    padding: 4px 8px;
+    align-items: center;
+    gap: 2px;
+    border-radius: 4px;
+    background: rgba(156, 163, 175, 0.10);
+    color: var(--Gray400, #9CA3AF);
+font-family: DM Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+}
+
+.github-card-header-section {
+display: flex;
+gap: 16px;
+}
