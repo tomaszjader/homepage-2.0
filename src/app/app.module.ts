@@ -10,6 +10,7 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { GithubCardComponent } from './github-card/github-card.component';
 import { AfterHoursSectionComponent } from './after-hours-section/after-hours-section.component';
+import { NavbarSectionComponent } from './navbar-section/navbar-section.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AfterHoursSectionComponent } from './after-hours-section/after-hours-se
     AboutSectionComponent,
     ProjectsSectionComponent,
     GithubCardComponent,
-    AfterHoursSectionComponent
+    AfterHoursSectionComponent,
+    NavbarSectionComponent
   ],
   imports: [
     BrowserModule,

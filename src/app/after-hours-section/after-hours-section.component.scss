@@ -17,8 +17,8 @@
     font-style: normal;
     font-weight: 500;
     line-height: 48px;
-    /* 120% */
     letter-spacing: -0.8px;
+    width: 864px;
 }
 
 .after-houer {
@@ -34,9 +34,6 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 32px;
-    /* 133.333% */
-    letter-spacing: -0.48px;
 }
 
 .image-p {
@@ -53,4 +50,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 16px;
+}
+
+.image-section {
+width: 316px;
 }
