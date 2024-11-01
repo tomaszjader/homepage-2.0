@@ -69,8 +69,11 @@
 }
 
 .hero-gap {
-    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 24px 0;
+    
 }
 
 .my {
@@ -79,4 +82,10 @@
 
     justify-content: center;
     flex-direction: column;
+}
+
+.nav-bar {
+    display: flex;
+    width: 1320px;
+    justify-content: space-between;
 }
