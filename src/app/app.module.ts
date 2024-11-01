@@ -11,6 +11,7 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
 import { GithubCardComponent } from './github-card/github-card.component';
 import { AfterHoursSectionComponent } from './after-hours-section/after-hours-section.component';
 import { NavbarSectionComponent } from './navbar-section/navbar-section.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarSectionComponent } from './navbar-section/navbar-section.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,35 +7,27 @@
     <div class="github">
         <div class="github-card-header-section">
             <h3 class="github-card-header">
-                simple-editor
+                {{project}}
             </h3>
             <span class="github-card-star">
                 <img src="assets/img/star.svg" alt="" height="16px">
-                27
+                {{stargazersCount}}
             </span>
         </div>
 
-        <p class="github-card-content">Phasellus dolor. In dui magna, posuere eget, vestibulum et, tempor auctor, justo
-            fringilla mauris sit amet nibh.
-            Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat...</p>
+        <p class="github-card-content">{{description}}</p>
         <div class="github-card-technologys">
-            <div class="github-card-technology">
-                HTML
-            </div>
-            <div class="github-card-technology">
-                HTML
-            </div>
-            <div class="github-card-technology">
-                HTML
+            <div *ngFor="let topic of topics" class="github-card-technology">
+                {{topic}}
             </div>
         </div>
         <div class="github-card-buttons">
-            <button class="github-card-view-button">
+            <a class="github-card-view-button" href={{website}} target="_blank" style="text-decoration: none;">
                 <img src="assets/img/page.svg" alt=""> View demo
-            </button>
-            <button class="github-card-source-button">
+            </a>
+            <a class="github-card-source-button" href={{link}} target="_blank" style="text-decoration: none;">
                 <img src="assets/img/github-logo.svg" alt=""> Source code
-            </button>
+            </a>
         </div>
     </div>
 
