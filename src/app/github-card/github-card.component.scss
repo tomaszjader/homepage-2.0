@@ -135,3 +135,14 @@
         flex-direction: column;
     }
 }
+@media only screen and (max-width: 374px) {
+    .github-card {
+        width: 272px;
+    }
+    .github-card-header-section {
+flex-direction: column;
+    }
+    .github-card-star {
+width: 40px;
+    }
+}

@@ -102,3 +102,9 @@ width: 221px;
     height: 300px;
 }
 }
+@media only screen and (max-width: 374px) {
+    .about-img {
+        width: 280px;
+        height: 280px;
+    }
+}

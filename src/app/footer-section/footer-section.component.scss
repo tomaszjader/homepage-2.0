@@ -73,3 +73,9 @@
     text-align: center;
   }
 }
+@media only screen and (max-width: 374px) {
+  .footer__button{
+    width: 272px;
+    font-size: 17px;
+  }
+}

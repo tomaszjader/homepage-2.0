@@ -1,72 +1,79 @@
 .after-houer-header {
-    color: var(--Gray400, #9CA3AF);
-    font-family: DM Sans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    /* 120% */
-    letter-spacing: 1px;
-    text-transform: uppercase;
+  color: var(--Gray400, #9ca3af);
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  /* 120% */
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .after-houer-p {
-    color: #FFF;
-    font-family: DM Sans;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 48px;
-    letter-spacing: -0.8px;
-    width: 864px;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.8px;
+  width: 864px;
 }
 
 .after-houer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px 0;
 }
 
 .image-header {
-    color: #FFF;
-    font-family: DM Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .image-p {
-    color: var(--Gray400, #9CA3AF);
-    font-family: DM Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    /* 150% */
+  color: var(--Gray400, #9ca3af);
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
 }
 
 .after-houers {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .image-section {
-width: 316px;
+  width: 316px;
 }
 
-
 @media only screen and (max-width: 1900px) {
-    .after-houers {
-      flex-direction: column;
-    }
-    .after-houer-p {
-        width: auto !important;
-    }
-    .after-houer-discription {
-        margin: 0 24px;
-    }
+  .after-houers {
+    flex-direction: column;
   }
+  .after-houer-p {
+    width: auto !important;
+  }
+  .after-houer-discription {
+    margin: 0 24px;
+  }
+}
+@media only screen and (max-width: 374px) {
+  .image-section {
+    width: 272px;
+  }
+  .image-section img {
+    width: 272px;
+  }
+}

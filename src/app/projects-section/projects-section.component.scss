@@ -49,8 +49,14 @@
   }
   .header {
     width: auto !important;
+  }
+  .project-dicription {
+    margin: 0 24px;
+  }
 }
-    .project-dicription {
-margin: 0 24px;
-    }
+@media only screen and (max-width: 374px) {
+  .header {
+    width: 272px;
+    font-size: 30px;
+  }
 }
