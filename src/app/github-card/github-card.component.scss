@@ -126,3 +126,12 @@
     display: flex;
     gap: 16px;
 }
+
+@media only screen and (max-width: 1900px) { 
+    .github-card  {
+        width: 327px;
+    }
+    .github-card-buttons  {
+        flex-direction: column;
+    }
+}
