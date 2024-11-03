@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 120px 64px;
+  margin: 120px 64px;
   gap: 144px;
 }
 
@@ -74,7 +74,7 @@
 .link-font {
   font-family: Arial;
 }
-@media only screen and (max-width: 1900px) {
+@media only screen and (max-width: 1320px) {
   .about {
     display: flex;
     flex-direction: column-reverse;
