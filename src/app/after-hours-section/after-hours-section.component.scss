@@ -57,7 +57,9 @@
 .image-section {
   width: 316px;
 }
-
+.image-section img {
+  border-radius: 20px;
+}
 @media only screen and (max-width: 1320px) {
   .after-houers {
     flex-direction: column;

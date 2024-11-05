@@ -6,10 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./skills-item.component.scss']
 })
 export class SkillsItemComponent {
-  @Input() skillsArray: string[] = ['— Semantic HTML5', '— Semantic HTML5',
-    '— Semantic HTML5', '— Semantic HTML5', '— Semantic HTML5', '— Semantic HTML5',
-    '— Semantic HTML5'];
-  @Input() skillsHeader: string = 'Working knowledge';
-  @Input() skillsImage: string = 'assets/img/trangle.svg';
+  @Input() skillsArray: string[] = [];
+  @Input() skillsHeader: string = '';
+  @Input() skillsImage: string = '';
 }
 
