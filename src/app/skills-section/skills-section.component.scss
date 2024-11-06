@@ -1,11 +1,11 @@
-.skills {
+.skills__boxs {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
 }
 
-.header {
+.skills__content-paragraf {
   color: #fff;
   font-family: DM Sans;
   font-size: 40px;
@@ -15,14 +15,14 @@
   margin-bottom: 80px;
 }
 
-.section-header {
+.skills__content-header {
   font-family: DM Sans;
   font-size: 20px;
   color: #9ca3af;
   margin-left: auto;
 }
 
-.centrum {
+.skills {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,13 +30,13 @@
   margin: 120px 0;
 }
 @media only screen and (max-width: 1320px) {
-  .skills {
+  .skills__boxs {
     flex-direction: column;
   }
-  .header {
+  .skills__content-paragraf {
     width: auto !important;
   }
-  .skills-centum {
+  .skills__content {
     margin: 0 24px;
   }
 

@@ -1,11 +1,11 @@
-.section-header {
+.projects__header {
   font-family: DM Sans;
   font-size: 20px;
   color: #9ca3af;
   margin-left: auto;
 }
 
-.header {
+.projects__description-header {
   color: #fff;
   font-family: DM Sans;
   font-size: 40px;
@@ -15,19 +15,19 @@
   margin-bottom: 80px;
 }
 
-.section-header {
+.projects__header {
   font-family: DM Sans;
   font-size: 20px;
   color: #9ca3af;
   margin-left: auto;
 }
 
-.github-cards {
+.projects__githubCards-concret {
   display: flex;
   gap: 16px;
 }
 
-.projects-section {
+.projects {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@
   padding: 120px 0;
 }
 
-.github-card-2-section {
+.projects__githubCards {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,18 +44,18 @@
 }
 
 @media only screen and (max-width: 1320px) {
-  .github-cards {
+  .projects__githubCards-concret {
     flex-direction: column;
   }
-  .header {
+  .projects__description-header {
     width: auto !important;
   }
-  .project-dicription {
+  .projects__description {
     margin: 0 24px;
   }
 }
 @media only screen and (max-width: 374px) {
-  .header {
+  .projects__description-header {
     width: 272px;
     font-size: 30px;
   }
