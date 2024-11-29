@@ -41,14 +41,18 @@
 }
 
 @media only screen and (max-width: 1320px) {
-  .projects__githubCards-concret {
-    flex-direction: column;
-  }
+ 
   .projects__description-header {
     width: auto !important;
   }
   .projects__description {
     margin: 0 24px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .projects__githubCards-concret {
+    flex-direction: column;
   }
 }
 @media only screen and (max-width: 374px) {
