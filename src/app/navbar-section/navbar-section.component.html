@@ -1,33 +1,26 @@
-<nav class="hero hero-gap">
-    <div class="nav-bar">
-        <div class="hero hero-section">
-            <img src="assets/img/navbar-logo.svg" alt="" height="42">
-            <div class="my">
-                <p class="my-name">Tomasz Jąder</p>
-                <p class="my-title">Junior Fullstack developer</p>
+<nav class="navbar">
+    <div class="navbar__container">
+        <div class="navbar__brand">
+            <img class="navbar__logo" src="assets/img/navbar-logo.svg" alt="" height="42">
+            <div class="navbar__info">
+                <p class="navbar__name">Tomasz Jąder</p>
+                <p class="navbar__title">Junior Fullstack developer</p>
             </div>
         </div>
-        <button class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="navbar__hamburger" (click)="toggleMenu()" [class.navbar__hamburger--active]="isMenuOpen">
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
+            <span class="navbar__hamburger-line"></span>
         </button>
-        <div class="nav-items" [class.mobile-menu-active]="isMenuOpen">
-            <a href="#about" class="nav-item">About</a>
-    
-            <a href="#skills" class="nav-item">Skills</a>
-    
-            <a href="#projects" class="nav-item">Projects</a>
-    
-            <div class="nav-item-resume">
-                <img src="assets/img/download-button.svg" alt="" height="20">
-    
-                <a href="assets/files/TomaszJąderCV.pdf"  download="TomaszJąderCV.pdf" class="nav-item">Resume</a>
-    
+        <div class="navbar__menu" [class.navbar__menu--active]="isMenuOpen">
+            <a href="#about" class="navbar__link">About</a>
+            <a href="#skills" class="navbar__link">Skills</a>
+            <a href="#projects" class="navbar__link">Projects</a>
+            <div class="navbar__resume">
+                <img class="navbar__resume-icon" src="assets/img/download-button.svg" alt="" height="20">
+                <a href="assets/files/TomaszJąderCV.pdf" download="TomaszJąderCV.pdf" class="navbar__link">Resume</a>
             </div>
-    
-            <a href="#contact" class="nav-item-contact">Contact</a>
+            <a href="#contact" class="navbar__link navbar__link--contact">Contact</a>
         </div>
     </div>
-    
 </nav>
