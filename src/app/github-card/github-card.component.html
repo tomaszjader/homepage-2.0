@@ -1,35 +1,33 @@
 <article class="github-card">
-    <div class="github-card-top">
-        <div class="github-card-dot"></div>
-        <div class="github-card-dot"></div>
-        <div class="github-card-dot"></div>
+    <div class="github-card__top">
+        <div class="github-card__dot"></div>
+        <div class="github-card__dot"></div>
+        <div class="github-card__dot"></div>
     </div>
-    <div class="github">
-        <div class="github-card-header-section">
-            <h3 class="github-card-header">
+    <div class="github-card__content">
+        <div class="github-card__header-section">
+            <h3 class="github-card__header">
                 {{project}}
             </h3>
-            <span class="github-card-star">
+            <span class="github-card__star">
                 <img src="assets/img/star.svg" alt="" height="16px">
                 {{stargazersCount}}
             </span>
         </div>
 
-        <p class="github-card-content">{{description}}</p>
-        <div class="github-card-technologys">
-            <div *ngFor="let topic of topics" class="github-card-technology">
+        <p class="github-card__description">{{description}}</p>
+        <div class="github-card__technologies">
+            <div *ngFor="let topic of topics" class="github-card__technology">
                 {{topic}}
             </div>
         </div>
-        <div class="github-card-buttons">
-            <a class="github-card-view-button" href={{website}} target="_blank" style="text-decoration: none;">
+        <div class="github-card__buttons">
+            <a class="github-card__button--view" href={{website}} target="_blank" style="text-decoration: none;">
                 <img src="assets/img/page.svg" alt="" height="24"> View demo
             </a>
-            <a class="github-card-source-button" href={{link}} target="_blank" style="text-decoration: none;">
+            <a class="github-card__button--source" href={{link}} target="_blank" style="text-decoration: none;">
                 <img src="assets/img/github-logo.svg" alt="" height="24"> Source code
             </a>
         </div>
     </div>
-
-
 </article>

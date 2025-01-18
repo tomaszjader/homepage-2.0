@@ -1,155 +1,142 @@
 .github-card {
   background-color: #1f2937;
   width: 648px;
-
   border-radius: 20px;
   border: 1px solid #020916;
-  background: linear-gradient(
-    155deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.04) 100.02%
-  );
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100.02%);
   box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset;
   backdrop-filter: blur(5px);
-}
 
-.github-card-top {
-  border-radius: 20px 20px 0px 0px;
-  border: 1px solid #020916;
-  background: linear-gradient(
-    155deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.04) 100.02%
-  );
-  box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset;
-  backdrop-filter: blur(5px);
-  display: flex;
-  padding: 16px;
-  align-items: flex-start;
-  gap: 6px;
-  align-self: stretch;
-  margin: -1px;
-}
+  &__top {
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid #020916;
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100.02%);
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset;
+    backdrop-filter: blur(5px);
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 6px;
+    align-self: stretch;
+    margin: -1px;
+  }
 
-.github-card-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 6px;
-  opacity: 0.5;
-  background: #020916;
-}
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    opacity: 0.5;
+    background: #020916;
+  }
 
-.github-card-header {
-  font-weight: 700;
-  color: var(--White, #fff);
-  font-size: 24px;
-  margin: 0;
-}
+  &__content {
+    padding: 40px;
+  }
 
-.github-card-content {
-  color: var(--Gray400, #9ca3af);
-  font-size: 20px;
-  font-weight: 400;
-  margin: 16px 0;
-}
+  &__header-section {
+    display: flex;
+    gap: 16px;
+  }
 
-.github-card-source-button {
-  display: flex;
-  padding: 16px 20px;
-  align-items: center;
-  gap: 8px;
-  color: #ceff7e;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-  background: #020916;
-}
+  &__header {
+    font-weight: 700;
+    color: var(--White, #fff);
+    font-size: 24px;
+    margin: 0;
+  }
 
-.github-card-view-button {
-  display: flex;
-  padding: 16px 20px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-  background: #020916;
-  color: #ceff7e;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-}
+  &__star {
+    height: 23px;
+    width: 29px;
+    display: flex;
+    padding: 4px 8px;
+    align-items: center;
+    gap: 2px;
+    border-radius: 4px;
+    background: rgba(156, 163, 175, 0.1);
+    color: var(--Gray400, #9ca3af);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
 
-.github-card-buttons {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
+  &__description {
+    color: var(--Gray400, #9ca3af);
+    font-size: 20px;
+    font-weight: 400;
+    margin: 16px 0;
+  }
 
-.github-card-technology {
-  color: var(--White, #fff);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  border-radius: 4px;
-  background: rgba(156, 163, 175, 0.1);
-  padding: 4px 8px;
-}
+  &__technologies {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 40px;
+  }
 
-.github-card-technologys {
-  display: flex;
-  gap: 8px;
-  padding-bottom: 40px;
-}
+  &__technology {
+    color: var(--White, #fff);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 4px;
+    background: rgba(156, 163, 175, 0.1);
+    padding: 4px 8px;
+  }
 
-.github {
-  padding: 40px;
-}
+  &__buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
 
-.github-card-star {
-  height: 23px;
-  width: 29px;
-  display: flex;
-  padding: 4px 8px;
-  align-items: center;
-  gap: 2px;
-  border-radius: 4px;
-  background: rgba(156, 163, 175, 0.1);
-  color: var(--Gray400, #9ca3af);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-}
+  &__button {
+    display: flex;
+    padding: 16px 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+    background: #020916;
+    color: #ceff7e;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
 
-.github-card-header-section {
-  display: flex;
-  gap: 16px;
-}
+    &--view {
+      @extend .github-card__button;
+    }
 
-@media only screen and (max-width: 1320px) {
-  .github-card {
+    &--source {
+      @extend .github-card__button;
+    }
+  }
+
+  @media only screen and (max-width: 1320px) {
     width: 327px;
     height: 505px;
+
+    &__buttons {
+      flex-direction: column;
+    }
+
+    &__header-section {
+      justify-content: space-between;
+    }
   }
-  .github-card-buttons {
-    flex-direction: column;
-  }
-  .github-card-header-section {
-    justify-content: space-between;
-  }
-}
-@media only screen and (max-width: 374px) {
-  .github-card {
+
+  @media only screen and (max-width: 374px) {
     width: 272px;
-  }
-  .github-card-header-section {
-    flex-direction: column;
-  }
-  .github-card-star {
-    width: 40px;
-  }
-  .github-card-source-button {
-    font-size: 16px;
+
+    &__header-section {
+      flex-direction: column;
+    }
+
+    &__star {
+      width: 40px;
+    }
+
+    &__button {
+      font-size: 16px;
+    }
   }
 }
