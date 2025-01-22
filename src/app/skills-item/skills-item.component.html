@@ -1,10 +1,8 @@
-<section class="skills-item">
-    <img class="skills-item__specific-image" [src]="skillsImage" alt="" style="height: 180px;">
-    <article class="skills-item__specific">
-        <img class="line" src="assets/img/myslnik.svg" alt="">
-
-        <p class="skills-item__specific-header" >{{skillsHeader}}</p>
-        <p class="skills-item__specific-item" *ngFor="let item of skillsArray">{{item}}</p>
+<section class="skills">
+    <img class="skills__image" [src]="skillsImage" alt="" style="height: 180px;">
+    <article class="skills__content">
+        <img class="skills__divider" src="assets/img/myslnik.svg" alt="">
+        <p class="skills__header">{{skillsHeader}}</p>
+        <p class="skills__item" *ngFor="let item of skillsArray">{{item}}</p>
     </article>
-    
 </section>
