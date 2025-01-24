@@ -2,7 +2,7 @@
 Homepage 2.0 is a modern web application built with Angular, styled using SCSS, and developed with TypeScript. The project is based on a professional design created in Figma, ensuring a sleek, user-focused interface and top-notch user experience.
 
 ## Key Features:
-Responsive Design: Optimized for a variety of devices, providing a seamless experience on desktops, tablets, and mobile phones.
+**Responsive Design**: Optimized for a variety of devices, providing a seamless experience on desktops, tablets, and mobile phones.
 **SCSS Styling**: Organized and modular styles for scalable and maintainable design.
 **Angular Framework**: Component-based architecture for robust and reusable features.
 **Figma Integration**: Faithfully translated design mockups into functional web pages for a polished result.
