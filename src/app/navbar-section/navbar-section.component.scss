@@ -82,9 +82,12 @@
         border: none;
         cursor: pointer;
         padding: 0;
-        margin: 24px 24px 0 0;
+        margin: 0;
         z-index: 1000;
-        position: relative;
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
 
         &-line {
             width: 30px;
