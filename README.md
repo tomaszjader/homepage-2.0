@@ -1,6 +1,6 @@
-# Homepage 2.0  
+# Homepage 2  
 
-**Homepage 2.0** is a modern web application built with **Angular**, styled with **SCSS**, and developed using **TypeScript**. The project is based on a professional design created in **Figma**, ensuring a sleek, user-friendly interface and an excellent user experience.  
+**Homepage 2** is a modern web application built with **Angular**, styled with **SCSS**, and developed using **TypeScript**. The project is based on a professional design created in **Figma**, ensuring a sleek, user-friendly interface and an excellent user experience.  
 
 ## Features
 - 📱 Responsive layout optimized for all devices  
