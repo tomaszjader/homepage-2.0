@@ -37,13 +37,14 @@
 
     &--link {
       color: var(--White, #fff);
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 
   &__img {
     width: 400px;
     height: 400px;
+    aspect-ratio: 1/1;
     border-radius: 16px 200px 16px 16px;
     background: #d2d5da;
     object-fit: cover;

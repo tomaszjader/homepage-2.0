@@ -51,6 +51,8 @@
   &__image {
     border-radius: 20px;
     height: 480px;
+    width: 100%;
+    object-fit: cover;
   }
 
   &__title {
