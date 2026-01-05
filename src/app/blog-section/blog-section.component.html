@@ -1,0 +1,17 @@
+<section id="blog" class="blog">
+  <div class="blog__description">
+    <h2 class="blog__header">Latest Articles</h2>
+    <p class="blog__text">Insights on technology, coding, and my journey.</p>
+  </div>
+
+  <div class="blog__grid">
+    <article class="blog-card" *ngFor="let post of posts" [routerLink]="['/blog', post.slug]">
+      <div class="blog-card__content">
+        <span class="blog-card__date">{{ post.date }}</span>
+        <h3 class="blog-card__title">{{ post.title }}</h3>
+        <p class="blog-card__excerpt">{{ post.excerpt }}</p>
+        <a [routerLink]="['/blog', post.slug]" class="blog-card__link">Read more <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </article>
+  </div>
+</section>

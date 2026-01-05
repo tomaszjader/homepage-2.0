@@ -11,6 +11,9 @@ import { ProjectsSectionComponent } from './projects-section/projects-section.co
 import { GithubCardComponent } from './github-card/github-card.component';
 import { AfterHoursSectionComponent } from './after-hours-section/after-hours-section.component';
 import { NavbarSectionComponent } from './navbar-section/navbar-section.component';
+import { BlogSectionComponent } from './blog-section/blog-section.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
+import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -23,7 +26,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ProjectsSectionComponent,
     GithubCardComponent,
     AfterHoursSectionComponent,
-    NavbarSectionComponent
+    NavbarSectionComponent,
+    BlogSectionComponent,
+    BlogPostComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
