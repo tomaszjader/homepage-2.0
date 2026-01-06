@@ -1,0 +1,38 @@
+<div class="blog-page">
+  <app-navbar-section></app-navbar-section>
+  
+  <main class="blog">
+    <div class="blog__header-container">
+      <h2 class="blog__header">Blog</h2>
+      <p class="blog__description">Thoughts, tutorials, and insights.</p>
+    </div>
+
+    <div class="blog__grid">
+      <article class="blog-card" *ngFor="let post of posts">
+        <div class="blog-card__top">
+          <div class="blog-card__dot"></div>
+          <div class="blog-card__dot"></div>
+          <div class="blog-card__dot"></div>
+        </div>
+        <div class="blog-card__content">
+          <span class="blog-card__date">{{ post.date }}</span>
+          <h2 class="blog-card__title">
+            <a [routerLink]="['/blog', post.slug]">{{ post.title }}</a>
+          </h2>
+          <p class="blog-card__excerpt">{{ post.excerpt }}</p>
+          <div class="blog-card__buttons">
+            <a [routerLink]="['/blog', post.slug]" class="blog-card__button">
+              Read article <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <div class="back-link">
+      <a routerLink="/" class="back-link__anchor">&larr; Back to Home</a>
+    </div>
+  </main>
+
+  <app-footer-section></app-footer-section>
+</div>

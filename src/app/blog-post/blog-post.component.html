@@ -1,11 +1,17 @@
-<div class="blog-post-container" *ngIf="post">
-  <div class="blog-post-header">
-    <a routerLink="/" fragment="blog" class="back-link">
-        <span aria-hidden="true">&larr;</span> Back to Blog
-    </a>
-    <span class="post-date">{{ post.date }}</span>
-    <h1 class="post-title">{{ post.title }}</h1>
-  </div>
+<div class="blog-post-page">
+  <app-navbar-section></app-navbar-section>
 
-  <div class="blog-post-content" [innerHTML]="post.content"></div>
+  <main class="blog-post-container" *ngIf="post">
+    <div class="blog-post-header">
+      <a routerLink="/blog" class="back-link">
+          <span aria-hidden="true">&larr;</span> Back to Blog
+      </a>
+      <span class="post-date">{{ post.date }}</span>
+      <h1 class="post-title">{{ post.title }}</h1>
+    </div>
+
+    <div class="blog-post-content" [innerHTML]="post.content"></div>
+  </main>
+
+  <app-footer-section></app-footer-section>
 </div>

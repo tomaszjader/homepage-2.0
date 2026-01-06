@@ -13,6 +13,7 @@ import { AfterHoursSectionComponent } from './after-hours-section/after-hours-se
 import { NavbarSectionComponent } from './navbar-section/navbar-section.component';
 import { BlogSectionComponent } from './blog-section/blog-section.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +30,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     NavbarSectionComponent,
     BlogSectionComponent,
     BlogPostComponent,
+    BlogListComponent,
     HomeComponent
   ],
   imports: [
