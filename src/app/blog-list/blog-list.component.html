@@ -5,10 +5,20 @@
     <div class="blog__header-container">
       <h2 class="blog__header">Blog</h2>
       <p class="blog__description">Thoughts, tutorials, and insights.</p>
+      
+      <div class="blog__search">
+        <input 
+          type="text" 
+          [(ngModel)]="searchText" 
+          (input)="filterPosts()" 
+          placeholder="Search articles by title..." 
+          class="blog__search-input"
+        >
+      </div>
     </div>
 
     <div class="blog__grid">
-      <article class="blog-card" *ngFor="let post of posts">
+      <article class="blog-card" *ngFor="let post of filteredPosts">
         <div class="blog-card__top">
           <div class="blog-card__dot"></div>
           <div class="blog-card__dot"></div>
