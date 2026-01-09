@@ -6,6 +6,7 @@ export interface BlogPost {
   date: string;
   excerpt: string;
   content: string;
+  tags?: string[];
 }
 
 @Injectable({
@@ -18,6 +19,7 @@ export class BlogService {
       title: 'Jak przestałem oszukiwać samego siebie w nauce angielskiego? (Automatyzacja nawyków)',
       date: 'January 7, 2026',
       excerpt: 'Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił? Postanowiłem to zmienić, wykorzystując n8n.',
+      tags: ['Automatyzacja', 'n8n', 'Productivity', 'English Learning'],
       content: `
         <p>Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił?</p>
         <p>Moje trzy filary – słuchanie, mówienie i powtórki w Anki – często lądowały na samym końcu listy "to-do". Robiłem je tuż przed snem, byle tylko odhaczyć punkt w kalendarzu. Efekt? Mała skuteczność i poczucie winy.</p>
@@ -50,6 +52,7 @@ export class BlogService {
       title: 'Angular 19: What’s New?',
       date: 'January 15, 2025',
       excerpt: 'Discover the latest features in Angular 19, including improved signals, standalone components by default, and hydration enhancements.',
+      tags: ['Angular', 'Frontend', 'Web Development'],
       content: `
         <p>Angular 19 introduces a wave of improvements designed to enhance developer experience and application performance. Here are the key highlights:</p>
         
@@ -70,6 +73,7 @@ export class BlogService {
       title: 'Mastering TypeScript Generics',
       date: 'December 28, 2024',
       excerpt: 'A deep dive into TypeScript generics. Learn how to write reusable, type-safe code with practical examples and best practices.',
+      tags: ['TypeScript', 'Programming', 'Web Development'],
       content: `
         <p>Generics are one of the most powerful features in TypeScript, allowing you to write flexible, reusable code while maintaining type safety. But they can be intimidating at first.</p>
         
@@ -89,6 +93,7 @@ export class BlogService {
       title: 'Optimizing Web Performance',
       date: 'November 10, 2024',
       excerpt: 'Learn key strategies to improve your Core Web Vitals, reduce LCP, and optimize image delivery for a faster user experience.',
+      tags: ['Performance', 'SEO', 'Web Development'],
       content: `
         <p>Web performance is crucial for user retention and SEO. Core Web Vitals are the metrics Google uses to measure the user experience. Let's look at how to improve them.</p>
         

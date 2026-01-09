@@ -8,6 +8,15 @@
       </a>
       <span class="post-date">{{ post.date }}</span>
       <h1 class="post-title">{{ post.title }}</h1>
+      
+      <div class="post-tags" *ngIf="post.tags && post.tags.length > 0">
+        <a *ngFor="let tag of post.tags" 
+           [routerLink]="['/blog']" 
+           [queryParams]="{ tag: tag }" 
+           class="post-tag">
+          #{{ tag }}
+        </a>
+      </div>
     </div>
 
     <div class="blog-post-content" [innerHTML]="post.content"></div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BlogService, BlogPost } from '../services/blog.service';
 
 @Component({
@@ -10,22 +11,40 @@ export class BlogListComponent implements OnInit {
   posts: BlogPost[] = [];
   filteredPosts: BlogPost[] = [];
   searchText: string = '';
+  activeTag: string | null = null;
 
-  constructor(private blogService: BlogService) {}
+  constructor(
+    private blogService: BlogService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     window.scrollTo(0, 0); // Ensure we start at the top
     this.posts = this.blogService.getPosts();
-    this.filteredPosts = this.posts;
+    
+    this.route.queryParams.subscribe(params => {
+      this.activeTag = params['tag'] || null;
+      this.filterPosts();
+    });
   }
 
   filterPosts(): void {
-    if (!this.searchText) {
-      this.filteredPosts = this.posts;
-    } else {
-      this.filteredPosts = this.posts.filter(post =>
+    let tempPosts = this.posts;
+
+    // Filter by tag if present
+    if (this.activeTag) {
+      tempPosts = tempPosts.filter(post => 
+        post.tags && post.tags.includes(this.activeTag!)
+      );
+    }
+
+    // Filter by search text
+    if (this.searchText) {
+      tempPosts = tempPosts.filter(post =>
         post.title.toLowerCase().includes(this.searchText.toLowerCase())
       );
     }
+
+    this.filteredPosts = tempPosts;
   }
 }
