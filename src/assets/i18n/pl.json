@@ -1,0 +1,75 @@
+{
+    "NAV": {
+      "ABOUT": "O mnie",
+      "SKILLS": "Umiejętności",
+      "PROJECTS": "Projekty",
+      "BLOG": "Blog",
+      "CONTACT": "Kontakt"
+    },
+    "ABOUT": {
+      "HEADER_PREFIX": "Mam na imię Tomasz i jestem",
+      "HEADER_HIGHLIGHT": "Fullstack developerem",
+      "HEADER_SUFFIX": "oraz fanem AI.",
+      "PARAGRAPH_1": "Jeśli interesują Cię moje",
+      "PARAGRAPH_LINK_SKILLS": "umiejętności",
+      "PARAGRAPH_2": "sprawdź listę. Nie zapomnij rzucić okiem na moje nowe",
+      "PARAGRAPH_LINK_PROJECTS": "projekty",
+      "PARAGRAPH_3": ". Szukam nowych wyzwań, więc jeśli jakieś masz, nie wahaj się",
+      "PARAGRAPH_LINK_CONTACT": "skontaktować ze mną",
+      "BUTTON_CONTACT": "Skontaktuj się",
+      "BUTTON_KNOW": "Poznaj mnie"
+    },
+    "SKILLS_SECTION": {
+      "HEADER": "MOJE UMIEJĘTNOŚCI",
+      "PARAGRAPH": "Zdobyłem kilka ciekawych umiejętności po drodze i cieszę się, że mogę się nimi podzielić. Sprawdź poniżej, co potrafię!",
+      "WORKING_KNOWLEDGE": "Dobra znajomość",
+      "KNOW_SOMETHING": "Znam podstawy",
+      "WANT_TO_LEARN": "Chcę się nauczyć"
+    },
+    "PROJECTS_SECTION": {
+      "HEADER": "Ostatnie projekty",
+      "DESCRIPTION": "Odkąd zacząłem przygodę z programowaniem w 2020 roku, zrealizowałem wiele projektów. Oto krótki przegląd moich dotychczasowych osiągnięć."
+    },
+    "GITHUB_CARD": {
+      "VIEW_DEMO": "Zobacz demo",
+      "SOURCE_CODE": "Kod źródłowy"
+    },
+    "AFTER_HOURS_SECTION": {
+        "HEADER": "Po godzinach",
+        "TEXT": "Poza regularnymi godzinami pracy oddaję się różnym aktywnościom i pasjom. Oto rzut oka na to, jak spędzam czas wolny.",
+        "AI_TITLE": "Sztuczna Inteligencja",
+        "AI_DESC": "Po pracy testuję modele LLM i automatyzuję swoją pracę",
+        "TRAVEL_TITLE": "Podróże",
+        "TRAVEL_DESC": "W wolnym czasie uwielbiam zagraniczne podróże i nowe przygody",
+        "CHESS_TITLE": "Szachy",
+        "CHESS_DESC": "Zatracony w strategicznych bitwach, znajduję radość i wyzwanie w ponadczasowym świecie szachów.",
+        "GYM_TITLE": "Trening siłowy",
+        "GYM_DESC": "Wzmacniając ciało i umysł, poświęcam się dyscyplinie treningu siłowego, ciągle przesuwając swoje granice."
+    },
+    "FOOTER": {
+        "COPYRIGHT": "Wszelkie prawa zastrzeżone"
+    },
+    "FOOTER_SECTION": {
+        "HEADER": "Współpracujmy",
+        "PARAGRAPH": "Jestem otwarty na nowe możliwości. <br>Jeśli masz jedną dla mnie, porozmawiajmy!",
+        "FIND_ME": "lub znajdź mnie na"
+    },
+    "BLOG_SECTION": {
+        "HEADER": "Ostatnie artykuły",
+        "TEXT": "Spostrzeżenia na temat technologii, programowania i mojej drogi.",
+        "READ_MORE": "Czytaj więcej",
+        "VIEW_ALL": "Zobacz wszystkie wpisy"
+    },
+    "BLOG": {
+        "TITLE": "Blog",
+        "DESCRIPTION": "Przemyślenia, poradniki i spostrzeżenia.",
+        "SEARCH_PLACEHOLDER": "Szukaj artykułów po tytule...",
+        "FILTERED_BY_TAG": "Filtrowanie po tagu:",
+        "CLEAR_FILTER": "Wyczyść filtr",
+        "READ_ARTICLE": "Czytaj artykuł",
+        "BACK_TO_HOME": "Powrót do strony głównej",
+        "BACK_TO_BLOG": "Powrót do bloga",
+        "READ_MORE": "Czytaj więcej",
+        "BACK_TO_LIST": "Powrót do listy"
+    }
+  }

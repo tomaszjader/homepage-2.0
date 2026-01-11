@@ -4,7 +4,7 @@
   <main class="blog-post-container" *ngIf="post">
     <div class="blog-post-header">
       <a routerLink="/blog" class="back-link">
-          <span aria-hidden="true">&larr;</span> Back to Blog
+          <span aria-hidden="true">&larr;</span> {{ 'BLOG.BACK_TO_BLOG' | translate }}
       </a>
       <span class="post-date">{{ post.date }}</span>
       <h1 class="post-title">{{ post.title }}</h1>

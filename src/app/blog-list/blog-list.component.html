@@ -3,22 +3,22 @@
   
   <main class="blog">
     <div class="blog__header-container">
-      <h2 class="blog__header">Blog</h2>
-      <p class="blog__description">Thoughts, tutorials, and insights.</p>
+      <h2 class="blog__header">{{ 'BLOG.TITLE' | translate }}</h2>
+      <p class="blog__description">{{ 'BLOG.DESCRIPTION' | translate }}</p>
       
       <div class="blog__search">
         <input 
           type="text" 
           [(ngModel)]="searchText" 
           (input)="filterPosts()" 
-          placeholder="Search articles by title..." 
+          [placeholder]="'BLOG.SEARCH_PLACEHOLDER' | translate"
           class="blog__search-input"
         >
       </div>
 
       <div class="blog__active-filter" *ngIf="activeTag">
-        <span>Filtered by tag: <strong>{{ activeTag }}</strong></span>
-        <a [routerLink]="['/blog']" [queryParams]="{}" class="blog__clear-filter">Clear filter &times;</a>
+        <span>{{ 'BLOG.FILTERED_BY_TAG' | translate }} <strong>{{ activeTag }}</strong></span>
+        <a [routerLink]="['/blog']" [queryParams]="{}" class="blog__clear-filter">{{ 'BLOG.CLEAR_FILTER' | translate }} &times;</a>
       </div>
     </div>
 
@@ -47,7 +47,7 @@
 
           <div class="blog-card__buttons">
             <a [routerLink]="['/blog', post.slug]" class="blog-card__button">
-              Read article <span aria-hidden="true">&rarr;</span>
+              {{ 'BLOG.READ_ARTICLE' | translate }} <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
@@ -55,7 +55,7 @@
     </div>
     
     <div class="back-link">
-      <a routerLink="/" class="back-link__anchor">&larr; Back to Home</a>
+      <a routerLink="/" class="back-link__anchor">&larr; {{ 'BLOG.BACK_TO_HOME' | translate }}</a>
     </div>
   </main>
 

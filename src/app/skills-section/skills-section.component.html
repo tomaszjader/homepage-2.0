@@ -1,24 +1,24 @@
 <section class="skills" id="skills">
     <article>
         <div class="skills__content">
-            <h2 class="skills__content-header">MY SKILLS</h2>
-            <h3 class="skills__content-paragraf">I've picked up some cool skills along the way, and I'm excited to share them with you. Check out what I can do below!</h3> 
+            <h2 class="skills__content-header">{{ 'SKILLS_SECTION.HEADER' | translate }}</h2>
+            <h3 class="skills__content-paragraf">{{ 'SKILLS_SECTION.PARAGRAPH' | translate }}</h3> 
         </div>
         
         <div class="skills__boxs">
             <app-skills-item
             [skillsArray] = 'workingKnowledgeArray'
-            [skillsHeader]= "'Working knowledge'"
+            [skillsHeader]= "'SKILLS_SECTION.WORKING_KNOWLEDGE' | translate"
             [skillsImage] = "'assets/img/trangle.svg'"
             ></app-skills-item>
             <app-skills-item
             [skillsArray] = 'knowSomethingAboutArray'
-            [skillsHeader]= "'Know something about'"
+            [skillsHeader]= "'SKILLS_SECTION.KNOW_SOMETHING' | translate"
             [skillsImage] = "'assets/img/elicpse.svg'"
             ></app-skills-item>
             <app-skills-item    
             [skillsArray] = 'wantToLearnArray'
-            [skillsHeader]= "'Want to learn'"
+            [skillsHeader]= "'SKILLS_SECTION.WANT_TO_LEARN' | translate"
             [skillsImage] = "'assets/img/test.svg'"
             ></app-skills-item>
         </div>

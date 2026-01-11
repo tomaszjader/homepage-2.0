@@ -2,22 +2,19 @@
 
     <div class="about">
         <div class="about__text">
-            <h1 class="about__header">My name is Tomasz and I'm a <span class="about__header--highlight">Fullstack
-                    developer</span> and AI fan.</h1>
+            <h1 class="about__header">{{ 'ABOUT.HEADER_PREFIX' | translate }} <span class="about__header--highlight">{{ 'ABOUT.HEADER_HIGHLIGHT' | translate }}</span> {{ 'ABOUT.HEADER_SUFFIX' | translate }}</h1>
 
-            <p class="about__paragraph">If you might be interested in my <a href="#skills"
-                    class="about__paragraph--link">skills</a> please check the list. Don't forget to take a quick look
-                at my new <a href="#projects" class="about__paragraph--link">projects</a>. I'm looking for new
-                challenges so if you have one don't hesitate to <a href="#contact"
-                    class="about__paragraph--link">contact me</a> 😊</p>
+            <p class="about__paragraph">{{ 'ABOUT.PARAGRAPH_1' | translate }} <a href="#skills"
+                    class="about__paragraph--link">{{ 'ABOUT.PARAGRAPH_LINK_SKILLS' | translate }}</a> {{ 'ABOUT.PARAGRAPH_2' | translate }} <a href="#projects" class="about__paragraph--link">{{ 'ABOUT.PARAGRAPH_LINK_PROJECTS' | translate }}</a>{{ 'ABOUT.PARAGRAPH_3' | translate }} <a href="#contact"
+                    class="about__paragraph--link">{{ 'ABOUT.PARAGRAPH_LINK_CONTACT' | translate }}</a> 😊</p>
             <div class="about__buttons">
                 <a href="#contact" class="about__button about__button--contact">
                     <img src="assets/img/cloud.svg" alt="" height="24" width="24">
-                    Get in touch
+                    {{ 'ABOUT.BUTTON_CONTACT' | translate }}
                 </a>
                 <a href="#skills" class="about__button about__button--know">
                     <img src="assets/img/image-user.svg" alt="" height="24" width="24">
-                    Get to know me
+                    {{ 'ABOUT.BUTTON_KNOW' | translate }}
                 </a>
             </div>
         </div>

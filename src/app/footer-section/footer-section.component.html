@@ -1,11 +1,11 @@
 <footer class="footer" id="contact">
-    <h2 class="footer__header">Let's work together</h2>
-    <h3 class="footer__paragraph">I'm open for new opportunities. <br>If you have one for me we should talk!</h3>
+    <h2 class="footer__header">{{ 'FOOTER_SECTION.HEADER' | translate }}</h2>
+    <h3 class="footer__paragraph" [innerHTML]="'FOOTER_SECTION.PARAGRAPH' | translate"></h3>
     <a class="footer__contact-button" href="mailto:tomasz.jader&#64;gmail.com">
         <img class="footer__contact-icon" src="assets/img/mail.svg" alt="" height="24" width="24" loading="lazy">
         <span class="footer__contact-text">tomasz.jader&#64;gmail.com</span>
     </a>
-    <p class="footer__text">or find me on</p>
+    <p class="footer__text">{{ 'FOOTER_SECTION.FIND_ME' | translate }}</p>
     <div class="footer__social">
         <a href="https://github.com/tomaszjader/" class="footer__social-link" aria-label="GitHub">
             <img class="footer__social-icon" src="assets/img/github.svg" alt="" height="24" width="24" loading="lazy">

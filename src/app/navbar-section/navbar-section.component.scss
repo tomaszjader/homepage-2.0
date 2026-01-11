@@ -72,6 +72,35 @@
         gap: 8px;
     }
 
+    &__lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        
+        .separator {
+            opacity: 0.5;
+        }
+
+        .lang-btn {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: all 0.3s;
+            padding: 4px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &.active {
+                opacity: 1;
+                color: #CEFF7E;
+            }
+        }
+    }
+
     &__hamburger {
         display: none;
         flex-direction: column;
@@ -127,6 +156,7 @@
             background: #020916;
             flex-direction: column;
             padding: 20px 0;
+            z-index: 1000; /* Ensure menu is above other content */
             
             &--active {
                 display: flex;
@@ -139,6 +169,10 @@
 
         &__brand{
             margin-left: 24px;
+        }
+
+        &__lang-switch {
+            margin-top: 20px;
         }
     }
 }

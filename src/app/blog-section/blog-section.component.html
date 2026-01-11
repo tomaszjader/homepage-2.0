@@ -1,7 +1,7 @@
 <section id="blog" class="blog">
   <div class="blog__description">
-    <h2 class="blog__header">Latest Articles</h2>
-    <p class="blog__text">Insights on technology, coding, and my journey.</p>
+    <h2 class="blog__header">{{ 'BLOG_SECTION.HEADER' | translate }}</h2>
+    <p class="blog__text">{{ 'BLOG_SECTION.TEXT' | translate }}</p>
   </div>
 
   <div class="blog__grid">
@@ -10,12 +10,12 @@
         <span class="blog-card__date">{{ post.date }}</span>
         <h3 class="blog-card__title">{{ post.title }}</h3>
         <p class="blog-card__excerpt">{{ post.excerpt }}</p>
-        <a [routerLink]="['/blog', post.slug]" class="blog-card__link">Read more <span aria-hidden="true">&rarr;</span></a>
+        <a [routerLink]="['/blog', post.slug]" class="blog-card__link">{{ 'BLOG_SECTION.READ_MORE' | translate }} <span aria-hidden="true">&rarr;</span></a>
       </div>
     </article>
   </div>
 
   <div class="blog__footer" style="text-align: center; margin-top: 48px;">
-    <a routerLink="/blog" class="blog__view-all">View all posts <span aria-hidden="true">&rarr;</span></a>
+    <a routerLink="/blog" class="blog__view-all">{{ 'BLOG_SECTION.VIEW_ALL' | translate }} <span aria-hidden="true">&rarr;</span></a>
   </div>
 </section>

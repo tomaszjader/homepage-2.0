@@ -7,15 +7,11 @@ import {Project} from '../interface/project'
 })
 export class GithubapiService {
 
-  private apiUrl ='https://api.github.com/users/tomaszjader/repos'
+  private apiUrl ='assets/projects.json'
   
   
   constructor(private http:HttpClient) { }
   getData(){
-    return this.http.get<Project[]>(this.apiUrl,  {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-  });
+    return this.http.get<Project[]>(this.apiUrl);
   }
 }
