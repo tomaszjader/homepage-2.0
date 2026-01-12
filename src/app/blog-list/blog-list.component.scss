@@ -245,19 +245,34 @@
   }
 }
 
-// Mobile adjustments to match homepage
-@media only screen and (max-width: 1320px) {
+// Mobile adjustments
+@media only screen and (max-width: 768px) {
+  .blog {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .blog__header-container {
+    margin-bottom: 40px;
+  }
+
   .blog__description {
+    font-size: 32px;
+    line-height: 1.2;
     width: auto;
   }
-  .blog-container {
-    padding-left: 24px;
-    padding-right: 24px;
+
+  .blog-card__content {
+    padding: 24px;
+  }
+
+  .blog-card__title {
+    font-size: 20px;
   }
 }
 
 @media only screen and (max-width: 374px) {
   .blog__description {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
