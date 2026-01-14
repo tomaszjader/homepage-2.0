@@ -15,6 +15,40 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'paradoks-produktywnosci-weekend-planner',
+      title: 'Paradoks produktywności: Dlaczego im więcej mamy czasu, tym trudniej go sensownie wykorzystać?',
+      date: 'January 14, 2026',
+      excerpt: 'Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.',
+      tags: ['Automatyzacja', 'n8n', 'OpenAI', 'Productivity', 'BuildInPublic', 'NoCode', 'TechCommunity', 'Innovation'],
+      content: `
+        <p>Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.</p>
+        
+        <p>Zamiast z tym walczyć, postanowiłem to zautomatyzować. 🤖</p>
+        
+        <img src="assets/img/mem2.jpg" alt="Meme: Ja buduję system n8n żeby zaplanować spacer" class="img-fluid my-4 rounded">
+
+        <p>Stworzyłem <strong>Weekend Planner</strong> – osobistego asystenta, który dba o to, bym wycisnął z wolnego czasu to, co najlepsze, bez marnowania godziny na zastanawianie się „co by tu dzisiaj zrobić”.</p>
+        
+        <h4>Jak to działa od strony technicznej?</h4>
+        <p>System opiera się na prostym, ale skutecznym workflow:</p>
+        
+        <ul>
+            <li><strong>1️⃣ Baza danych (Google Sheets):</strong> Dwie listy – miejsca, które chcę odwiedzić (backlog marzeń) oraz aktywności cykliczne/sportowe.</li>
+            <li><strong>2️⃣ Logika (n8n):</strong> Serce systemu. Workflow pobiera dane z arkuszy i analizuje dostępne opcje.</li>
+            <li><strong>3️⃣ Mózg (OpenAI API):</strong> Model analizuje moje preferencje i generuje spójny, atrakcyjny plan na nadchodzący weekend.</li>
+            <li><strong>4️⃣ Interfejs (Telegram):</strong> Bot wysyła mi gotową propozycję.</li>
+        </ul>
+        
+        <p>Klikam „Akceptuję” ✅ -> plan ląduje w kalendarzu.<br>
+        Klikam „Generuj nowy” 🔄 -> n8n prosi AI o inną konfigurację.</p>
+        
+        <h4>Dlaczego n8n, a nie gotowa aplikacja?</h4>
+        <p>Bo daje pełną kontrolę nad logiką i pozwala na łatwą rozbudowę (np. o prognozę pogody czy rezerwację biletów przez API). To klasyczny przykład tego, jak narzędzia low-code i AI mogą rozwiązywać realne, codzienne problemy.</p>
+        
+        <p>Ciekaw jestem Waszego podejścia – automatyzujecie takie „życiowe” procesy, czy w weekendy wolicie całkowity analog i spontan? 👇</p>
+      `
+    },
+    {
       slug: 'czysty-kod-to-tylko-polowa-sukcesu',
       title: 'Czysty kod to tylko połowa sukcesu. Prawdziwą wartością jest umiejętność dzielenia się wiedzą.',
       date: 'January 13, 2026',
