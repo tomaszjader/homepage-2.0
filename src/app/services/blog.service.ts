@@ -15,6 +15,37 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'second-brain-n8n-ai-agent',
+      title: 'Jak połączyć Second Brain z N8N i AI, by stworzyć Osobistego Agenta do Burzy Mózgów?',
+      date: 'January 15, 2026',
+      excerpt: 'Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?',
+      tags: ['SecondBrain', 'Automatyzacja', 'N8N', 'AI', 'Produktywność', 'LowCode', 'GoogleDocs', 'ContentMarketing'],
+      content: `
+        <p>Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu, prezentowana na wydarzeniu Mindstone prowadzonym przez Kamila Dąbrowska. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?</p>
+        
+        <p>Efekt? Stworzyłem osobistego asystenta do burzy mózgów, który faktycznie zna moje cele, priorytety i tożsamość. To krok dalej niż zwykłe promptowanie.</p>
+
+        <img src="assets/img/second-brain-n8n.jpg" alt="Meme: Agent AI używa Twoich celów z Second Brain" class="img-fluid my-4 rounded">
+        
+        <h4>Architektura pamięci dla Agenta</h4>
+        <p>Aby agent AI mógł prowadzić ze mną merytoryczne dyskusje i proponować trafne rozwiązania, musiałem wyposażyć go w kontekst.</p>
+        
+        <p>Oto kluczowe elementy tej implementacji:</p>
+        <ul>
+            <li><strong>Agent w N8N:</strong> Wykorzystanie standardowego środowiska automatyzacji do zarządzania logiką.</li>
+            <li><strong>Baza Danych:</strong> Dwa arkusze Google Docs przechowujące zbiór danych na mój temat: od najważniejszych celów, przez opis mojej roli, aż po kluczowe projekty.</li>
+            <li><strong>Serwer MCP:</strong> Służy jako mechanizm łączący agenta z dynamicznymi danymi.</li>
+            <li><strong>Dynamiczna Aktualizacja:</strong> Możliwość szybkiego dodawania i aktualizowania tych danych (np. zmiana celu) bezpośrednio z poziomu serwera.</li>
+        </ul>
+        
+        <p>Cała konfiguracja pozwala agentowi na błyskawiczne odniesienie się do moich danych, dzięki czemu burza mózgów jest precyzyjna, a propozycje — zawsze zgodne z moimi priorytetami.</p>
+        
+        <h4>🔥 Pora na eksperymenty!</h4>
+        <p>Czy macie doświadczenia z łączeniem narzędzi do automatyzacji z koncepcjami zarządzania wiedzą, takimi jak Second Brain?</p>
+        <p>Podzielcie się w komentarzu swoimi pomysłami lub pytaniami technicznymi!</p>
+      `
+    },
+    {
       slug: 'paradoks-produktywnosci-weekend-planner',
       title: 'Paradoks produktywności: Dlaczego im więcej mamy czasu, tym trudniej go sensownie wykorzystać?',
       date: 'January 14, 2026',
