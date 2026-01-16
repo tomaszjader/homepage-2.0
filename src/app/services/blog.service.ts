@@ -15,6 +15,46 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'poranny-automat-raportowy-switomir',
+      title: 'Jak przerobiłem asystenta pogodowego na "Świtomira" – Asystenta Poranka',
+      date: 'January 16, 2026',
+      excerpt: 'Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!',
+      tags: ['n8n', 'Automatyzacja', 'Workflow', 'LowCode', 'Produktywność', 'OpenAI', 'Programowanie'],
+      content: `
+        <p>Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!</p>
+
+        <h4>🗓️ Poranny Automat Raportowy – n8n Workflow</h4>
+        <p>Ten workflow w n8n automatycznie wysyła codzienne poranne raporty prosto na Telegram. Zbiera dane z kilku źródeł, generuje czytelny podsumowujący komunikat i wysyła go o stałej godzinie. Pełna automatyzacja porannej rutyny!</p>
+        
+        <h4>🔧 Co robi workflow?</h4>
+        <ul>
+            <li>⏰ <strong>Uruchamia się codziennie o 07:07</strong> dzięki Schedule Trigger.</li>
+            <li>🤖 <strong>Pobiera żart z OpenAI.</strong></li>
+            <li>📅 <strong>Pobiera dzisiejsze wydarzenia z Google Calendar.</strong></li>
+            <li>⛅ <strong>Pobiera bieżącą pogodę z OpenWeatherMap.</strong></li>
+            <li>📝 <strong>Pobiera zadania z Google Tasks.</strong></li>
+            <li>🗃 <strong>Łączy dane z DataTable</strong> (ID czatu Telegram).</li>
+            <li>🧩 <strong>Składa wszystko w raport</strong> w kodzie JavaScript.</li>
+            <li>📤 <strong>Wysyła wiadomość na Telegram</strong> w formacie Markdown.</li>
+        </ul>
+        
+        <h4>📄 Co znajduje się w raporcie?</h4>
+        <ul>
+            <li>Pogoda dla wskazanego miasta (Temperatura, odczuwalna, ciśnienie, wiatr).</li>
+            <li>Lista wydarzeń z kalendarza (z godzinami).</li>
+            <li>Lista zadań do wykonania.</li>
+            <li>"Żart dnia" prosto z AI.</li>
+        </ul>
+        
+        <h4>🎯 Cel:</h4>
+        <p>Jeden, spersonalizowany raport, codziennie, bez żadnej interakcji. Oczywiście, nie obyło się bez wpadki! Pierwszego dnia podczas testów obudziłem się bez powiadomienia. Okazało się, że popełniłem trywialny błąd w workflow. Taki to już jest n8n, man! 😉</p>
+        
+        <img src="assets/img/switomir-n8n.jpg" alt="Świtomir n8n workflow" class="img-fluid my-4 rounded">
+        
+        <p>A Ty, co ostatnio zautomatyzowałeś w n8n? Podziel się swoim projektem w komentarzu!</p>
+      `
+    },
+    {
       slug: 'second-brain-n8n-ai-agent',
       title: 'Jak połączyć Second Brain z N8N i AI, by stworzyć Osobistego Agenta do Burzy Mózgów?',
       date: 'January 15, 2026',
