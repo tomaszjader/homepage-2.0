@@ -15,6 +15,403 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'agent-tomek-google-adk-automatyzacja-instagrama',
+      title: 'Jak stworzyłem „Agenta Tomka” – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.',
+      date: 'January 17, 2026',
+      excerpt: 'Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.',
+      tags: ['GoogleADK', 'Automatyzacja', 'Python', 'SztucznaInteligencja', 'ContentMarketing', 'Innowacje', 'TelegramBot', 'UmiejętnościJutra', 'AI'],
+      content: `
+        <p>Jak stworzyłem „Agenta Tomka” – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.</p>
+        
+        <p>Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.</p>
+        
+        <p>Moim celem było zbudowanie wirtualnego asystenta, który potrafiłby publikować posty na Instagramie, tworzyć proste notatki na komputerze, a także wyszukiwać podstawowe informacje, takie jak pogoda.</p>
+        
+        <p>Zabrałem się do pracy. Finalnie, po wielu bojach, udało się ukończyć ten projekt i okiełznać krnąbrnego asystenta, którego nazwałem Agentem Tomkiem.</p>
+        
+        <p>Kluczowe rozwiązanie polega na wykorzystaniu Telegrama. Dzięki normalnej konwersacji jestem w stanie wydawać mu polecenia. Na przykład, przed publikacją posta na Instagramie, Agent Tomek pomaga mi stworzyć optymalne tagi i angażujący tytuł. Wszystko odbywa się w formie naturalnego dialogu, co uważam za dużo przyjemniejsze i szybsze niż korzystanie z natywnego interfejsu Instagrama.</p>
+        
+        <img src="assets/img/agent-tomek-google-adk.jpg" alt="Meme: Programista vs Agent Tomek - negocjacje" class="img-fluid my-4 rounded">
+
+        <p>Najzabawniejszym aspektem projektu było testowanie. Początkowo Agent Tomek bywał bardzo uparty – nie chciał słuchać moich poleceń! Wiele razy musiałem go prosić, by wykonał proste zadanie, np. usunął niepotrzebną frazę z tytułu czy opublikował post. Zdarzało się, że musiałem ponawiać komendę nawet pięć razy! Choć problem został finalnie rozwiązany, te pierwsze, komiczne „negocjacje” z asystentem wspominam z największym sentymentem.</p>
+        
+        <p>Całość rozwiązania bazuje na języku Python, Google ADK (Agent Development Kit) oraz API Telegrama. Projekt ten był doskonałym praktycznym zwieńczeniem wiedzy, którą zdobyłem na kursie Umiejętności Jutra 2.0.</p>
+        
+        <p>A Wy, jak wykorzystujecie potencjał Google ADK i innych narzędzi AI? Dajcie znać w komentarzu, jakie projekty automatyzacyjne wzbudzają Waszą ciekawość! 👇</p>
+      `
+    },
+    {
+      slug: 'hodowla-kur-na-balkonie-claude-ai-eksperyment',
+      title: 'Czy zastanawiałeś się kiedyś nad hodowlą kur… na balkonie? 🐔🌿',
+      date: 'January 17, 2026',
+      excerpt: 'Brzmi absurdalnie, prawda? A jednak taki pomysł pojawił się u mnie – nie dlatego, że planuję zamienić balkon w kurnik, ale dlatego, że testowałem Claude AI od Anthropic do generowania stron internetowych.',
+      tags: ['AI', 'Claude', 'Anthropic', 'WebDev', 'Eksperyment', 'Kreatywność', 'Absurd'],
+      content: `
+        <p>Czy zastanawiałeś się kiedyś nad hodowlą kur… na balkonie? 🐔🌿</p>
+        
+        <p>Brzmi absurdalnie, prawda? A jednak taki pomysł pojawił się u mnie – nie dlatego, że planuję zamienić balkon w kurnik, ale dlatego, że testowałem Claude AI od Anthropic do generowania stron internetowych.</p>
+        
+        <p>I co się okazało? Większość moich znajomych w ogóle nie zakwestionowała samej idei. Zamiast tego zaczęli zastanawiać się:</p>
+        <ul>
+            <li>🐔 Jak by to mogło działać?</li>
+            <li>🥚 Ile jajek można by „wyprodukować” w miesiącu?</li>
+            <li>💰 Czy to faktycznie się opłaca?</li>
+        </ul>
+        
+        <p>Nie zatrzymali się na absurdzie, tylko weszli głębiej w logikę pomysłu – a nawet zaczęli liczyć wyniki w kalkulatorze.</p>
+        
+        <img src="assets/img/hodowla-kur-balkon.jpg" alt="Obrazek: Kury na balkonie" class="img-fluid my-4 rounded">
+
+        <p>I to mnie rozbawiło, ale i zainspirowało.</p>
+        
+        <p>👉 Czasem właśnie absurd otwiera kreatywność bardziej niż rozsądek.</p>
+        <p>👉 Eksperymenty z nietypowymi scenariuszami potrafią dać świeże spojrzenie – i w AI, i w biznesie.</p>
+        <p>👉 Absurdalne pytania często prowadzą do najbardziej sensownych odpowiedzi.</p>
+        
+        <p>📌 Link do strony wrzucam w komentarzu.</p>
+        
+        <p>A teraz pytanie do Ciebie: Kiedy ostatnio pozwoliłeś sobie potraktować absurd całkiem serio? 🤔</p>
+      `
+    },
+    {
+      slug: 'moje-pierwsze-kroki-vibe-coding-sukces',
+      title: '✨ Moje pierwsze kroki w vibe codingu zakończyły się sukcesem! ✨',
+      date: 'January 17, 2026',
+      excerpt: 'Udało mi się stworzyć aplikację do śledzenia nawyków, idealnie dopasowaną do moich potrzeb. 🚀 Cały proces był fascynującym doświadczeniem – pełnym wyzwań, nauki i nieoczekiwanych problemów.',
+      tags: ['WebDevelopment', 'Coding', 'Projekt', 'Aplikacja', 'Programowanie', 'AI', 'VibeCoding'],
+      content: `
+        <p>✨ Moje pierwsze kroki w vibe codingu zakończyły się sukcesem! ✨</p>
+        
+        <p>Udało mi się stworzyć aplikację do śledzenia nawyków, idealnie dopasowaną do moich potrzeb. 🚀</p>
+        
+        <p>Cały proces był fascynującym doświadczeniem – pełnym wyzwań, nauki i nieoczekiwanych problemów.</p>
+        
+        <p>👉 Spotkałem się m.in. z:</p>
+        <ul>
+            <li>🔧 awarią wibracji po miesiącu działania,</li>
+            <li>🎨 zniknięciem funkcjonalności po zmianie wyglądu na styl iOS.</li>
+        </ul>
+        
+        <img src="assets/img/vibe-coding-success.jpg" alt="Meme: How it started vs How it's going with AI" class="img-fluid my-4 rounded">
+
+        <p>Zamiast się poddać, potraktowałem to jako okazję do nauki i doskonalenia umiejętności. 💡</p>
+        
+        <p>Ten projekt był moim marzeniem od lat, ale dopiero teraz – dzięki wsparciu sztucznej inteligencji – mogłem go zrealizować sprawniej i skuteczniej niż kiedykolwiek. Jestem naprawdę dumny, że udało mi się doprowadzić go do końca. 🙌</p>
+      `
+    },
+    {
+      slug: 'moja-walka-z-literowkami-aplikacja-android',
+      title: '💥 Moja Walka z Literówkami: Jak Dysleksja Popchnęła Mnie do Stworzenia Aplikacji na Androida',
+      date: 'January 17, 2026',
+      excerpt: 'Nie wiem, czy też tak macie, ale poprawianie literówek potrafi doprowadzić mnie do szału. Zwłaszcza gdy wiem, co chcę napisać… a ekran uparcie pokazuje coś innego. 😅 Z mojej frustracji z dysleksją narodził się pomysł.',
+      tags: ['AndroidDev', 'MobileDevelopment', 'Dysleksja', 'EdTech', 'Accessibility', 'PersonalProject', 'WłasnyProjekt'],
+      content: `
+        <p>💥 Moja Walka z Literówkami: Jak Dysleksja Popchnęła Mnie do Stworzenia Aplikacji na Androida</p>
+        
+        <p>Nie wiem, czy też tak macie, ale poprawianie literówek potrafi doprowadzić mnie do szału. Zwłaszcza gdy wiem, co chcę napisać… a ekran uparcie pokazuje coś innego. 😅</p>
+        
+        <p>Z mojej frustracji z dysleksją narodził się pomysł: 👉 stworzę aplikację, która sama poprawia błędy w tekście.</p>
+        
+        <p>Brzmi prosto? Tylko brzmi. 😅</p>
+        
+        <img src="assets/img/android-dyslexia-app.jpg" alt="Meme: Expectation vs Reality - Ja po skompilowaniu aplikacji po raz pierwszy vs Aplikacja: [crash sound]" class="img-fluid my-4 rounded">
+
+        <h4>🔧 Droga od pomysłu do prototypu</h4>
+        <p>Drugie podejście. Tym razem — Android.</p>
+        <ul>
+            <li>💥 Pierwsze uruchomienie? Nic nie działa.</li>
+            <li>🌥️ Drugie? Działa... ale tylko trochę.</li>
+            <li>❄️ Trzecie? Zawiesza się przy każdym zaznaczeniu tekstu.</li>
+        </ul>
+        
+        <p>I tak przez wiele dni. Poprawki, testy, kolejne błędy.</p>
+        
+        <p>W końcu powstał pierwszy działający prototyp – aplikacja, która poprawia literówki, zanim zdążę się zdenerwować. 🙌</p>
+        
+        <h4>😂 Najzabawniejszy moment?</h4>
+        <p>Google uznało moją aplikację za… wirusa. Serio. Nie mogłem jej nawet wrzucić na własny Dysk Google.</p>
+        
+        <p>To był ten moment, gdy pomyślałem: “Skoro Google myśli, że to wirus, to znaczy, że aplikacja jest potężna.” 💪</p>
+        
+        <h4>💡 Co dalej?</h4>
+        <ul>
+            <li>🔹 aplikacja działa lokalnie na Androidzie</li>
+            <li>🔹 wysyła tekst do modelu korekcyjnego</li>
+            <li>🔹 zwraca poprawioną wersję</li>
+            <li>🔹 w planach: publikacja w Google Play</li>
+        </ul>
+        
+        <p>🚀 Potrzebuję Waszej opinii. Jak Wy radzicie sobie z dysleksją w codziennej komunikacji? 💬 Dajcie znać w komentarzu!</p>
+      `
+    },
+    {
+      slug: 'n8n-okiem-programisty-agent-automatyzacji',
+      title: 'Od „Psa do Jeża” do Agenta Automatyzacji – Moja Prawda o N8N jako Programisty',
+      date: 'January 17, 2026',
+      excerpt: 'Słyszałem wiele pozytywnych opinii o narzędziach low-code, które rzekomo pozwalają bardzo szybko stworzyć ciekawe projekty. Ale, powiedzmy to szczerze: jako programista, podchodziłem do tematu jak pies do jeża.',
+      tags: ['Automatyzacja', 'N8N', 'LowCode', 'Programowanie', 'DeveloperLife', 'IntegracjeAPI', 'Digitalizacja'],
+      content: `
+        <p>Od „Psa do Jeża” do Agenta Automatyzacji – Moja Prawda o N8N jako Programisty 🐾🦔</p>
+        
+        <p>Słyszałem wiele pozytywnych opinii o narzędziach low-code, które rzekomo pozwalają bardzo szybko stworzyć ciekawe projekty.</p>
+        
+        <p>Ale, powiedzmy to szczerze: jako programista, podchodziłem do tematu jak pies do jeża. Przerzucenie się na narzędzia wizualne, takie jak N8N, wydawało mi się stratą czasu w porównaniu do pisania czystego kodu.</p>
+        
+        <img src="assets/img/n8n-programista-opinion.jpg" alt="Meme: One does not simply connect n8n to telegram without https on local machine" class="img-fluid my-4 rounded">
+
+        <h4>Pierwsze podejście? Porażka.</h4>
+        <p>Próba uruchomienia N8N na lokalnej maszynie napotkała na problem z integracją Telegrama. Wymagało to HTTPS-a, co wymuszało instalację dodatkowych narzędzi. Zniechęciłem się i poddałem za pierwszym razem.</p>
+        
+        <h4>Drugie podejście: Czas na "Mikrusa"</h4>
+        <p>Dałem N8N drugą szansę. Tym razem postawiłem go na kupionym serwerze, tzw. "Mikrusie" od 🔥 Jakub Mrugalski. Po wielu bojach w końcu nadszedł sukces!</p>
+        
+        <p>Udało mi się stworzyć pierwszego, prostego agenta automatyzacji, który zarządza moimi sprawami z poziomu Telegrama:</p>
+        <ul>
+            <li>✉️ Wysyła e-maile z Gmaila.</li>
+            <li>📅 Dodaje nowe wydarzenia do Kalendarza Google.</li>
+            <li>🔎 Sprawdza, jakie mam wydarzenia dzisiaj lub w konkretnym przedziale czasowym.</li>
+        </ul>
+        
+        <p>Cały system działa tak, że piszę przez Telegram, a asystent dopytuje o szczegóły i wykonuje podane czynności. Takie narzędzie daje realną wolność!</p>
+        
+        <h4>Czego nauczyłem się w boju?</h4>
+        <p>Wracam honor! N8N to naprawdę fajne narzędzie. Pozwala szybko zobaczyć efekt pracy.</p>
+        
+        <p>Największe problemy sprawiło mi nie samo N8N, lecz... podpięcie Google API. To nie jest proste i zajęło najwięcej czasu. Po tym, było już z górki.</p>
+        
+        <p>Low-code wymaga przełamania barier mentalnych. Mimo to, wciąż uważam, że dla zaawansowanych rzeczy czysty kod jest (na razie) szybszy.</p>
+        
+        <p>A Ty? Jakie są Twoje doświadczenia z narzędziami low-code/no-code? W jakich projektach widzisz dla nich największy potencjał? 👇</p>
+      `
+    },
+    {
+      slug: 'asystent-pogodowy-n8n-telegram-api',
+      title: 'Jak w 5 minut stworzyć własnego Asystenta Pogodowego? 🌤️',
+      date: 'January 17, 2026',
+      excerpt: 'n8n to potężne narzędzie! Ostatnio szukałem pomysłu na kolejny mały projekt automatyzacyjny i postanowiłem rozwiązać swój wieczny problem: zapominanie o sprawdzeniu pogody.',
+      tags: ['n8n', 'Automatyzacja', 'WeatherAPI', 'Telegram', 'SideProject', 'LowCode'],
+      content: `
+        <p>Jak w 5 minut stworzyć własnego Asystenta Pogodowego? 🌤️</p>
+        
+        <p>n8n to potężne narzędzie! Ostatnio szukałem pomysłu na kolejny mały projekt automatyzacyjny i postanowiłem rozwiązać swój wieczny problem: zapominanie o sprawdzeniu pogody.</p>
+        
+        <p>Udało mi się stworzyć prostą, ale efektywną automatyzację, która codziennie o 8:00 rano wysyła mi prognozę prosto na Telegram.</p>
+        
+        <img src="assets/img/weather-assistant-n8n.jpg" alt="Meme: Jak wstajesz rano i widzisz powiadomienie z Telegrama, ale Ty sam sobie wysłałeś to powiadomienie" class="img-fluid my-4 rounded">
+
+        <p>Wiem, że większość aplikacji to robi, ale satysfakcja z posiadania własnego, działającego rozwiązania, które nie wymaga skomplikowanej konfiguracji serwera, jest bezcenna!</p>
+        
+        <h4>Co jest potrzebne do stworzenia takiego workflow?</h4>
+        <ul>
+            <li>🔹 Platforma do automatyzacji: <strong>n8n</strong></li>
+            <li>🔹 Źródło danych: <strong>OpenWeatherMap API</strong></li>
+            <li>🔹 Kanał komunikacji: <strong>Telegram</strong></li>
+        </ul>
+        
+        <p>A co było najzabawniejsze? Dziś rano obudziłem się, usłyszałem powiadomienie i pomyślałem, że ktoś do mnie napisał. Dopiero po chwili zorientowałem się, że to... moja własna automatyzacja! 😅</p>
+        
+        <p>Prosta rzecz, a tak cieszy!</p>
+        
+        <p>A Ty? Jakie najciekawsze drobne automatyzacje stworzyłeś ostatnio dla własnych potrzeb? Podziel się w komentarzu! 👇</p>
+      `
+    },
+    {
+      slug: 'gymtracker-vibe-coding-drugie-podejscie',
+      title: '👨💻💪 Drugie podejście do vibe codingu, ale wreszcie się udało! GymTracker is here!',
+      date: 'January 17, 2026',
+      excerpt: 'Od dawna marzyłem o tym, żeby mieć własną aplikację do śledzenia postępów na siłowni. Za pierwszym razem – brak czasu i motywacji. Za drugim podejściem, już z vibe codingiem wspieranym przez AI i odrobiną uporu… i jest! 🚀',
+      tags: ['VibeCoding', 'AI', 'Angular', 'GoogleSheets', 'GymTracker', 'SideProject', 'WebDev'],
+      content: `
+        <p>👨💻💪 Drugie podejście do vibe codingu, ale wreszcie się udało!</p>
+        
+        <p>Od dawna marzyłem o tym, żeby mieć własną aplikację do śledzenia postępów na siłowni. Za pierwszym razem – brak czasu i motywacji. Za drugim podejściem, już z vibe codingiem wspieranym przez AI i odrobiną uporu… i jest! 🚀</p>
+        
+        <p>👉 Tak powstał <strong>GymTracker</strong> – webowa aplikacja napisana w Angularze 20, z integracją z Google Sheets, która pozwala śledzić treningi, statystyki i postępy na wykresach.</p>
+        
+        <img src="assets/img/gymtracker-vibe-coding.jpg" alt="Meme: AI Fixing the bug vs Programista z debuggerem" class="img-fluid my-4 rounded">
+
+        <p>Najfajniejsza część? Podczas pracy zdarzały się typowo programistyczne „przygody”. Wrzucam log błędu do AI, odpowiedź: „wszystko naprawione”. Odpalam ponownie… i dokładnie ten sam błąd 🙃 To był moment, w którym zrozumiałem, że AI to świetny partner, ale nie zrobi wszystkiego za nas.</p>
+        
+        <p>Cała ta przygoda pokazała mi, że:</p>
+        <ul>
+            <li>✅ nawet jeśli zaczynasz od zera, da się stworzyć coś działającego,</li>
+            <li>✅ AI potrafi ogromnie przyspieszyć proces,</li>
+            <li>✅ satysfakcja z własnego projektu to najlepsza nagroda.</li>
+        </ul>
+        
+        <p>🔗 Repozytorium i szczegóły aplikacji znajdziesz tutaj: <a href="https://lnkd.in/dKy-A4Ek" target="_blank">https://lnkd.in/dKy-A4Ek</a></p>
+        
+        <p>Ciekaw jestem – kto z Was też próbował budować swoje projekty z pomocą AI? 🤔</p>
+      `
+    },
+    {
+      slug: 'autocenzura-pod-kontrola-vibe-coding-3',
+      title: 'Autocenzura pod kontrolą: Czy Narzędzie Cenzurujące Słowa „Niewygodne” Ocali Twórców?',
+      date: 'January 17, 2026',
+      excerpt: 'Podejście do Vibe Codingu, numer 3. Od dawna zastanawiałem się nad rosnącym problemem: cenzurą algorytmiczną na platformach takich jak YouTube. Inspiracją do działania był jeden z odcinków podcastu „Na Wschód od Bliskiego Wschodu”.',
+      tags: ['AI', 'OpenAI', 'ContentCreators', 'YouTubeCreators', 'Algorytmy', 'MachineLearning', 'VibeCoding', 'Coding'],
+      content: `
+        <p>Autocenzura pod kontrolą: Czy Narzędzie Cenzurujące Słowa „Niewygodne” Ocali Twórców? 🤔</p>
+        <p>Podejście do Vibe Codingu, numer 3.</p>
+
+        <p>Od dawna zastanawiałem się nad rosnącym problemem: cenzurą algorytmiczną na platformach takich jak YouTube. Inspiracją do działania był jeden z odcinków podcastu „Na Wschód od Bliskiego Wschodu” Wojciecha Szewko. Postawiłem sobie za cel: stworzyć narzędzie, które chroni zasięgi twórców przed automatycznymi blokerami.</p>
+
+        <p>Jaka była idea?</p>
+        <p>Chciałem, aby narzędzie identyfikowało słowa "niewygodne" (takie jak np. „kurde”, które mogłoby zostać błędnie zinterpretowane) i automatycznie zastępowało je dźwiękiem cenzury. W ten sposób treść pozostaje nienaruszona merytorycznie, a twórca nie traci cennych wyświetleń i przychodów.</p>
+
+        <img src="assets/img/autocenzura-vibe-coding.jpg" alt="Meme: Algorytm YouTube nie może ocenzurować słowa, jeśli nigdy go nie usłyszy" class="img-fluid my-4 rounded">
+
+        <p>Po kilkunastu iteracjach udało mi się osiągnąć zadowalające rezultaty.</p>
+
+        <h4>Kluczowe etapy projektu:</h4>
+        <ul>
+            <li>🤖 <strong>Implementacja AI:</strong> Wykorzystanie modelu Whisper od OpenAI (zarówno lokalnie, jak i przez API) do precyzyjnej transkrypcji i identyfikacji słów.</li>
+            <li>🐛 <strong>"Zabawna" Usterka:</strong> W pierwszej iteracji narzędzie, z nieznanych mi przyczyn, dodawało cenzurę zupełnie losowo! Był to humorystyczny, ale pouczający błąd w procesie debugowania.</li>
+            <li>✅ <strong>Testy Skuteczności:</strong> Testy przeprowadzone na piosence „Dni, których nie znamy” Marka Grechuty wykazały skuteczność w zakresie 80-90%. Spodziewam się, że w przypadku podcastów i prostszych nagrań, efektywność będzie jeszcze wyższa.</li>
+        </ul>
+
+        <p>Projekt Vibe Coding #3 udowadnia, że za pomocą AI możemy tworzyć inteligentne rozwiązania dla realnych problemów, z którymi mierzą się twórcy w sieci.</p>
+
+        <p>A Wy, z jakimi problemami związanymi z algorytmami YouTube zmagacie się na co dzień? Jakie "niewygodne" słowa najczęściej Was blokują? Dajcie znać w komentarzu! 👇</p>
+
+        <p>Pełen kod źródłowy projektu Vibe Coding #3 znajdziecie w pierwszym komentarzu poniżej. Jestem otwarty na Wasz feedback i Pull Requesty!</p>
+      `
+    },
+    {
+      slug: 'automatyzacja-instagrama-python-google-sheets',
+      title: 'Miałem ostatnio pomysł na mały projekt po godzinach – prostą automatyzację publikowania postów.',
+      date: 'January 17, 2026',
+      excerpt: 'Na początku próbowałem podejść do tematu przez oficjalną aplikację na platformie Meta. Niestety, szybko się poddałem – proces konfiguracji okazał się bardziej skomplikowany, niż zakładałem. Drugie podejście zrobiłem w Pythonie – i tym razem się udało 🎉',
+      tags: ['Python', 'Automation', 'SideProject', 'Instagram', 'GoogleSheets', 'Telegram', 'Coding', 'DevLife'],
+      content: `
+        <p>Miałem ostatnio pomysł na mały projekt po godzinach – prostą automatyzację publikowania postów. 🚀</p>
+        
+        <p>Na początku próbowałem podejść do tematu przez oficjalną aplikację na platformie Meta, żeby połączyć się z Instagramem. Niestety, szybko się poddałem – proces konfiguracji okazał się bardziej skomplikowany, niż zakładałem.</p>
+        
+        <p>Drugie podejście zrobiłem w Pythonie – i tym razem się udało 🎉</p>
+        
+        <p>Bez tworzenia aplikacji w Meta, tylko przez symulację logowania w przeglądarce.</p>
+        
+        <img src="assets/img/python-instagram-automation.jpg" alt="Meme: To chociaż prosta automatyzacja - This is fine dog with fire" class="img-fluid my-4 rounded">
+
+        <p>Efekt?</p>
+        <ul>
+            <li>👉 Skrypt, który pobiera dane z arkusza Google i w wybrane dni publikuje posty na Instagramie – z tytułem, tagami i zdjęciem.</li>
+            <li>👉 Dodatkowo po udanej publikacji wysyła powiadomienie na Telegram, żebym miał od razu feedback, że wszystko działa.</li>
+        </ul>
+        
+        <p>Mały side-project, a jednak daje dużo satysfakcji 🚀</p>
+      `
+    },
+    {
+      slug: 'automatyzacja-nawykow-n8n-wdziecznosc',
+      title: 'Zapominasz o dobrych nawykach? Kluczem jest automatyzacja!',
+      date: 'January 17, 2026',
+      excerpt: 'Wszyscy chcemy wprowadzać pozytywne zmiany, ale często zderzamy się z jednym problemem: zapominaniem. Moja własna walka z wdrożeniem nawyku wdzięczności była tego najlepszym przykładem.',
+      tags: ['Automatyzacja', 'Produktywność', 'Nawyki', 'n8n', 'TechForGood'],
+      content: `
+        <p>Zapominasz o dobrych nawykach? Kluczem jest automatyzacja! 🚀</p>
+        
+        <p>Wszyscy chcemy wprowadzać pozytywne zmiany, ale często zderzamy się z jednym problemem: zapominaniem.</p>
+        
+        <p>Moja własna walka z wdrożeniem nawyku wdzięczności była tego najlepszym przykładem. Nie chodziło o to, że nie miałem pomysłu na zmianę. Problem polegał na braku jasno zdefiniowanej, wymuszonej pory jej wykonania.</p>
+        
+        <img src="assets/img/habits-automation.jpg" alt="Meme: Ja vs Moje Nawyki vs Pilne Zadania" class="img-fluid my-4 rounded">
+
+        <p>Zawsze odkładałem proste zapisywanie, za co jestem wdzięczny danego dnia. Skutek był ten sam: nawyk nie mógł się utrzymać.</p>
+        
+        <p>Wpadłem na pomysł, jak wykorzystać technologię, by rozwiązać ten problem. Stworzyłem prostą automatyzację w n8n.</p>
+        
+        <h4>Oto, jak to działa:</h4>
+        <ul>
+            <li>⏰ <strong>Codziennie o 20:00:</strong> n8n wysyła mi wiadomość na Telegramie z pytaniem: "Za co jesteś dzisiaj wdzięczny?".</li>
+            <li>🛑 <strong>Wymuszona reakcja:</strong> Muszę na to pytanie odpowiedzieć. W ten sposób nawyk zostaje zrealizowany.</li>
+            <li>📊 <strong>Podsumowanie miesiąca:</strong> Na początku każdego miesiąca dostaję zbiorczy raport z moimi odpowiedziami.</li>
+        </ul>
+        
+        <p>Pomaga mi to w sposób świadomy docenić każdy dzień, a na koniec miesiąca zobaczyć pełen obraz pozytywnych doświadczeń. To prosta zmiana, ale udowadnia, że automatyzacja może być potężnym narzędziem w służbie samo rozwoju.</p>
+        
+        <p>A Ty? Czy masz nawyk, który uratowałeś dzięki automatyzacji? Podziel się w komentarzu! 👇</p>
+      `
+    },
+    {
+      slug: 'ai-journal-dziennik-wspomagany-przez-llm',
+      title: '💭 AI w służbie samoświadomości: wypuściłem AI Journal – dziennik wspomagany przez LLM!',
+      date: 'January 17, 2026',
+      excerpt: 'Zainspirowany wykładem Franciszka Bazylego Georgiew, postanowiłem pójść o krok dalej i stworzyć własne narzędzie. Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.',
+      tags: ['Programowanie', 'OpenSource', 'SztucznaInteligencja', 'LLM', 'Rozwój', 'SideProject', 'TworzenieOprogramowania'],
+      content: `
+        <p>Zainspirowany wykładem Franciszek Bazyli Georgiew 高傅安 w ramach kursu Umiejętności Jutra, postanowiłem pójść o krok dalej i stworzyć własne narzędzie.</p>
+        <p>Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.</p>
+        <p>Tak powstał projekt <strong>AI Journal</strong> – proste narzędzie do prowadzenia dziennika z pomocą sztucznej inteligencji, które w pełni realizuje tę ideę.</p>
+
+        <img src="assets/img/ai-journal.jpg" alt="AI Journal Meme: Ja prowadzący dziennik vs AI Journal" class="img-fluid my-4 rounded">
+
+        <h4>🧠 Jak działa AI Journal?</h4>
+        <p>AI Journal to intuicyjna aplikacja działająca jak chat. W tym interfejsie możesz codziennie zapisywać swoje przemyślenia, cele, trudności czy wątpliwości.</p>
+
+        <p>Wsparcie AI polega na tym, że:</p>
+        <ul>
+            <li>pomaga w głębszej refleksji,</li>
+            <li>zadaje trafne pytania, które prowadzą do ciekawszych wniosków,</li>
+            <li>automatycznie generuje miesięczne podsumowania (ta funkcja jest jeszcze w fazie testów!).</li>
+        </ul>
+
+        <p>Obecnie intensywnie testuję rozwiązanie, by sprawdzić jego realną użyteczność. W kolejnych tygodniach będę dzielić się postępami i wnioskami z testów!</p>
+
+        <h4>💡 Dla programistów:</h4>
+        <p>Ponieważ to projekt open source, cały kod jest dostępny na GitHubie. Jeśli ciekawi Cię, jak to działa od środka – zapraszam!</p>
+
+        <p>👉 <a href="https://lnkd.in/d3d-_VYJ" target="_blank">https://lnkd.in/d3d-_VYJ</a></p>
+
+        <p>Zostaw ⭐, jeśli doceniasz pomysł, albo podziel się w komentarzu, jak Ty wykorzystujesz AI w swoich niszowych projektach!</p>
+      `
+    },
+    {
+      slug: 'maly-skrypt-duza-roznica-ctrl-q-autokorekta',
+      title: '🚀 Mały skrypt, duża różnica! (CTRL+Q Autokorekta)',
+      date: 'January 17, 2026',
+      excerpt: 'Ostatnio stworzyłem prosty skrypt, który pozwala jednym skrótem klawiszowym (CTRL+Q) poprawiać literówki w zaznaczonym tekście – nie zmieniając przy tym słów. Idealny dla osób z dysleksją lub tych, którzy często robią literówki.',
+      tags: ['Python', 'Scripting', 'Produktywność', 'Gemini', 'Google', 'OpenSource', 'Programowanie'],
+      content: `
+        <p>🚀 Mały skrypt, duża różnica!</p>
+        
+        <p>Ostatnio stworzyłem prosty skrypt, który pozwala jednym skrótem klawiszowym (CTRL+Q) poprawiać literówki w zaznaczonym tekście – nie zmieniając przy tym słów. Idealny dla osób z dysleksją lub tych, którzy często robią literówki.</p>
+        
+        <p>Działa w języku polskim i angielskim, a wszystko, czego potrzebujesz, to darmowy dostęp do Gemini od Google. Żadnych kosztów, a oszczędza mnóstwo czasu przy codziennym pisaniu.</p>
+        
+        <img src="assets/img/ctrl-q-typo-fix.jpg" alt="Before vs After Typon Fix - CTRL+Q" class="img-fluid my-4 rounded">
+
+        <p>📂 Kod udostępniłem na GitHubie, więc każdy może wypróbować: <a href="https://lnkd.in/d-vvM9nY" target="_blank">https://lnkd.in/d-vvM9nY</a></p>
+        
+        <p>Czasem najprostsze narzędzia okazują się najbardziej przydatne – zaznacz tekst, naciśnij CTRL+Q i gotowe!</p>
+      `
+    },
+    {
+      slug: 'szeptucha-notatki-glosowe-whisper',
+      title: '"Szeptucha": Jak stworzyłem własne narzędzie do notatek głosowych z transkrypcją oparte na Whisper (i dlaczego to się opłaca)',
+      date: 'January 17, 2026',
+      excerpt: 'Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha. Inspiracją był post Jakuba Mrugalskiego, opisujący niedoskonałości domyślnie wbudowanych systemów do tworzenia notatek głosowych.',
+      tags: ['Programowanie', 'OpenAI', 'Whisper', 'AI', 'Produktywność', 'Narzędzia', 'Developer', 'VibeKodowania'],
+      content: `
+        <p>Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha.</p>
+        
+        <p>Inspiracją był post 🔥 Jakub Mrugalski, opisujący niedoskonałości domyślnie wbudowanych systemów do tworzenia notatek głosowych. Mowa tu o systemowym narzędziu Text To Speech w Windowsie, które nie działało do końca tak, jakbym tego oczekiwał.</p>
+        
+        <p>Postanowiłem stworzyć własne, skuteczne i ekonomiczne rozwiązanie: prosty program, który za pomocą skrótu klawiszowego automatycznie uruchamia transkrypcję mowy na tekst.</p>
+        
+        <img src="assets/img/szeptucha-whisper.jpg" alt="Meme: Używanie wbudowanej funkcji Text To Speech w Windowsie vs Zbudowanie własnej 'Szeptuchy'" class="img-fluid my-4 rounded">
+
+        <h4>W projekcie wykorzystałem płatną wersję modelu Whisper od OpenAI.</h4>
+        
+        <p>Główną motywacją było obniżenie kosztów. Analizując ceny komercyjnych rozwiązań, szybko zdałem sobie sprawę, że przy moim regularnym (choć nie intensywnym) użytkowaniu, musiałbym przejść na płatne plany, co byłoby nieuzasadnione ekonomicznie. Stworzenie własnego narzędzia okazało się dużo szybsze i w dłuższej perspektywie znacznie tańsze w eksploatacji. Udało mi się go w pełni zrealizować w tym stylu.</p>
+        
+        <p><strong>Ciekawostka:</strong> Cały ten post, po niezbędnych korektach, został wstępnie podyktowany i przetranskrybowany właśnie za pomocą Szeptuchy.</p>
+        
+        <p>Co Wy myślicie o tworzeniu własnych narzędzi zamiast korzystania z gotowych, ale drogich subskrypcji? Dajcie znać w komentarzu!</p>
+      `
+    },
+    {
       slug: 'poranny-automat-raportowy-switomir',
       title: 'Jak przerobiłem asystenta pogodowego na "Świtomira" – Asystenta Poranka',
       date: 'January 16, 2026',
