@@ -28,7 +28,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"
@@ -37,10 +38,11 @@
           },
           "configurations": {
             "production": {
-              "buildOptimizer": true,
               "optimization": true,
               "vendorChunk": false,
               "extractLicenses": true,
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json",
               "sourceMap": false,
               "namedChunks": false,
               "budgets": [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 import { BlogService, BlogPost } from '../services/blog.service';
 
 @Component({
@@ -15,13 +16,23 @@ export class BlogListComponent implements OnInit {
 
   constructor(
     private blogService: BlogService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private titleService: Title,
+    private metaService: Meta
+  ) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0); // Ensure we start at the top
+
+    // Set SEO Meta Tags
+    this.titleService.setTitle('Blog | Tomasz Jąder - Programowanie, Angular, AI');
+    this.metaService.updateTag({
+      name: 'description',
+      content: 'Blog o programowaniu, Angular, JavaScript, Node.js i AI. Sprawdź moje projekty, tutoriale i przemyślenia programistyczne.'
+    });
+
     this.posts = this.blogService.getPosts();
-    
+
     this.route.queryParams.subscribe(params => {
       this.activeTag = params['tag'] || null;
       this.filterPosts();
@@ -33,7 +44,7 @@ export class BlogListComponent implements OnInit {
 
     // Filter by tag if present
     if (this.activeTag) {
-      tempPosts = tempPosts.filter(post => 
+      tempPosts = tempPosts.filter(post =>
         post.tags && post.tags.includes(this.activeTag!)
       );
     }
