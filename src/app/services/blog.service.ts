@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 export interface BlogPost {
   slug: string;
@@ -604,11 +606,24 @@ export class BlogService {
     },
   ];
 
+  constructor(private http: HttpClient) { }
+
   getPosts(): BlogPost[] {
     return this.posts;
   }
 
   getPostBySlug(slug: string): BlogPost | undefined {
     return this.posts.find(post => post.slug === slug);
+  }
+
+  searchPosts(query: string, limit: number = 3): Observable<any> {
+    // URL relative to the domain for proxying during dev
+    // In production, this should likely be the full URL or handled by a real backend/nginx
+    const url = "/search";
+    const payload = {
+      query: query,
+      limit: limit
+    };
+    return this.http.post<any>(url, payload);
   }
 }

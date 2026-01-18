@@ -1,24 +1,39 @@
 <div class="blog-page">
   <app-navbar-section></app-navbar-section>
-  
+
   <main class="blog">
     <div class="blog__header-container">
       <h2 class="blog__header">{{ 'BLOG.TITLE' | translate }}</h2>
       <p class="blog__description">{{ 'BLOG.DESCRIPTION' | translate }}</p>
-      
+
       <div class="blog__search">
-        <input 
-          type="text" 
-          [(ngModel)]="searchText" 
-          (input)="filterPosts()" 
-          [placeholder]="'BLOG.SEARCH_PLACEHOLDER' | translate"
-          class="blog__search-input"
-        >
+        <div class="blog__search-input-wrapper">
+          <input type="text" [(ngModel)]="searchText" (input)="onSearchInput()" (keydown.enter)="onSearchEnter()"
+            [placeholder]="'BLOG.SEARCH_PLACEHOLDER' | translate" class="blog__search-input">
+          <button *ngIf="isSemanticSearchEnabled" (click)="performSemanticSearch()" class="blog__search-button"
+            [disabled]="isSearching || searchText.length < 3">
+            Search
+          </button>
+        </div>
+
+        <div class="blog__search-toggle">
+          <label class="switch">
+            <input type="checkbox" [checked]="isSemanticSearchEnabled" (change)="toggleSemanticSearch()">
+            <span class="slider round"></span>
+          </label>
+          <span class="blog__search-toggle-label">Semantic Search (AI)</span>
+        </div>
+      </div>
+
+      <div class="blog__loading" *ngIf="isSearching">
+        <div class="spinner"></div>
+        <span>Searching...</span>
       </div>
 
       <div class="blog__active-filter" *ngIf="activeTag">
         <span>{{ 'BLOG.FILTERED_BY_TAG' | translate }} <strong>{{ activeTag }}</strong></span>
-        <a [routerLink]="['/blog']" [queryParams]="{}" class="blog__clear-filter">{{ 'BLOG.CLEAR_FILTER' | translate }} &times;</a>
+        <a [routerLink]="['/blog']" [queryParams]="{}" class="blog__clear-filter">{{ 'BLOG.CLEAR_FILTER' | translate }}
+          &times;</a>
       </div>
     </div>
 
@@ -35,12 +50,10 @@
             <a [routerLink]="['/blog', post.slug]">{{ post.title }}</a>
           </h2>
           <p class="blog-card__excerpt">{{ post.excerpt }}</p>
-          
+
           <div class="blog-card__tags" *ngIf="post.tags && post.tags.length > 0">
-            <a *ngFor="let tag of post.tags" 
-               [routerLink]="['/blog']" 
-               [queryParams]="{ tag: tag }" 
-               class="blog-card__tag">
+            <a *ngFor="let tag of post.tags" [routerLink]="['/blog']" [queryParams]="{ tag: tag }"
+              class="blog-card__tag">
               #{{ tag }}
             </a>
           </div>
@@ -53,7 +66,7 @@
         </div>
       </article>
     </div>
-    
+
     <div class="back-link">
       <a routerLink="/" class="back-link__anchor">&larr; {{ 'BLOG.BACK_TO_HOME' | translate }}</a>
     </div>

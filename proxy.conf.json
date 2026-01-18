@@ -1,0 +1,8 @@
+{
+    "/search": {
+        "target": "https://d2fbb4e6abb7.ngrok-free.app",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
