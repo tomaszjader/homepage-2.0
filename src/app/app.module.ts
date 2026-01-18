@@ -16,7 +16,7 @@ import { BlogSectionComponent } from './blog-section/blog-section.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -27,43 +27,36 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SkillsItemComponent,
-    SkillsSectionComponent,
-    FooterSectionComponent,
-    AboutSectionComponent,
-    ProjectsSectionComponent,
-    GithubCardComponent,
-    AfterHoursSectionComponent,
-    NavbarSectionComponent,
-    BlogSectionComponent,
-    BlogPostComponent,
-    BlogListComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-      defaultLanguage: 'pl'
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SkillsItemComponent,
+        SkillsSectionComponent,
+        FooterSectionComponent,
+        AboutSectionComponent,
+        ProjectsSectionComponent,
+        GithubCardComponent,
+        AfterHoursSectionComponent,
+        NavbarSectionComponent,
+        BlogSectionComponent,
+        BlogPostComponent,
+        BlogListComponent,
+        HomeComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            },
+            defaultLanguage: 'pl'
+        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
