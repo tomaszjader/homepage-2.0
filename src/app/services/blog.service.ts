@@ -622,7 +622,7 @@ export class BlogService {
     // TODO: Replace ngrok URL with your permanent backend URL when available
     const url = this.isDevMode()
       ? "/search"  // Proxied in dev via proxy.conf.json
-      : "https://d2fbb4e6abb7.ngrok-free.app/search";  // Direct URL in production
+      : "https://a17bc68bf933.ngrok-free.app/search";  // Direct URL in production
 
     const payload = {
       query: query,
