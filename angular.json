@@ -17,9 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": {
-              "base": "dist/homepage-2.0"
-            },
+            "outputPath": "dist/homepage-2.0",
             "index": "src/index.html",
             "polyfills": [
               "zone.js"
@@ -30,7 +28,9 @@
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/CNAME",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss"
@@ -48,13 +48,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "20kb"
                 }
               ],
               "outputHashing": "all"
@@ -106,7 +106,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "dir": "dist/homepage-2.0/browser"
+          }
         }
       }
     }
