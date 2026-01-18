@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-github-card',
-  templateUrl: './github-card.component.html',
-  styleUrls: ['./github-card.component.scss']
+    selector: 'app-github-card',
+    templateUrl: './github-card.component.html',
+    styleUrls: ['./github-card.component.scss'],
+    standalone: false
 })
 export class GithubCardComponent {
   @Input() description?: string ='';

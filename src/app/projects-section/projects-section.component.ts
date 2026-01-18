@@ -3,9 +3,10 @@ import { GithubapiService } from '../services/githubapi.service';
 import { Project } from '../interface/project';
 
 @Component({
-  selector: 'app-projects-section',
-  templateUrl: './projects-section.component.html',
-  styleUrls: ['./projects-section.component.scss']
+    selector: 'app-projects-section',
+    templateUrl: './projects-section.component.html',
+    styleUrls: ['./projects-section.component.scss'],
+    standalone: false
 })
 export class ProjectsSectionComponent {
   data :Project[] =[];

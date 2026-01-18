@@ -4,9 +4,10 @@ import { Title, Meta } from '@angular/platform-browser';
 import { BlogService, BlogPost } from '../services/blog.service';
 
 @Component({
-  selector: 'app-blog-list',
-  templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.scss']
+    selector: 'app-blog-list',
+    templateUrl: './blog-list.component.html',
+    styleUrls: ['./blog-list.component.scss'],
+    standalone: false
 })
 export class BlogListComponent implements OnInit {
   posts: BlogPost[] = [];

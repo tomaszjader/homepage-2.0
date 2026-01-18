@@ -4,10 +4,12 @@ import { Title, Meta } from '@angular/platform-browser';
 import { BlogService, BlogPost } from '../services/blog.service';
 
 @Component({
-  selector: 'app-blog-post',
-  templateUrl: './blog-post.component.html',
-  styleUrls: ['./blog-post.component.scss'],
-  encapsulation: ViewEncapsulation.None // To style innerHTML content
+    selector: 'app-blog-post',
+    templateUrl: './blog-post.component.html',
+    styleUrls: ['./blog-post.component.scss'],
+    encapsulation: ViewEncapsulation.None // To style innerHTML content
+    ,
+    standalone: false
 })
 export class BlogPostComponent implements OnInit {
   post: BlogPost | undefined;

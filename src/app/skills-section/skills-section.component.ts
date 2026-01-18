@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-skills-section',
-  templateUrl: './skills-section.component.html',
-  styleUrls: ['./skills-section.component.scss']
+    selector: 'app-skills-section',
+    templateUrl: './skills-section.component.html',
+    styleUrls: ['./skills-section.component.scss'],
+    standalone: false
 })
 export class SkillsSectionComponent {
   workingKnowledgeArray: string[] = ['— Semantic HTML5', '— Flexbox',

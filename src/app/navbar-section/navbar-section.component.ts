@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-navbar-section',
-  templateUrl: './navbar-section.component.html',
-  styleUrls: ['./navbar-section.component.scss']
+    selector: 'app-navbar-section',
+    templateUrl: './navbar-section.component.html',
+    styleUrls: ['./navbar-section.component.scss'],
+    standalone: false
 })
 export class NavbarSectionComponent {
   isMenuOpen = false;

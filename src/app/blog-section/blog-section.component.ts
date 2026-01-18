@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService, BlogPost } from '../services/blog.service';
 
 @Component({
-  selector: 'app-blog-section',
-  templateUrl: './blog-section.component.html',
-  styleUrls: ['./blog-section.component.scss']
+    selector: 'app-blog-section',
+    templateUrl: './blog-section.component.html',
+    styleUrls: ['./blog-section.component.scss'],
+    standalone: false
 })
 export class BlogSectionComponent implements OnInit {
   posts: BlogPost[] = [];
