@@ -2,14 +2,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { BlogService, BlogPost } from '../services/blog.service';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { NavbarSectionComponent } from '../navbar-section/navbar-section.component';
+import { FooterSectionComponent } from '../footer-section/footer-section.component';
 
 @Component({
-    selector: 'app-blog-post',
-    templateUrl: './blog-post.component.html',
-    styleUrls: ['./blog-post.component.scss'],
-    encapsulation: ViewEncapsulation.None // To style innerHTML content
-    ,
-    standalone: false
+  selector: 'app-blog-post',
+  templateUrl: './blog-post.component.html',
+  styleUrls: ['./blog-post.component.scss'],
+  encapsulation: ViewEncapsulation.None // To style innerHTML content
+  ,
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule, NavbarSectionComponent, FooterSectionComponent]
 })
 export class BlogPostComponent implements OnInit {
   post: BlogPost | undefined;

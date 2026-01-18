@@ -2,12 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { BlogService, BlogPost } from '../services/blog.service';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NavbarSectionComponent } from '../navbar-section/navbar-section.component';
+import { FooterSectionComponent } from '../footer-section/footer-section.component';
 
 @Component({
-    selector: 'app-blog-list',
-    templateUrl: './blog-list.component.html',
-    styleUrls: ['./blog-list.component.scss'],
-    standalone: false
+  selector: 'app-blog-list',
+  templateUrl: './blog-list.component.html',
+  styleUrls: ['./blog-list.component.scss'],
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule, FormsModule, NavbarSectionComponent, FooterSectionComponent]
 })
 export class BlogListComponent implements OnInit {
   posts: BlogPost[] = [];

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-navbar-section',
-    templateUrl: './navbar-section.component.html',
-    styleUrls: ['./navbar-section.component.scss'],
-    standalone: false
+  selector: 'app-navbar-section',
+  templateUrl: './navbar-section.component.html',
+  styleUrls: ['./navbar-section.component.scss'],
+  standalone: true,
+  imports: [CommonModule, TranslateModule, RouterModule]
 })
 export class NavbarSectionComponent {
   isMenuOpen = false;
