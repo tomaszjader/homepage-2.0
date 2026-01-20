@@ -17,13 +17,38 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'wyszukiwanie-semantyczne-qdrant-python-fastapi',
+      title: 'Zainspirowałem się wyszukiwarką w "unknowNews" i postanowiłem stworzyć własne wyszukiwanie semantyczne',
+      date: 'January 18, 2026',
+      excerpt: 'Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀 Zamiast tradycyjnego szukania po słowach kluczowych, mój blog rozumie teraz intencje użytkownika.',
+      tags: ['Python', 'VectorDatabase', 'Qdrant', 'FastAPI', 'SemanticSearch', 'AI', 'Programowanie', 'MachineLearning', 'WebDevelopment'],
+      content: `
+        <p>Zainspirowałem się wyszukiwarką w "unknowNews" i postanowiłem stworzyć własne wyszukiwanie semantyczne. Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀</p>
+        
+        <p>Zamiast tradycyjnego szukania po słowach kluczowych, mój blog rozumie teraz intencje użytkownika. Wpisujesz pytanie językiem naturalnym, a algorytm przeszukuje bazę wektorową i podaje 3 najbardziej trafne wpisy.</p>
+        
+        <h4>Jak to zbudowałem?</h4>
+        <ul>
+          <li><strong>Qdrant</strong> – jako silnik bazy wektorowej.</li>
+          <li><strong>Python + FastAPI</strong> – do obsługi logiki i API.</li>
+          <li><strong>ngrok</strong> – aby bezpiecznie wystawić usługę na zewnątrz.</li>
+        </ul>
+        
+        <p>To była cenna lekcja pokory. Technologia potrafi dać w kość, zwłaszcza przy konfiguracji sieciowej i "wystawianiu na świat", ale warto było przez to przejść dla końcowego efektu.</p>
+        
+        <p>Zobacz jak to działa na żywo: <a href="https://tomaszjader.com/blog" target="_blank">https://tomaszjader.com/blog</a></p>
+        
+        <p>A Wy? Korzystacie już z wyszukiwania semantycznego w swoich projektach, czy zostajecie przy klasycznym SQL-owym LIKE? Dajcie znać w komentarzach!</p>
+      `
+    },
+    {
       slug: 'agent-tomek-google-adk-automatyzacja-instagrama',
-      title: 'Jak stworzyłem „Agenta Tomka” – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.',
+      title: 'Jak stworzyłem „Agenta Tomka" – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.',
       date: 'January 17, 2026',
       excerpt: 'Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.',
       tags: ['GoogleADK', 'Automatyzacja', 'Python', 'SztucznaInteligencja', 'ContentMarketing', 'Innowacje', 'TelegramBot', 'UmiejętnościJutra', 'AI'],
       content: `
-        <p>Jak stworzyłem „Agenta Tomka” – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.</p>
+        <p>Jak stworzyłem „Agenta Tomka" – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.</p>
         
         <p>Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.</p>
         
@@ -35,7 +60,7 @@ export class BlogService {
         
         <img src="assets/img/agent-tomek-google-adk.jpg" alt="Meme: Programista vs Agent Tomek - negocjacje" class="img-fluid my-4 rounded">
 
-        <p>Najzabawniejszym aspektem projektu było testowanie. Początkowo Agent Tomek bywał bardzo uparty – nie chciał słuchać moich poleceń! Wiele razy musiałem go prosić, by wykonał proste zadanie, np. usunął niepotrzebną frazę z tytułu czy opublikował post. Zdarzało się, że musiałem ponawiać komendę nawet pięć razy! Choć problem został finalnie rozwiązany, te pierwsze, komiczne „negocjacje” z asystentem wspominam z największym sentymentem.</p>
+        <p>Najzabawniejszym aspektem projektu było testowanie. Początkowo Agent Tomek bywał bardzo uparty – nie chciał słuchać moich poleceń! Wiele razy musiałem go prosić, by wykonał proste zadanie, np. usunął niepotrzebną frazę z tytułu czy opublikował post. Zdarzało się, że musiałem ponawiać komendę nawet pięć razy! Choć problem został finalnie rozwiązany, te pierwsze, komiczne „negocjacje" z asystentem wspominam z największym sentymentem.</p>
         
         <p>Całość rozwiązania bazuje na języku Python, Google ADK (Agent Development Kit) oraz API Telegrama. Projekt ten był doskonałym praktycznym zwieńczeniem wiedzy, którą zdobyłem na kursie Umiejętności Jutra 2.0.</p>
         
