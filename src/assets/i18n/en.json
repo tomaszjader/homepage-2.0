@@ -1,75 +1,78 @@
 {
-    "NAV": {
-      "ABOUT": "About",
-      "SKILLS": "Skills",
-      "PROJECTS": "Projects",
-      "BLOG": "Blog",
-      "CONTACT": "Contact"
-    },
-    "ABOUT": {
-      "HEADER_PREFIX": "My name is Tomasz and I'm a",
-      "HEADER_HIGHLIGHT": "Fullstack developer",
-      "HEADER_SUFFIX": "and AI fan.",
-      "PARAGRAPH_1": "If you might be interested in my",
-      "PARAGRAPH_LINK_SKILLS": "skills",
-      "PARAGRAPH_2": "please check the list. Don't forget to take a quick look at my new",
-      "PARAGRAPH_LINK_PROJECTS": "projects",
-      "PARAGRAPH_3": ". I'm looking for new challenges so if you have one don't hesitate to",
-      "PARAGRAPH_LINK_CONTACT": "contact me",
-      "BUTTON_CONTACT": "Get in touch",
-      "BUTTON_KNOW": "Get to know me"
-    },
-    "SKILLS_SECTION": {
-      "HEADER": "MY SKILLS",
-      "PARAGRAPH": "I've picked up some cool skills along the way, and I'm excited to share them with you. Check out what I can do below!",
-      "WORKING_KNOWLEDGE": "Working knowledge",
-      "KNOW_SOMETHING": "Know something about",
-      "WANT_TO_LEARN": "Want to learn"
-    },
-    "PROJECTS_SECTION": {
-      "HEADER": "Recent Projects",
-      "DESCRIPTION": "Since diving into development in 2020, I've brought a range of projects to life. Here's a snapshot of my accomplishments so far."
-    },
-    "GITHUB_CARD": {
-      "VIEW_DEMO": "View demo",
-      "SOURCE_CODE": "Source code"
-    },
-    "AFTER_HOURS_SECTION": {
-        "HEADER": "After Hours",
-        "TEXT": "Outside of my regular working hours, I delve into an array of activities and passions. Here's a glimpse into how I spend my after-hours.",
-        "AI_TITLE": "Artificial Intelligence",
-        "AI_DESC": "After work I test LLM and automate my work",
-        "TRAVEL_TITLE": "Travel",
-        "TRAVEL_DESC": "In my spare time in love with foreign travel and new adventures",
-        "CHESS_TITLE": "Chess",
-        "CHESS_DESC": "Lost in strategic battles, I find joy and challenge in the timeless world of chess.",
-        "GYM_TITLE": "Strength Training",
-        "GYM_DESC": "Empowering both body and mind, I'm dedicated to the discipline of strength training, continuously pushing my limits."
-    },
-    "FOOTER": {
-        "COPYRIGHT": "All rights reserved"
-    },
-    "FOOTER_SECTION": {
-        "HEADER": "Let's work together",
-        "PARAGRAPH": "I'm open for new opportunities. <br>If you have one for me we should talk!",
-        "FIND_ME": "or find me on"
-    },
-    "BLOG_SECTION": {
-        "HEADER": "Latest Articles",
-        "TEXT": "Insights on technology, coding, and my journey.",
-        "READ_MORE": "Read more",
-        "VIEW_ALL": "View all posts"
-    },
-    "BLOG": {
-        "TITLE": "Blog",
-        "DESCRIPTION": "Thoughts, tutorials, and insights.",
-        "SEARCH_PLACEHOLDER": "Search articles by title...",
-        "FILTERED_BY_TAG": "Filtered by tag:",
-        "CLEAR_FILTER": "Clear filter",
-        "READ_ARTICLE": "Read article",
-        "BACK_TO_HOME": "Back to Home",
-        "BACK_TO_BLOG": "Back to Blog",
-        "READ_MORE": "Read more",
-        "BACK_TO_LIST": "Back to list"
-    }
+  "NAV": {
+    "ABOUT": "About",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "BLOG": "Blog",
+    "CONTACT": "Contact"
+  },
+  "ABOUT": {
+    "HEADER_PREFIX": "My name is Tomasz and I'm a",
+    "HEADER_HIGHLIGHT": "Fullstack developer",
+    "HEADER_SUFFIX": "and AI fan.",
+    "PARAGRAPH_1": "If you might be interested in my",
+    "PARAGRAPH_LINK_SKILLS": "skills",
+    "PARAGRAPH_2": "please check the list. Don't forget to take a quick look at my new",
+    "PARAGRAPH_LINK_PROJECTS": "projects",
+    "PARAGRAPH_3": ". I'm looking for new challenges so if you have one don't hesitate to",
+    "PARAGRAPH_LINK_CONTACT": "contact me",
+    "BUTTON_CONTACT": "Get in touch",
+    "BUTTON_KNOW": "Get to know me"
+  },
+  "SKILLS_SECTION": {
+    "HEADER": "MY SKILLS",
+    "PARAGRAPH": "I've picked up some cool skills along the way, and I'm excited to share them with you. Check out what I can do below!",
+    "WORKING_KNOWLEDGE": "Working knowledge",
+    "KNOW_SOMETHING": "Know something about",
+    "WANT_TO_LEARN": "Want to learn"
+  },
+  "PROJECTS_SECTION": {
+    "HEADER": "Recent Projects",
+    "DESCRIPTION": "Since diving into development in 2020, I've brought a range of projects to life. Here's a snapshot of my accomplishments so far."
+  },
+  "GITHUB_CARD": {
+    "VIEW_DEMO": "View demo",
+    "SOURCE_CODE": "Source code"
+  },
+  "AFTER_HOURS_SECTION": {
+    "HEADER": "After Hours",
+    "TEXT": "Outside of my regular working hours, I delve into an array of activities and passions. Here's a glimpse into how I spend my after-hours.",
+    "AI_TITLE": "Artificial Intelligence",
+    "AI_DESC": "After work I test LLM and automate my work",
+    "TRAVEL_TITLE": "Travel",
+    "TRAVEL_DESC": "In my spare time in love with foreign travel and new adventures",
+    "CHESS_TITLE": "Chess",
+    "CHESS_DESC": "Lost in strategic battles, I find joy and challenge in the timeless world of chess.",
+    "GYM_TITLE": "Strength Training",
+    "GYM_DESC": "Empowering both body and mind, I'm dedicated to the discipline of strength training, continuously pushing my limits."
+  },
+  "FOOTER": {
+    "COPYRIGHT": "All rights reserved"
+  },
+  "FOOTER_SECTION": {
+    "HEADER": "Let's work together",
+    "PARAGRAPH": "I'm open for new opportunities. <br>If you have one for me we should talk!",
+    "FIND_ME": "or find me on"
+  },
+  "BLOG_SECTION": {
+    "HEADER": "Latest Articles",
+    "TEXT": "Insights on technology, coding, and my journey.",
+    "READ_MORE": "Read more",
+    "VIEW_ALL": "View all posts"
+  },
+  "BLOG": {
+    "TITLE": "Blog",
+    "DESCRIPTION": "Thoughts, tutorials, and insights.",
+    "SEARCH_PLACEHOLDER": "Search articles by title...",
+    "SEARCH_BUTTON": "Search",
+    "SEMANTIC_SEARCH_LABEL": "Semantic Search (AI)",
+    "SEARCHING_TEXT": "Searching...",
+    "FILTERED_BY_TAG": "Filtered by tag:",
+    "CLEAR_FILTER": "Clear filter",
+    "READ_ARTICLE": "Read article",
+    "BACK_TO_HOME": "Back to Home",
+    "BACK_TO_BLOG": "Back to Blog",
+    "READ_MORE": "Read more",
+    "BACK_TO_LIST": "Back to list"
   }
+}

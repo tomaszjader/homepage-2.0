@@ -12,7 +12,7 @@
             [placeholder]="'BLOG.SEARCH_PLACEHOLDER' | translate" class="blog__search-input">
           <button *ngIf="isSemanticSearchEnabled" (click)="performSemanticSearch()" class="blog__search-button"
             [disabled]="isSearching || searchText.length < 3">
-            Search
+            {{ 'BLOG.SEARCH_BUTTON' | translate }}
           </button>
         </div>
 
@@ -21,13 +21,13 @@
             <input type="checkbox" [checked]="isSemanticSearchEnabled" (change)="toggleSemanticSearch()">
             <span class="slider round"></span>
           </label>
-          <span class="blog__search-toggle-label">Semantic Search (AI)</span>
+          <span class="blog__search-toggle-label">{{ 'BLOG.SEMANTIC_SEARCH_LABEL' | translate }}</span>
         </div>
       </div>
 
       <div class="blog__loading" *ngIf="isSearching">
         <div class="spinner"></div>
-        <span>Searching...</span>
+        <span>{{ 'BLOG.SEARCHING_TEXT' | translate }}</span>
       </div>
 
       <div class="blog__active-filter" *ngIf="activeTag">

@@ -642,12 +642,9 @@ export class BlogService {
   }
 
   searchPosts(query: string, limit: number = 3): Observable<any> {
-    // In development (ng serve), use proxy path
-    // In production (Netlify), use full ngrok URL to avoid 404
-    // TODO: Replace ngrok URL with your permanent backend URL when available
     const url = this.isDevMode()
-      ? "/search"  // Proxied in dev via proxy.conf.json
-      : "https://search.tomaszjader.com/search";  // Direct URL in production
+      ? "/search"
+      : "https://search.tomaszjader.com/search";
 
     const payload = {
       query: query,
@@ -657,7 +654,6 @@ export class BlogService {
   }
 
   private isDevMode(): boolean {
-    // Check if we're running in development mode
     return !window.location.hostname.includes('tomaszjader.com') &&
       !window.location.hostname.includes('netlify.app');
   }

@@ -32,9 +32,8 @@ export class BlogListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0); // Ensure we start at the top
+    window.scrollTo(0, 0);
 
-    // Set SEO Meta Tags
     this.titleService.setTitle('Blog | Tomasz Jąder - Programowanie, Angular, AI');
     this.metaService.updateTag({
       name: 'description',
@@ -51,9 +50,9 @@ export class BlogListComponent implements OnInit {
 
   toggleSemanticSearch(): void {
     this.isSemanticSearchEnabled = !this.isSemanticSearchEnabled;
-    this.filteredPosts = []; // Clear results when switching modes
+    this.filteredPosts = [];
     if (!this.isSemanticSearchEnabled) {
-      this.filterPosts(); // Restore local posts if switching back to standard
+      this.filterPosts();
     }
   }
 
@@ -71,7 +70,6 @@ export class BlogListComponent implements OnInit {
 
   filterPosts(): void {
     if (this.isSemanticSearchEnabled) {
-      // Do nothing on input for semantic search, wait for button or enter
       return;
     } else {
       this.performLocalSearch();
@@ -80,15 +78,11 @@ export class BlogListComponent implements OnInit {
 
   performLocalSearch(): void {
     let tempPosts = this.posts;
-
-    // Filter by tag if present
     if (this.activeTag) {
       tempPosts = tempPosts.filter(post =>
         post.tags && post.tags.includes(this.activeTag!)
       );
     }
-
-    // Filter by search text
     if (this.searchText) {
       tempPosts = tempPosts.filter(post =>
         post.title.toLowerCase().includes(this.searchText.toLowerCase())
@@ -104,18 +98,14 @@ export class BlogListComponent implements OnInit {
       next: (response) => {
         if (response && response.results) {
           this.filteredPosts = response.results.map((result: any) => {
-            // Extract slug from URL
             const slug = result.url.split('/').pop() || '';
             const localPost = this.blogService.getPostBySlug(slug);
 
             if (localPost) {
               return {
                 ...localPost,
-                // Optionally override some fields with API data if needed, or just use local
-                // Keeping local data ensures full richness (date, tags, image)
               };
             } else {
-              // Fallback if not found locally
               return {
                 slug: slug,
                 title: result.title,
@@ -132,8 +122,6 @@ export class BlogListComponent implements OnInit {
       error: (error) => {
         console.error('Semantic search failed', error);
         this.isSearching = false;
-        // Fallback to local search or show error?
-        // For now, let's keep the list empty or show an error message in UI
         this.filteredPosts = [];
       }
     });

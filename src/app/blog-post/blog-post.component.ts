@@ -12,8 +12,7 @@ import { FooterSectionComponent } from '../footer-section/footer-section.compone
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss'],
-  encapsulation: ViewEncapsulation.None // To style innerHTML content
-  ,
+  encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [CommonModule, TranslateModule, RouterModule, NavbarSectionComponent, FooterSectionComponent]
 })
@@ -34,12 +33,9 @@ export class BlogPostComponent implements OnInit {
       if (slug) {
         this.post = this.blogService.getPostBySlug(slug);
         if (!this.post) {
-          this.router.navigate(['/']); // Redirect to home if post not found
+          this.router.navigate(['/']);
         } else {
-          // Scroll to top
           window.scrollTo(0, 0);
-
-          // Set SEO Meta Tags
           this.titleService.setTitle(`${this.post.title} | Tomasz Jąder`);
           this.metaService.updateTag({ name: 'description', content: this.post.excerpt });
         }
