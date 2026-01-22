@@ -42,7 +42,6 @@
             "production": {
               "optimization": true,
               "extractLicenses": true,
-              "serviceWorker": "ngsw-config.json",
               "sourceMap": false,
               "namedChunks": false,
               "budgets": [
