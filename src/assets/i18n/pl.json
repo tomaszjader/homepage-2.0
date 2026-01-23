@@ -52,7 +52,14 @@
   "FOOTER_SECTION": {
     "HEADER": "Współpracujmy",
     "PARAGRAPH": "Jestem otwarty na nowe możliwości. <br>Jeśli masz jedną dla mnie, porozmawiajmy!",
-    "FIND_ME": "lub znajdź mnie na"
+    "FIND_ME": "lub znajdź mnie na",
+    "FORM_NAME_PLACEHOLDER": "Twoje imię",
+    "FORM_EMAIL_PLACEHOLDER": "Twój email",
+    "FORM_MESSAGE_PLACEHOLDER": "Treść wiadomości",
+    "FORM_SUBMIT_BUTTON": "Wyślij wiadomość",
+    "FORM_SENDING": "Wysyłanie...",
+    "FORM_SUCCESS": "Wiadomość została wysłana pomyślnie!",
+    "FORM_ERROR": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
   },
   "BLOG_SECTION": {
     "HEADER": "Ostatnie artykuły",

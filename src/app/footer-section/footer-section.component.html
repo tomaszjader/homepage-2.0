@@ -1,6 +1,33 @@
 <footer class="footer" id="contact">
     <h2 class="footer__header">{{ 'FOOTER_SECTION.HEADER' | translate }}</h2>
     <h3 class="footer__paragraph" [innerHTML]="'FOOTER_SECTION.PARAGRAPH' | translate"></h3>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="footer__form">
+        <div class="footer__form-group">
+            <input type="text" formControlName="imie" [placeholder]="'FOOTER_SECTION.FORM_NAME_PLACEHOLDER' | translate"
+                class="footer__input"
+                [class.error]="contactForm.get('imie')?.invalid && contactForm.get('imie')?.touched">
+        </div>
+        <div class="footer__form-group">
+            <input type="email" formControlName="email"
+                [placeholder]="'FOOTER_SECTION.FORM_EMAIL_PLACEHOLDER' | translate" class="footer__input"
+                [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        </div>
+        <div class="footer__form-group">
+            <textarea formControlName="tresc" [placeholder]="'FOOTER_SECTION.FORM_MESSAGE_PLACEHOLDER' | translate"
+                class="footer__textarea"
+                [class.error]="contactForm.get('tresc')?.invalid && contactForm.get('tresc')?.touched"></textarea>
+        </div>
+
+        <button type="submit" class="footer__submit-button" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">{{ 'FOOTER_SECTION.FORM_SUBMIT_BUTTON' | translate }}</span>
+            <span *ngIf="isSubmitting">{{ 'FOOTER_SECTION.FORM_SENDING' | translate }}</span>
+        </button>
+
+        <p *ngIf="submitSuccess" class="footer__success-message">{{ 'FOOTER_SECTION.FORM_SUCCESS' | translate }}</p>
+        <p *ngIf="submitError" class="footer__error-message">{{ 'FOOTER_SECTION.FORM_ERROR' | translate }}</p>
+    </form>
+
     <a class="footer__contact-button" href="mailto:tomasz.jader&#64;gmail.com">
         <img class="footer__contact-icon" src="assets/img/mail.svg" alt="" height="24" width="24" loading="lazy">
         <span class="footer__contact-text">tomasz.jader&#64;gmail.com</span>
