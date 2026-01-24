@@ -46,8 +46,6 @@
   }
 
   &__star {
-    height: 23px;
-    width: 29px;
     display: flex;
     padding: 4px 8px;
     align-items: center;
@@ -131,9 +129,7 @@
       flex-direction: column;
     }
 
-    &__star {
-      width: 40px;
-    }
+
 
     &__button {
       font-size: 16px;
