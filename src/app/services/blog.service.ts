@@ -17,6 +17,41 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'n8n-formularz-kontaktowy',
+      title: 'Czy jako Frontendowiec męczy Cię konfigurowanie backendu tylko po to, by obsłużyć prosty formularz kontaktowy? 📩',
+      date: 'January 25, 2026',
+      excerpt: 'Ostatnio szukałem alternatywy dla gotowych rozwiązań typu EmailJS. Zazwyczaj wymagają one albo płatnej subskrypcji, albo stawiania dedykowanego serwera pocztowego. Pomyślałem: a co gdyby wykorzystać do tego n8n? 🤔',
+      tags: ['n8n', 'automation', 'webdevelopment', 'frontend', 'nocode', 'javascript', 'selfhosted', 'productivity'],
+      content: `
+        <p>Czy jako Frontendowiec męczy Cię konfigurowanie backendu tylko po to, by obsłużyć prosty formularz kontaktowy? 📩</p>
+        
+        <p>Ostatnio szukałem alternatywy dla gotowych rozwiązań typu EmailJS. Zazwyczaj wymagają one albo płatnej subskrypcji, albo stawiania dedykowanego serwera pocztowego.</p>
+        
+        <p>Pomyślałem: a co gdyby wykorzystać do tego n8n? 🤔</p>
+        
+        <p>Przeszedłem od słów do czynów. Moje rozwiązanie działa już na produkcyjnej stronie i opiera się na prostym workflow:</p>
+        
+        <ol>
+            <li>1️⃣ Webhook odbiera dane z formularza.</li>
+            <li>2️⃣ Google Sheets zapisuje zgłoszenie w bazie.</li>
+            <li>3️⃣ Noda Gmail wysyła automatyczne podziękowanie do klienta oraz powiadomienie do mnie.</li>
+        </ol>
+        
+        <img src="assets/img/n8n-form-meme.png" alt="Meme: Konfigurowanie serwera pocztowego vs n8n do formularzy kontaktowych" class="img-fluid my-4 rounded">
+
+        <h4>Dlaczego warto?</h4>
+        <ul>
+            <li>✅ <strong>Pełna kontrola:</strong> Nie zależysz od zewnętrznych dostawców i ich cenników.</li>
+            <li>✅ <strong>Oszczędność:</strong> Przy własnej instancji n8n rozwiązanie jest darmowe (oszczędzasz ok. 9$ miesięcznie).</li>
+            <li>✅ <strong>Skalowalność:</strong> Łatwo dodasz kolejne kroki, np. powiadomienie na Slacku.</li>
+        </ul>
+        
+        <p>To prosta automatyzacja, która oszczędza mnóstwo frustracji przy konfiguracji.</p>
+        
+        <p>A Wy jakich narzędzi używacie do obsługi formularzy na landing page’ach? Stawiacie na gotowce, czy budujecie własne mikroserwisy? Dajcie znać w komentarzach! 👇</p>
+      `
+    },
+    {
       slug: 'wyszukiwanie-semantyczne-qdrant-python-fastapi',
       title: 'Zainspirowałem się wyszukiwarką w "unknowNews" i postanowiłem stworzyć własne wyszukiwanie semantyczne',
       date: 'January 18, 2026',
