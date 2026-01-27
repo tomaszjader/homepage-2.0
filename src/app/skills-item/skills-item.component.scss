@@ -4,11 +4,9 @@
   width: 426.67px;
   color: white;
   border: 1px solid #020916;
-  background: linear-gradient(
-    155deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.04) 100.02%
-  );
+  background: linear-gradient(155deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.04) 100.02%);
   box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.15) inset;
   backdrop-filter: blur(5px);
 
@@ -21,9 +19,7 @@
     height: 462px;
   }
 
-  &__divider {
-    // ... existing code ...
-  }
+  &__divider {}
 
   &__header {
     font-size: 24px;
