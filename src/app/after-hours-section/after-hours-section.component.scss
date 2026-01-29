@@ -10,7 +10,7 @@
   }
 
   &__header {
-    color: var(--Gray400, #9ca3af);
+    color: var(--text-secondary);
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -20,7 +20,7 @@
   }
 
   &__text {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
@@ -55,14 +55,14 @@
   }
 
   &__title {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
   }
 
   &__description {
-    color: var(--Gray400, #9ca3af);
+    color: var(--text-secondary);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

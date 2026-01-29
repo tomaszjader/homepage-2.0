@@ -1,9 +1,9 @@
 .skills {
-  background-color: #1f2937;
+  background-color: var(--bg-card);
   border-radius: 20px;
   width: 426.67px;
-  color: white;
-  border: 1px solid #020916;
+  color: var(--text-primary);
+  border: 1px solid var(--bg-primary);
   background: linear-gradient(155deg,
       rgba(255, 255, 255, 0.1) 0%,
       rgba(255, 255, 255, 0.04) 100.02%);
@@ -19,7 +19,7 @@
     height: 462px;
   }
 
-  &__divider {}
+
 
   &__header {
     font-size: 24px;

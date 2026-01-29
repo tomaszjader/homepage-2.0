@@ -1,8 +1,8 @@
-#about{
+#about {
   display: flex;
-  justify-content: center; 
-  flex-direction: row; 
-  align-items: center; 
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
   margin: 0;
 }
 
@@ -20,23 +20,23 @@
   }
 
   &__header {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 48px;
     font-weight: 700;
 
     &--highlight {
-      color: #ceff7e;
+      color: var(--accent-primary);
     }
   }
 
   &__paragraph {
-    color: var(--Gray400, #9ca3af);
+    color: var(--text-secondary);
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
 
     &--link {
-      color: var(--White, #fff);
+      color: var(--text-primary);
       text-decoration: underline;
     }
   }
@@ -69,14 +69,14 @@
     font-family: Arial;
 
     &--contact {
-      background: #ceff7e;
-      color: #020916;
+      background: var(--accent-primary);
+      color: var(--bg-primary);
     }
 
     &--know {
-      border: 2px solid #1f2937;
-      background: #020916;
-      color: #ceff7e;
+      border: 2px solid var(--border-primary);
+      background: var(--bg-primary);
+      color: var(--accent-primary);
     }
   }
 }

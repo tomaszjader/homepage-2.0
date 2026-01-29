@@ -1,7 +1,7 @@
 .blog-post-page {
   min-height: 100vh;
-  background-color: #020916;
-  color: #fff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
 }
@@ -12,7 +12,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 120px 24px 60px;
-  color: #d1d5db;
+  color: var(--text-muted);
 }
 
 .blog-post-header {
@@ -26,19 +26,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #9ca3af; // Match other back links
+  color: var(--text-secondary); // Match other back links
   text-decoration: none;
   font-weight: 500;
   margin-bottom: 32px;
   transition: color 0.2s;
 
   &:hover {
-    color: #fff;
+    color: var(--text-primary);
   }
 }
 
 .post-date {
-  color: #9ca3af;
+  color: var(--text-secondary);
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -46,7 +46,7 @@
 }
 
 .post-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
@@ -62,7 +62,7 @@
 
 .post-tag {
   font-size: 14px;
-  color: #9ca3af;
+  color: var(--text-secondary);
   background: rgba(255, 255, 255, 0.05);
   padding: 6px 14px;
   border-radius: 999px;
@@ -72,7 +72,7 @@
 
   &:hover {
     background: rgba(96, 165, 250, 0.1);
-    color: #60a5fa;
+    color: var(--accent-blue);
     border-color: rgba(96, 165, 250, 0.3);
   }
 }
@@ -82,7 +82,7 @@
   line-height: 1.8;
 
   h4 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 28px;
     margin: 48px 0 24px;
     font-weight: 700;
@@ -102,22 +102,22 @@
   }
 
   code {
-    background: #1f2937;
+    background: var(--bg-tertiary);
     padding: 2px 6px;
     border-radius: 4px;
-    color: #ceff7e;
+    color: var(--accent-primary);
     font-family: monospace;
     font-size: 0.9em;
   }
 
   pre {
-    background: #1f2937;
+    background: var(--bg-tertiary);
     padding: 24px;
     border-radius: 12px;
     overflow-x: auto;
     margin-bottom: 32px;
-    border: 1px solid #374151;
-    
+    border: 1px solid var(--border-secondary);
+
     code {
       background: transparent;
       padding: 0;
@@ -131,7 +131,7 @@
   .post-title {
     font-size: 32px;
   }
-  
+
   .blog-post-content {
     font-size: 18px;
   }

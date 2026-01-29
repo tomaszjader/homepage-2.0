@@ -26,7 +26,7 @@
     }
 
     &__name {
-        color: #CEFF7E;
+        color: var(--accent-primary);
         font-size: 20px;
         font-weight: 700;
         line-height: 24px;
@@ -34,7 +34,7 @@
     }
 
     &__title {
-        color: #FFF;
+        color: var(--text-primary);
         font-size: 12px;
         font-weight: 700;
         opacity: 0.8;
@@ -49,7 +49,7 @@
     }
 
     &__link {
-        color: #FFF;
+        color: var(--text-primary);
         font-size: 16px;
         font-weight: 700;
         line-height: 20px;
@@ -60,8 +60,8 @@
         &--contact {
             padding: 14px 32px;
             border-radius: 12px;
-            background: #CEFF7E;
-            color: #020916;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
         }
     }
 
@@ -76,10 +76,10 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        color: #fff;
+        color: var(--text-primary);
         font-weight: 700;
         font-size: 16px;
-        
+
         .separator {
             opacity: 0.5;
         }
@@ -96,7 +96,7 @@
 
             &.active {
                 opacity: 1;
-                color: #CEFF7E;
+                color: var(--accent-primary);
             }
         }
     }
@@ -121,7 +121,7 @@
         &-line {
             width: 30px;
             height: 3px;
-            background: #FFFFFF;
+            background: var(--text-primary);
             border-radius: 10px;
             transition: all 0.3s linear;
             position: relative;
@@ -134,9 +134,11 @@
                     top: 11px;
                     position: absolute;
                 }
+
                 &:nth-child(2) {
                     opacity: 0;
                 }
+
                 &:last-child {
                     transform: rotate(-45deg);
                     top: 11px;
@@ -153,11 +155,12 @@
             top: 90px;
             left: 0;
             right: 0;
-            background: #020916;
+            background: var(--bg-primary);
             flex-direction: column;
             padding: 20px 0;
-            z-index: 1000; /* Ensure menu is above other content */
-            
+            z-index: 1000;
+            /* Ensure menu is above other content */
+
             &--active {
                 display: flex;
             }
@@ -167,7 +170,7 @@
             display: flex;
         }
 
-        &__brand{
+        &__brand {
             margin-left: 24px;
         }
 
