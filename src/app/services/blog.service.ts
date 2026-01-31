@@ -9,6 +9,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   tags?: string[];
+  image?: string;
 }
 
 @Injectable({
@@ -22,6 +23,7 @@ export class BlogService {
       date: 'January 25, 2026',
       excerpt: 'Ostatnio szukałem alternatywy dla gotowych rozwiązań typu EmailJS. Zazwyczaj wymagają one albo płatnej subskrypcji, albo stawiania dedykowanego serwera pocztowego. Pomyślałem: a co gdyby wykorzystać do tego n8n? 🤔',
       tags: ['n8n', 'automation', 'webdevelopment', 'frontend', 'nocode', 'javascript', 'selfhosted', 'productivity'],
+      image: 'assets/img/n8n-form-meme.png',
       content: `
         <p>Czy jako Frontendowiec męczy Cię konfigurowanie backendu tylko po to, by obsłużyć prosty formularz kontaktowy? 📩</p>
         
@@ -57,6 +59,7 @@ export class BlogService {
       date: 'January 18, 2026',
       excerpt: 'Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀 Zamiast tradycyjnego szukania po słowach kluczowych, mój blog rozumie teraz intencje użytkownika.',
       tags: ['Python', 'VectorDatabase', 'Qdrant', 'FastAPI', 'SemanticSearch', 'AI', 'Programowanie', 'MachineLearning', 'WebDevelopment'],
+      image: 'assets/img/semantic-search-meme.png',
       content: `
         <p>Zainspirowałem się wyszukiwarką w "unknowNews" i postanowiłem stworzyć własne wyszukiwanie semantyczne. Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀</p>
         
@@ -69,6 +72,8 @@ export class BlogService {
           <li><strong>ngrok</strong> – aby bezpiecznie wystawić usługę na zewnątrz.</li>
         </ul>
         
+        <img src="assets/img/semantic-search-meme.png" alt="Meme: Wyszukiwanie tradycyjne vs semantyczne vs własna baza wektorowa" class="img-fluid my-4 rounded">
+
         <p>To była cenna lekcja pokory. Technologia potrafi dać w kość, zwłaszcza przy konfiguracji sieciowej i "wystawianiu na świat", ale warto było przez to przejść dla końcowego efektu.</p>
         
         <p>Zobacz jak to działa na żywo: <a href="https://tomaszjader.com/blog" target="_blank">https://tomaszjader.com/blog</a></p>
@@ -82,6 +87,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.',
       tags: ['GoogleADK', 'Automatyzacja', 'Python', 'SztucznaInteligencja', 'ContentMarketing', 'Innowacje', 'TelegramBot', 'UmiejętnościJutra', 'AI'],
+      image: 'assets/img/agent-tomek-google-adk.jpg',
       content: `
         <p>Jak stworzyłem „Agenta Tomka" – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.</p>
         
@@ -108,6 +114,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Brzmi absurdalnie, prawda? A jednak taki pomysł pojawił się u mnie – nie dlatego, że planuję zamienić balkon w kurnik, ale dlatego, że testowałem Claude AI od Anthropic do generowania stron internetowych.',
       tags: ['AI', 'Claude', 'Anthropic', 'WebDev', 'Eksperyment', 'Kreatywność', 'Absurd'],
+      image: 'assets/img/hodowla-kur-balkon.jpg',
       content: `
         <p>Czy zastanawiałeś się kiedyś nad hodowlą kur… na balkonie? 🐔🌿</p>
         
@@ -141,6 +148,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Udało mi się stworzyć aplikację do śledzenia nawyków, idealnie dopasowaną do moich potrzeb. 🚀 Cały proces był fascynującym doświadczeniem – pełnym wyzwań, nauki i nieoczekiwanych problemów.',
       tags: ['WebDevelopment', 'Coding', 'Projekt', 'Aplikacja', 'Programowanie', 'AI', 'VibeCoding'],
+      image: 'assets/img/vibe-coding-success.jpg',
       content: `
         <p>✨ Moje pierwsze kroki w vibe codingu zakończyły się sukcesem! ✨</p>
         
@@ -167,6 +175,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Nie wiem, czy też tak macie, ale poprawianie literówek potrafi doprowadzić mnie do szału. Zwłaszcza gdy wiem, co chcę napisać… a ekran uparcie pokazuje coś innego. 😅 Z mojej frustracji z dysleksją narodził się pomysł.',
       tags: ['AndroidDev', 'MobileDevelopment', 'Dysleksja', 'EdTech', 'Accessibility', 'PersonalProject', 'WłasnyProjekt'],
+      image: 'assets/img/android-dyslexia-app.jpg',
       content: `
         <p>💥 Moja Walka z Literówkami: Jak Dysleksja Popchnęła Mnie do Stworzenia Aplikacji na Androida</p>
         
@@ -212,6 +221,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Słyszałem wiele pozytywnych opinii o narzędziach low-code, które rzekomo pozwalają bardzo szybko stworzyć ciekawe projekty. Ale, powiedzmy to szczerze: jako programista, podchodziłem do tematu jak pies do jeża.',
       tags: ['Automatyzacja', 'N8N', 'LowCode', 'Programowanie', 'DeveloperLife', 'IntegracjeAPI', 'Digitalizacja'],
+      image: 'assets/img/n8n-programista-opinion.jpg',
       content: `
         <p>Od „Psa do Jeża” do Agenta Automatyzacji – Moja Prawda o N8N jako Programisty 🐾🦔</p>
         
@@ -252,6 +262,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'n8n to potężne narzędzie! Ostatnio szukałem pomysłu na kolejny mały projekt automatyzacyjny i postanowiłem rozwiązać swój wieczny problem: zapominanie o sprawdzeniu pogody.',
       tags: ['n8n', 'Automatyzacja', 'WeatherAPI', 'Telegram', 'SideProject', 'LowCode'],
+      image: 'assets/img/weather-assistant-n8n.jpg',
       content: `
         <p>Jak w 5 minut stworzyć własnego Asystenta Pogodowego? 🌤️</p>
         
@@ -283,6 +294,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Od dawna marzyłem o tym, żeby mieć własną aplikację do śledzenia postępów na siłowni. Za pierwszym razem – brak czasu i motywacji. Za drugim podejściem, już z vibe codingiem wspieranym przez AI i odrobiną uporu… i jest! 🚀',
       tags: ['VibeCoding', 'AI', 'Angular', 'GoogleSheets', 'GymTracker', 'SideProject', 'WebDev'],
+      image: 'assets/img/gymtracker-vibe-coding.jpg',
       content: `
         <p>👨💻💪 Drugie podejście do vibe codingu, ale wreszcie się udało!</p>
         
@@ -312,30 +324,31 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Podejście do Vibe Codingu, numer 3. Od dawna zastanawiałem się nad rosnącym problemem: cenzurą algorytmiczną na platformach takich jak YouTube. Inspiracją do działania był jeden z odcinków podcastu „Na Wschód od Bliskiego Wschodu”.',
       tags: ['AI', 'OpenAI', 'ContentCreators', 'YouTubeCreators', 'Algorytmy', 'MachineLearning', 'VibeCoding', 'Coding'],
+      image: 'assets/img/autocenzura-vibe-coding.jpg',
       content: `
         <p>Autocenzura pod kontrolą: Czy Narzędzie Cenzurujące Słowa „Niewygodne” Ocali Twórców? 🤔</p>
         <p>Podejście do Vibe Codingu, numer 3.</p>
 
         <p>Od dawna zastanawiałem się nad rosnącym problemem: cenzurą algorytmiczną na platformach takich jak YouTube. Inspiracją do działania był jeden z odcinków podcastu „Na Wschód od Bliskiego Wschodu” Wojciecha Szewko. Postawiłem sobie za cel: stworzyć narzędzie, które chroni zasięgi twórców przed automatycznymi blokerami.</p>
-
+        
         <p>Jaka była idea?</p>
         <p>Chciałem, aby narzędzie identyfikowało słowa "niewygodne" (takie jak np. „kurde”, które mogłoby zostać błędnie zinterpretowane) i automatycznie zastępowało je dźwiękiem cenzury. W ten sposób treść pozostaje nienaruszona merytorycznie, a twórca nie traci cennych wyświetleń i przychodów.</p>
-
+        
         <img src="assets/img/autocenzura-vibe-coding.jpg" alt="Meme: Algorytm YouTube nie może ocenzurować słowa, jeśli nigdy go nie usłyszy" class="img-fluid my-4 rounded">
 
         <p>Po kilkunastu iteracjach udało mi się osiągnąć zadowalające rezultaty.</p>
-
+        
         <h4>Kluczowe etapy projektu:</h4>
         <ul>
             <li>🤖 <strong>Implementacja AI:</strong> Wykorzystanie modelu Whisper od OpenAI (zarówno lokalnie, jak i przez API) do precyzyjnej transkrypcji i identyfikacji słów.</li>
             <li>🐛 <strong>"Zabawna" Usterka:</strong> W pierwszej iteracji narzędzie, z nieznanych mi przyczyn, dodawało cenzurę zupełnie losowo! Był to humorystyczny, ale pouczający błąd w procesie debugowania.</li>
             <li>✅ <strong>Testy Skuteczności:</strong> Testy przeprowadzone na piosence „Dni, których nie znamy” Marka Grechuty wykazały skuteczność w zakresie 80-90%. Spodziewam się, że w przypadku podcastów i prostszych nagrań, efektywność będzie jeszcze wyższa.</li>
         </ul>
-
+        
         <p>Projekt Vibe Coding #3 udowadnia, że za pomocą AI możemy tworzyć inteligentne rozwiązania dla realnych problemów, z którymi mierzą się twórcy w sieci.</p>
-
+        
         <p>A Wy, z jakimi problemami związanymi z algorytmami YouTube zmagacie się na co dzień? Jakie "niewygodne" słowa najczęściej Was blokują? Dajcie znać w komentarzu! 👇</p>
-
+        
         <p>Pełen kod źródłowy projektu Vibe Coding #3 znajdziecie w pierwszym komentarzu poniżej. Jestem otwarty na Wasz feedback i Pull Requesty!</p>
       `
     },
@@ -345,6 +358,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Na początku próbowałem podejść do tematu przez oficjalną aplikację na platformie Meta. Niestety, szybko się poddałem – proces konfiguracji okazał się bardziej skomplikowany, niż zakładałem. Drugie podejście zrobiłem w Pythonie – i tym razem się udało 🎉',
       tags: ['Python', 'Automation', 'SideProject', 'Instagram', 'GoogleSheets', 'Telegram', 'Coding', 'DevLife'],
+      image: 'assets/img/python-instagram-automation.jpg',
       content: `
         <p>Miałem ostatnio pomysł na mały projekt po godzinach – prostą automatyzację publikowania postów. 🚀</p>
         
@@ -371,6 +385,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Wszyscy chcemy wprowadzać pozytywne zmiany, ale często zderzamy się z jednym problemem: zapominaniem. Moja własna walka z wdrożeniem nawyku wdzięczności była tego najlepszym przykładem.',
       tags: ['Automatyzacja', 'Produktywność', 'Nawyki', 'n8n', 'TechForGood'],
+      image: 'assets/img/habits-automation.jpg',
       content: `
         <p>Zapominasz o dobrych nawykach? Kluczem jest automatyzacja! 🚀</p>
         
@@ -402,30 +417,31 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Zainspirowany wykładem Franciszka Bazylego Georgiew, postanowiłem pójść o krok dalej i stworzyć własne narzędzie. Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.',
       tags: ['Programowanie', 'OpenSource', 'SztucznaInteligencja', 'LLM', 'Rozwój', 'SideProject', 'TworzenieOprogramowania'],
+      image: 'assets/img/ai-journal.jpg',
       content: `
         <p>Zainspirowany wykładem Franciszek Bazyli Georgiew 高傅安 w ramach kursu Umiejętności Jutra, postanowiłem pójść o krok dalej i stworzyć własne narzędzie.</p>
         <p>Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.</p>
         <p>Tak powstał projekt <strong>AI Journal</strong> – proste narzędzie do prowadzenia dziennika z pomocą sztucznej inteligencji, które w pełni realizuje tę ideę.</p>
-
+        
         <img src="assets/img/ai-journal.jpg" alt="AI Journal Meme: Ja prowadzący dziennik vs AI Journal" class="img-fluid my-4 rounded">
 
         <h4>🧠 Jak działa AI Journal?</h4>
         <p>AI Journal to intuicyjna aplikacja działająca jak chat. W tym interfejsie możesz codziennie zapisywać swoje przemyślenia, cele, trudności czy wątpliwości.</p>
-
+        
         <p>Wsparcie AI polega na tym, że:</p>
         <ul>
             <li>pomaga w głębszej refleksji,</li>
             <li>zadaje trafne pytania, które prowadzą do ciekawszych wniosków,</li>
             <li>automatycznie generuje miesięczne podsumowania (ta funkcja jest jeszcze w fazie testów!).</li>
         </ul>
-
+        
         <p>Obecnie intensywnie testuję rozwiązanie, by sprawdzić jego realną użyteczność. W kolejnych tygodniach będę dzielić się postępami i wnioskami z testów!</p>
-
+        
         <h4>💡 Dla programistów:</h4>
         <p>Ponieważ to projekt open source, cały kod jest dostępny na GitHubie. Jeśli ciekawi Cię, jak to działa od środka – zapraszam!</p>
-
+        
         <p>👉 <a href="https://lnkd.in/d3d-_VYJ" target="_blank">https://lnkd.in/d3d-_VYJ</a></p>
-
+        
         <p>Zostaw ⭐, jeśli doceniasz pomysł, albo podziel się w komentarzu, jak Ty wykorzystujesz AI w swoich niszowych projektach!</p>
       `
     },
@@ -435,6 +451,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Ostatnio stworzyłem prosty skrypt, który pozwala jednym skrótem klawiszowym (CTRL+Q) poprawiać literówki w zaznaczonym tekście – nie zmieniając przy tym słów. Idealny dla osób z dysleksją lub tych, którzy często robią literówki.',
       tags: ['Python', 'Scripting', 'Produktywność', 'Gemini', 'Google', 'OpenSource', 'Programowanie'],
+      image: 'assets/img/ctrl-q-typo-fix.jpg',
       content: `
         <p>🚀 Mały skrypt, duża różnica!</p>
         
@@ -455,6 +472,7 @@ export class BlogService {
       date: 'January 17, 2026',
       excerpt: 'Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha. Inspiracją był post Jakuba Mrugalskiego, opisujący niedoskonałości domyślnie wbudowanych systemów do tworzenia notatek głosowych.',
       tags: ['Programowanie', 'OpenAI', 'Whisper', 'AI', 'Produktywność', 'Narzędzia', 'Developer', 'VibeKodowania'],
+      image: 'assets/img/szeptucha-whisper.jpg',
       content: `
         <p>Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha.</p>
         
@@ -479,6 +497,7 @@ export class BlogService {
       date: 'January 16, 2026',
       excerpt: 'Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!',
       tags: ['n8n', 'Automatyzacja', 'Workflow', 'LowCode', 'Produktywność', 'OpenAI', 'Programowanie'],
+      image: 'assets/img/switomir-n8n.jpg',
       content: `
         <p>Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!</p>
 
@@ -519,11 +538,12 @@ export class BlogService {
       date: 'January 15, 2026',
       excerpt: 'Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?',
       tags: ['SecondBrain', 'Automatyzacja', 'N8N', 'AI', 'Produktywność', 'LowCode', 'GoogleDocs', 'ContentMarketing'],
+      image: 'assets/img/second-brain-n8n.jpg',
       content: `
         <p>Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu, prezentowana na wydarzeniu Mindstone prowadzonym przez Kamila Dąbrowska. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?</p>
         
         <p>Efekt? Stworzyłem osobistego asystenta do burzy mózgów, który faktycznie zna moje cele, priorytety i tożsamość. To krok dalej niż zwykłe promptowanie.</p>
-
+        
         <img src="assets/img/second-brain-n8n.jpg" alt="Meme: Agent AI używa Twoich celów z Second Brain" class="img-fluid my-4 rounded">
         
         <h4>Architektura pamięci dla Agenta</h4>
@@ -550,6 +570,7 @@ export class BlogService {
       date: 'January 14, 2026',
       excerpt: 'Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.',
       tags: ['Automatyzacja', 'n8n', 'OpenAI', 'Productivity', 'BuildInPublic', 'NoCode', 'TechCommunity', 'Innovation'],
+      image: 'assets/img/mem2.jpg',
       content: `
         <p>Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.</p>
         
@@ -584,6 +605,7 @@ export class BlogService {
       date: 'January 13, 2026',
       excerpt: 'Kontynuując rozwój mojej strony-portfolio, zdecydowałem się na wdrożenie sekcji blogowej. Moim celem jest nie tylko prezentacja gotowych projektów, ale przede wszystkim dokumentowanie procesu ich powstawania.',
       tags: ['Angular', 'TypeScript', 'WebDevelopment', 'Frontend', 'Programming', 'PersonalBrand', 'Portfolio', 'OpenSource'],
+      image: 'assets/img/mem1.jpg',
       content: `
         <p>Kontynuując rozwój mojej strony-portfolio, zdecydowałem się na wdrożenie sekcji blogowej. Moim celem jest nie tylko prezentacja gotowych projektów, ale przede wszystkim dokumentowanie procesu ich powstawania i pogłębianie technicznych detali.</p>
         
@@ -613,6 +635,7 @@ export class BlogService {
       date: 'January 7, 2026',
       excerpt: 'Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił? Postanowiłem to zmienić, wykorzystując n8n.',
       tags: ['Automatyzacja', 'n8n', 'Productivity', 'English Learning'],
+      image: 'assets/img/n8n-meme.jpg',
       content: `
         <p>Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił?</p>
         <p>Moje trzy filary – słuchanie, mówienie i powtórki w Anki – często lądowały na samym końcu listy "to-do". Robiłem je tuż przed snem, byle tylko odhaczyć punkt w kalendarzu. Efekt? Mała skuteczność i poczucie winy.</p>
@@ -646,6 +669,7 @@ export class BlogService {
       date: 'January 4, 2026',
       excerpt: 'Dziś nietypowo, bo czas na krótkie podsumowanie roku. Rok temu zacząłem dzielić się swoimi perypetiami przy hobbystycznych projektach. Efekt? Ponad 100 000 wyświetleń.',
       tags: ['Podsumowanie', 'Hobby', 'Projekty', 'Rozwój', 'Community', 'Mikroinfluencer'],
+      image: 'assets/img/results.jpg',
       content: `
         <p>Dziś nietypowo, bo czas na krótkie podsumowanie roku. Rok temu zacząłem dzielić się swoimi perypetiami przy hobbystycznych projektach.</p>
         
@@ -676,6 +700,7 @@ export class BlogService {
     return this.posts.find(post => post.slug === slug);
   }
 
+  // search functionality
   searchPosts(query: string, limit: number = 3): Observable<any> {
     const url = this.isDevMode()
       ? "/search"
