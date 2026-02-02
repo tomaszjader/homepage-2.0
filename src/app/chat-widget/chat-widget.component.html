@@ -1,5 +1,4 @@
 <div class="chat-widget-container">
-    <!-- Chat Button -->
     <button class="chat-toggle-btn" (click)="toggleChat()" [class.hidden]="isOpen" aria-label="Open Chat">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -10,7 +9,6 @@
         </svg>
     </button>
 
-    <!-- Chat Window -->
     <div class="chat-window" *ngIf="isOpen">
         <div class="chat-header">
             <div class="header-title">

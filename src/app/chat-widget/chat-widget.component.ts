@@ -41,7 +41,6 @@ export class ChatWidgetComponent implements AfterViewChecked {
         this.isLoading = true;
 
         try {
-            // Use firstValueFrom to handle the observable as a promise
             const response = await firstValueFrom(this.chatService.sendMessage(userMsg));
             this.messages.push({ role: 'agent', content: response.answer });
         } catch (error) {
