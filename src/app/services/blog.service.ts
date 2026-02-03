@@ -18,6 +18,42 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'rag-gpt4o-qdrant-assistant',
+      title: '🚀 Od bazy wektorowej do inteligentnego asystenta – wdrożyłem RAG z wykorzystaniem GPT-4o!',
+      date: 'February 01, 2026',
+      excerpt: 'Ostatnio zastanawiałem się, jak nadać mojej bazie wektorowej drugie życie. Postanowiłem przejść od słów do czynów i rozbudować ją o możliwość interakcji z treściami. Efekt? Asystent AI w architekturze RAG.',
+      tags: ['AI', 'RAG', 'GPT4o', 'OpenAI', 'LangChain', 'Qdrant', 'VectorDatabase', 'Python', 'FastAPI', 'Innovation', 'MachineLearning'],
+      image: 'assets/img/rag-gpt4o.png',
+      content: `
+        <p>🚀 Od bazy wektorowej do inteligentnego asystenta – wdrożyłem RAG z wykorzystaniem GPT-4o!</p>
+        
+        <p>Ostatnio zastanawiałem się, jak nadać mojej bazie wektorowej drugie życie. Postanowiłem przejść od słów do czynów i rozbudować ją o możliwość interakcji z treściami.</p>
+        
+        <p>Efekt? Stworzyłem asystenta AI w architekturze RAG (Retrieval-Augmented Generation), który pozwala "rozmawiać" z moimi postami. Dzięki temu czytelnicy mogą błyskawicznie wyciągać konkretną wiedzę z archiwalnych treści.</p>
+        
+        <h4>Co potrafi to rozwiązanie?</h4>
+        <ul>
+            <li>Precyzyjnie odpowiada na pytania o technologie opisane w postach.</li>
+            <li>Dzięki integracji z GPT-4o odpowiedzi są naturalne, merytoryczne i bardzo trafne.</li>
+            <li>Pełna kontrola nad kontekstem: asystent bazuje wyłącznie na moich treściach – nie zmyśla, nie wychodzi poza ramy bloga.</li>
+        </ul>
+
+        <img src="assets/img/rag-gpt4o.png" alt="Meme: Baza wektorowa zwykła vs Baza wektorowa z LangChain i GPT-4o" class="img-fluid my-4 rounded">
+        
+        <h4>Mój tech-stack dla tego projektu:</h4>
+        <ul>
+            <li>🔹 <strong>OpenAI (GPT-4o)</strong> – jako "mózg" operacyjny i silnik rozumowania.</li>
+            <li>🔹 <strong>LangChain</strong> – do orkiestracji agenta i przepływu danych.</li>
+            <li>🔹 <strong>FastAPI</strong> – lekki i szybki backend.</li>
+            <li>🔹 <strong>Qdrant</strong> – moja baza wektorowa, która trzyma wszystkie dane.</li>
+        </ul>
+        
+        <p>Najbardziej cieszy mnie to, że system "wstał" niemal bezproblemowo za pierwszym razem. Zapraszam do testów – na moim blogu znajdziecie nowy dymek czatu, gotowy do rozmowy o moich artykułach!</p>
+        
+        <p>Jakie są Wasze doświadczenia z modelem GPT-4o w rozwiązaniach typu RAG? Zauważyliście dużą różnicę w jakości odpowiedzi względem starszych modeli? Chętnie podyskutuję w komentarzach! 👇</p>
+      `
+    },
+    {
       slug: 'n8n-formularz-kontaktowy',
       title: 'Czy jako Frontendowiec męczy Cię konfigurowanie backendu tylko po to, by obsłużyć prosty formularz kontaktowy? 📩',
       date: 'January 25, 2026',
