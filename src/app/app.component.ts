@@ -11,5 +11,4 @@ import { ChatWidgetComponent } from './chat-widget/chat-widget.component';
 })
 export class AppComponent {
   title = 'homepage-2.0';
-
 }
