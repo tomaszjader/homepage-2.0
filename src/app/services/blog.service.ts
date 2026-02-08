@@ -18,6 +18,144 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'budowanie-wlasnego-systemu-rag-python',
+      title: 'Budowanie własnego systemu RAG (Retrieval-Augmented Generation) w Pythonie',
+      date: 'February 08, 2026',
+      excerpt: 'Systemy RAG (Retrieval-Augmented Generation) łączą w sobie potęgę dużych modeli językowych (LLM) z własną bazą wiedzy. Dzięki temu możemy tworzyć asystentów AI, którzy odpowiadają na pytania w oparciu o specyficzne dane.',
+      tags: ['RAG', 'Python', 'OpenAI', 'Qdrant', 'VectorDatabase', 'LLM', 'AI', 'Tutorial'],
+      image: 'assets/img/rag-python-system.png',
+      content: `
+        <p>Systemy RAG (Retrieval-Augmented Generation) łączą w sobie potęgę dużych modeli językowych (LLM) z własną bazą wiedzy. Dzięki temu możemy tworzyć asystentów AI, którzy odpowiadają na pytania w oparciu o specyficzne dane, których model nie widział podczas treningu.</p>
+
+        <p>W tym poradniku pokażę, jak zaimplementować kluczowe mechanizmy RAG przy użyciu Pythona, OpenAI API oraz bazy wektorowej Qdrant.</p>
+
+        <h2>Wymagania wstępne</h2>
+        <p>Zanim zaczniesz budować swój system RAG, upewnij się, że posiadasz zainstalowane następujące narzędzia oraz klucze dostępu:</p>
+        <ul>
+            <li><strong>Docker</strong>: Niezbędny do uruchomienia bazy wektorowej Qdrant w kontenerze.</li>
+            <li><strong>Python</strong>: Język programowania, w którym napiszemy logikę aplikacji (zalecana wersja 3.8+).</li>
+            <li><strong>Klucz API OpenAI</strong>: Niezbędny do generowania embeddingów oraz odpowiedzi modelu.</li>
+        </ul>
+
+        <h2>Uruchomienie Qdranta</h2>
+        <p>Aby uruchomić bazę wektorową Qdrant, wykonaj poniższe polecenia w terminalu (wymagany Docker). Najpierw pobierz obraz:</p>
+        <pre><code class="language-bash">docker pull qdrant/qdrant</code></pre>
+
+        <p>Następnie uruchom kontener:</p>
+        <pre><code class="language-bash">docker run -p 6333:6333 -p 6334:6334 \
+    -v $(pwd)/qdrant_storage:/qdrant/storage \
+    qdrant/qdrant</code></pre>
+
+        <h2>1. Dodawanie wiedzy do bazy wektorowej</h2>
+        <p>Pierwszym krokiem jest przetworzenie naszych danych tekstowych na wektory (tzw. embeddings) i zapisanie ich w bazie. Każdy fragment tekstu otrzymuje swoją reprezentację numeryczną, co pozwala na późniejsze wyszukiwanie semantyczne.</p>
+
+        <p>Poniższy kod pokazuje funkcję <code>index_data</code>, która iteruje przez linie tekstu, generuje dla nich embeddingi i wysyła do Qdranta za pomocą funkcji <code>add_points</code>.</p>
+
+        <pre><code class="language-python">
+import hashlib
+import requests
+
+def add_points(url, json_data):
+    """Wysyła punkty (wektory) do kolekcji w Qdrant."""
+    response = requests.put(url=f"{url}/points", json=json_data)
+    if response.status_code == 200:
+        print("Punkty zostały dodane pomyślnie.")
+    else:
+        print(f"Błąd dodawania punktów: {response.text}")
+    return response.text
+
+def index_data(lines, url, client):
+    """Indeksuje listę linii tekstu w bazie wektorowej."""
+    for line in lines:
+        # Tworzymy unikalne ID dla każdego punktu na podstawie treści
+        point_id = hashlib.md5(line.encode()).hexdigest()
+        
+        # Generujemy wektor embeddingu (funkcja pomocnicza generate_embedding)
+        vector = generate_embedding(client, line)
+        
+        json_data = {
+            "points": [
+                {
+                    'id': point_id,
+                    "payload": {'text': line},
+                    "vector": vector
+                }
+            ]
+        }
+        add_points(url=url, json_data=json_data)
+        </code></pre>
+
+        <h2>2. Wyszukiwanie kontekstowe w bazie wektorowej</h2>
+        <p>Gdy mamy już zaindeksowaną wiedzę, możemy ją przeszukiwać. Nie szukamy jednak po słowach kluczowych, ale po <em>znaczeniu</em> zapytania (podobieństwo wektorowe).</p>
+
+        <p>Funkcja <code>search_collection_with_context</code> zamienia pytanie użytkownika na wektor, a następnie pyta bazę Qdrant o najbardziej pasujące fragmenty tekstu. Wyniki są łączone w jeden ciąg tekstowy, który posłuży jako kontekst dla AI.</p>
+
+        <pre><code class="language-python">
+def search_collection_with_context(url, query, client):
+    """Wyszukuje najbardziej pasujące fragmenty tekstu dla danego zapytania."""
+    # Zamieniamy pytanie użytkownika na wektor
+    query_vector = generate_embedding(client, query)
+    
+    search_payload = {
+        "vector": query_vector,
+        "limit": 3,  # Pobieramy 3 najlepsze wyniki, aby zbudować szerszy kontekst
+        "with_payload": True
+    }
+    
+    response = requests.post(url=f'{url}/points/search', json=search_payload)
+    
+    if response.status_code == 200:
+        results = response.json()
+        # Łączymy znalezione fragmenty w jeden tekst kontekstu
+        context = "\n".join([result['payload']['text'] for result in results['result']])
+        return context
+    else:
+        print(f"Błąd wyszukiwania: {response.text}")
+        return None
+        </code></pre>
+
+        <h2>3. Generowanie odpowiedzi z wykorzystaniem kontekstu (RAG)</h2>
+        <p>Ostatnim etapem jest połączenie znalezionego kontekstu z zapytaniem użytkownika i przesłanie tego do modelu językowego (np. GPT-3.5 lub GPT-4).</p>
+
+        <p>W funkcji <code>generate_answer_with_context</code> tworzymy prompt systemowy, który instruuje model, aby opierał się na dostarczonym kontekście. Dzięki temu odpowiedź jest precyzyjna i dotyczy naszych danych.</p>
+
+        <pre><code class="language-python">
+def generate_answer_with_context(client, query, context):
+    """Generuje odpowiedź modelu AI w oparciu o znaleziony kontekst."""
+    messages = [
+        {
+            "role": "system", 
+            "content": "Jesteś pomocnym asystentem. Odpowiedz na pytanie użytkownika na podstawie dostarczonego kontekstu."
+        },
+        {
+            "role": "user", 
+            "content": f"Kontekst:\n{context}\n\nPytanie: {query}"
+        }
+    ]
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages
+    )
+    
+    return response.choices[0].message.content
+        </code></pre>
+
+        <h2>Podsumowanie</h2>
+        <p>Powyższy kod stanowi fundament prostego systemu RAG. Cały proces zamyka się w pętli:</p>
+        <ol>
+            <li><strong>Indeksowanie</strong>: Tekst -> Embedding -> Baza Wektorowa.</li>
+            <li><strong>Retrieval (Wyszukiwanie)</strong>: Pytanie -> Embedding -> Wyszukanie w bazie -> Kontekst.</li>
+            <li><strong>Generation (Generowanie)</strong>: Kontekst + Pytanie -> LLM -> Odpowiedź.</li>
+        </ol>
+
+        <p>Mając te funkcje, możemy zbudować chatbota, który "czyta" nasze dokumenty i potrafi o nich rozmawiać.</p>
+
+        <h2>Kod źródłowy</h2>
+        <p>Cały przedstawiony kod jest dostępny w moim repozytorium na GitHubie: <a href="https://github.com/tomaszjader/RAG" target="_blank">tomaszjader/RAG</a>. Zachęcam do pobrania, testowania i rozwijania projektu!</p>
+      `
+    },
+    {
       slug: 'rag-gpt4o-qdrant-assistant',
       title: '🚀 Od bazy wektorowej do inteligentnego asystenta – wdrożyłem RAG z wykorzystaniem GPT-4o!',
       date: 'February 01, 2026',
