@@ -18,6 +18,32 @@ export interface BlogPost {
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'jak-zbudowac-wlasny-system-rag',
+      title: 'Jak zbudować własny system RAG? 🛠️',
+      date: 'February 09, 2026',
+      excerpt: 'Niedawno pokazywałem Wam, że mój blog zyskał nową funkcję – system RAG, który pozwala AI odpowiadać na pytania w oparciu o moje artykuły. Dziś czas zajrzeć pod maskę tej technologii.',
+      tags: ['Python', 'RAG', 'ArtificialIntelligence', 'Qdrant', 'OpenAI', 'LLM', 'Programowanie', 'VectorDatabase', 'Wiedza'],
+      image: 'assets/img/rag-source-of-truth.jpg',
+      content: `
+        <p>Niedawno pokazywałem Wam, że mój blog zyskał nową funkcję – system RAG, który pozwala AI odpowiadać na pytania w oparciu o moje artykuły. Dziś czas zajrzeć pod maskę tej technologii.</p>
+        
+        <img src="assets/img/rag-source-of-truth.jpg" alt="Meme: Spójrz na mnie. To ja jestem teraz źródłem prawdy dla LLM (dzięki RAG)" class="img-fluid my-4 rounded">
+
+        <p>Zamiast ogólników, przygotowałem konkretny poradnik o tym, jak połączyć potęgę LLM z własną bazą wiedzy przy użyciu Pythona i bazy wektorowej Qdrant.</p>
+        
+        <p>W tym artykule na blogu pokazuję 3 kluczowe kroki:</p>
+        <ul>
+          <li><strong>Indeksowanie danych:</strong> Jak przetworzyć tekst na wektory i zapisać je w bazie Qdrant.</li>
+          <li><strong>Wyszukiwanie semantyczne:</strong> Jak znaleźć w bazie fragmenty tekstu pasujące do znaczenia pytania użytkownika.</li>
+          <li><strong>Generowanie odpowiedzi:</strong> Jak wykorzystać znaleziony kontekst, by model AI (np. GPT-4) odpowiadał precyzyjnie i bez halucynacji.</li>
+        </ul>
+        
+        <p>To fundamenty, które pozwolą Ci stworzyć asystenta AI „czytającego” Twoje dokumenty.</p>
+        
+        <p>Dajcie znać, czy takie techniczne „deep dive’y” są dla Was przydatne! 👇</p>
+      `
+    },
+    {
       slug: 'budowanie-wlasnego-systemu-rag-python',
       title: 'Budowanie własnego systemu RAG (Retrieval-Augmented Generation) w Pythonie',
       date: 'February 08, 2026',
