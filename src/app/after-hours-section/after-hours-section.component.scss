@@ -1,3 +1,5 @@
+@import 'variables';
+
 .after-hours {
   display: flex;
   align-items: center;
@@ -70,7 +72,9 @@
   }
 }
 
-@media only screen and (max-width: 1320px) {
+
+
+@media only screen and (max-width: $breakpoint-xl) {
   .after-hours {
     &__content {
       flex-direction: column;
@@ -83,13 +87,13 @@
   }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: $breakpoint-md) {
   .image-grid {
     flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 374px) {
+@media only screen and (max-width: $breakpoint-xs) {
   .image-grid {
     &__item {
       width: 272px;

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .blog-post-page {
   min-height: 100vh;
   background-color: var(--bg-primary);
@@ -139,7 +141,9 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+
+
+@media only screen and (max-width: $breakpoint-md) {
   .post-title {
     font-size: 32px;
   }

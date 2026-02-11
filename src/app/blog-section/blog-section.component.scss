@@ -1,9 +1,11 @@
+@import 'variables';
+
 .blog {
   padding: 100px 0;
   background-color: #111827;
   color: #f3f4f6;
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-md) {
     padding: 60px 0;
   }
 
@@ -37,7 +39,7 @@
     margin: 0 auto;
     padding: 0 24px;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     }
   }

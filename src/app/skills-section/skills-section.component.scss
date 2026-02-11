@@ -1,3 +1,5 @@
+@import 'variables';
+
 .skills__boxs {
   display: flex;
   justify-content: center;
@@ -28,7 +30,9 @@
   margin: 120px 0;
 }
 
-@media only screen and (max-width: 1320px) {
+
+
+@media only screen and (max-width: $breakpoint-xl) {
   .skills__content-paragraf {
     width: auto !important;
   }
@@ -38,7 +42,7 @@
   }
 }
 
-@media only screen and (max-width: 1046px) {
+@media only screen and (max-width: $breakpoint-lg) {
   .skills__boxs {
     flex-direction: column;
   }

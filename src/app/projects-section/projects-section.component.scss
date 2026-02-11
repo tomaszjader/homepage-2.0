@@ -1,3 +1,5 @@
+@import 'variables';
+
 .projects__header {
   font-size: 20px;
   color: var(--text-secondary);
@@ -40,7 +42,9 @@
   gap: 16px;
 }
 
-@media only screen and (max-width: 1320px) {
+
+
+@media only screen and (max-width: $breakpoint-xl) {
 
   .projects__description-header {
     width: auto !important;
@@ -51,13 +55,13 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: $breakpoint-md) {
   .projects__githubCards-concret {
     flex-direction: column;
   }
 }
 
-@media only screen and (max-width: 374px) {
+@media only screen and (max-width: $breakpoint-xs) {
   .projects__description-header {
     width: 272px;
     font-size: 30px;

@@ -1,3 +1,5 @@
+@import 'variables';
+
 #about {
   display: flex;
   justify-content: center;
@@ -81,7 +83,9 @@
   }
 }
 
-@media only screen and (max-width: 1320px) {
+
+
+@media only screen and (max-width: $breakpoint-xl) {
   .about {
     flex-direction: column-reverse;
     gap: 32px;
@@ -113,7 +117,7 @@
   }
 }
 
-@media only screen and (max-width: 374px) {
+@media only screen and (max-width: $breakpoint-xs) {
   .about {
     &__img {
       width: 280px;

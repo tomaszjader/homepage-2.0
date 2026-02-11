@@ -1,3 +1,5 @@
+@import 'variables';
+
 .footer {
   display: flex;
   align-items: center;
@@ -143,7 +145,7 @@
     align-items: center;
   }
 
-  @media only screen and (max-width: 1320px) {
+  @media only screen and (max-width: $breakpoint-xl) {
     margin: 120px 24px;
 
     &__header {
@@ -155,7 +157,7 @@
     }
   }
 
-  @media only screen and (max-width: 374px) {
+  @media only screen and (max-width: $breakpoint-xs) {
     &__contact-button {
       width: 272px;
       font-size: 17px;
