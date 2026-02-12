@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BlogPost } from '../interfaces/blog-post.interface';
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  tags?: string[];
-  image?: string;
-}
+
 
 @Injectable({
   providedIn: 'root'

@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ContactFormData } from '../interfaces/contact-form-data.interface';
 
-export interface ContactFormData {
-    email: string;
-    imie: string;
-    tresc: string;
-}
+
 
 @Injectable({
     providedIn: 'root'

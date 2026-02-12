@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { GithubapiService } from '../services/githubapi.service';
-import { Project } from '../interface/project';
+import { Project } from '../interfaces/project.interface';
 import { GithubCardComponent } from '../github-card/github-card.component';
 
 @Component({

@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ChatResponse } from '../interfaces/chat-response.interface';
 
-export interface ChatResponse {
-    answer: string;
-    // Add other properties if the API returns them, e.g., sources
-}
+
 
 @Injectable({
     providedIn: 'root'

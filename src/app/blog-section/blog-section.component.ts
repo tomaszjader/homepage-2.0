@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
-import { BlogService, BlogPost } from '../services/blog.service';
+import { BlogService } from '../services/blog.service';
+import { BlogPost } from '../interfaces/blog-post.interface';
 
 @Component({
   selector: 'app-blog-section',

@@ -1,0 +1,63 @@
+export interface Project {
+    name: string
+    description: string
+    topics: string[]
+    html_url: string
+    homepage: string
+    stargazers_count: number
+    id?: number
+    node_id?: string
+    full_name?: string
+    private?: boolean
+    owner?: any
+    fork?: boolean
+    url?: string
+    created_at?: string
+    updated_at?: string
+    pushed_at?: string
+    git_url?: string
+    ssh_url?: string
+    clone_url?: string
+    svn_url?: string
+    size?: number
+    watchers_count?: number
+    language?: string
+    has_issues?: boolean
+    has_projects?: boolean
+    has_downloads?: boolean
+    has_wiki?: boolean
+    has_pages?: boolean
+    has_discussions?: boolean
+    forks_count?: number
+    archived?: boolean
+    disabled?: boolean
+    open_issues_count?: number
+    allow_forking?: boolean
+    is_template?: boolean
+    web_commit_signoff_required?: boolean
+    visibility?: string
+    forks?: number
+    open_issues?: number
+    watchers?: number
+    default_branch?: string
+}
+
+export interface Owner {
+    login: string
+    id: number
+    node_id: string
+    avatar_url: string
+    gravatar_id: string
+    url: string
+    html_url: string
+    followers_url: string
+    following_url: string
+    gists_url: string
+    starred_url: string
+    subscriptions_url: string
+    organizations_url: string
+    repos_url: string
+    events_url: string
+    received_events_url: string
+    type: string
+}

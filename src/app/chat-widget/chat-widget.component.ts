@@ -1,7 +1,8 @@
 import { Component, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ChatService, ChatResponse } from '../services/chat.service';
+import { ChatService } from '../services/chat.service';
+import { ChatResponse } from '../interfaces/chat-response.interface';
 import { firstValueFrom } from 'rxjs';
 
 interface Message {
