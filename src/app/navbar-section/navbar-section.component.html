@@ -7,21 +7,22 @@
                 <p class="navbar__title">Fullstack developer</p>
             </div>
         </div>
-        <button class="navbar__hamburger" (click)="toggleMenu()" [class.navbar__hamburger--active]="isMenuOpen" aria-label="Toggle menu">
+        <button class="navbar__hamburger" (click)="toggleMenu()" [class.navbar__hamburger--active]="isMenuOpen"
+            aria-label="Toggle menu">
             <span class="navbar__hamburger-line"></span>
             <span class="navbar__hamburger-line"></span>
             <span class="navbar__hamburger-line"></span>
         </button>
         <div class="navbar__menu" [class.navbar__menu--active]="isMenuOpen">
-            <a routerLink="/" fragment="about" class="navbar__link" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a>
-            <a routerLink="/" fragment="skills" class="navbar__link" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate }}</a>
-            <a routerLink="/" fragment="projects" class="navbar__link" (click)="closeMenu()">{{ 'NAV.PROJECTS' | translate }}</a>
+            <a routerLink="/" fragment="about" class="navbar__link" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate
+                }}</a>
+            <a routerLink="/" fragment="skills" class="navbar__link" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate
+                }}</a>
+            <a routerLink="/" fragment="projects" class="navbar__link" (click)="closeMenu()">{{ 'NAV.PROJECTS' |
+                translate }}</a>
             <a routerLink="/blog" class="navbar__link" (click)="closeMenu()">{{ 'NAV.BLOG' | translate }}</a>
-            <!-- <div class="navbar__resume">
-                <img class="navbar__resume-icon" src="assets/img/download-button.svg" alt="" height="20" width="20">
-                <a href="assets/files/Tomasz_Jąder_CV.pdf" download="TomaszJąderCV.pdf" class="navbar__link" (click)="closeMenu()">Resume</a>
-            </div> -->
-            <a routerLink="/" fragment="contact" class="navbar__link navbar__link--contact" (click)="closeMenu()">{{ 'NAV.CONTACT' | translate }}</a>
+            <a routerLink="/" fragment="contact" class="navbar__link navbar__link--contact" (click)="closeMenu()">{{
+                'NAV.CONTACT' | translate }}</a>
             <div class="navbar__lang-switch">
                 <span (click)="switchLang('pl')" [class.active]="currentLang === 'pl'" class="lang-btn">PL</span>
                 <span class="separator">|</span>
