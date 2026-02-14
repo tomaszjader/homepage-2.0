@@ -16,11 +16,11 @@ export class BlogService {
       date: 'February 09, 2026',
       excerpt: 'Niedawno pokazywałem Wam, że mój blog zyskał nową funkcję – system RAG, który pozwala AI odpowiadać na pytania w oparciu o moje artykuły. Dziś czas zajrzeć pod maskę tej technologii.',
       tags: ['Python', 'RAG', 'ArtificialIntelligence', 'Qdrant', 'OpenAI', 'LLM', 'Programowanie', 'VectorDatabase', 'Wiedza'],
-      image: 'assets/img/rag-source-of-truth.jpg',
+      image: 'assets/img/jpg/rag-source-of-truth.jpg',
       content: `
         <p>Niedawno pokazywałem Wam, że mój blog zyskał nową funkcję – system RAG, który pozwala AI odpowiadać na pytania w oparciu o moje artykuły. Dziś czas zajrzeć pod maskę tej technologii.</p>
         
-        <img src="assets/img/rag-source-of-truth.jpg" alt="Meme: Spójrz na mnie. To ja jestem teraz źródłem prawdy dla LLM (dzięki RAG)" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/rag-source-of-truth.jpg" alt="Meme: Spójrz na mnie. To ja jestem teraz źródłem prawdy dla LLM (dzięki RAG)" class="img-fluid my-4 rounded">
 
         <p>Zamiast ogólników, przygotowałem konkretny poradnik o tym, jak połączyć potęgę LLM z własną bazą wiedzy przy użyciu Pythona i bazy wektorowej Qdrant.</p>
         
@@ -42,7 +42,7 @@ export class BlogService {
       date: 'February 08, 2026',
       excerpt: 'Systemy RAG (Retrieval-Augmented Generation) łączą w sobie potęgę dużych modeli językowych (LLM) z własną bazą wiedzy. Dzięki temu możemy tworzyć asystentów AI, którzy odpowiadają na pytania w oparciu o specyficzne dane.',
       tags: ['RAG', 'Python', 'OpenAI', 'Qdrant', 'VectorDatabase', 'LLM', 'AI', 'Tutorial'],
-      image: 'assets/img/rag-python-system.png',
+      image: 'assets/img/png/rag-python-system.png',
       content: `
         <p>Systemy RAG (Retrieval-Augmented Generation) łączą w sobie potęgę dużych modeli językowych (LLM) z własną bazą wiedzy. Dzięki temu możemy tworzyć asystentów AI, którzy odpowiadają na pytania w oparciu o specyficzne dane, których model nie widział podczas treningu.</p>
 
@@ -180,7 +180,7 @@ def generate_answer_with_context(client, query, context):
       date: 'February 01, 2026',
       excerpt: 'Ostatnio zastanawiałem się, jak nadać mojej bazie wektorowej drugie życie. Postanowiłem przejść od słów do czynów i rozbudować ją o możliwość interakcji z treściami. Efekt? Asystent AI w architekturze RAG.',
       tags: ['AI', 'RAG', 'GPT4o', 'OpenAI', 'LangChain', 'Qdrant', 'VectorDatabase', 'Python', 'FastAPI', 'Innovation', 'MachineLearning'],
-      image: 'assets/img/rag-gpt4o.png',
+      image: 'assets/img/png/rag-gpt4o.png',
       content: `
         <p>🚀 Od bazy wektorowej do inteligentnego asystenta – wdrożyłem RAG z wykorzystaniem GPT-4o!</p>
         
@@ -195,7 +195,7 @@ def generate_answer_with_context(client, query, context):
             <li>Pełna kontrola nad kontekstem: asystent bazuje wyłącznie na moich treściach – nie zmyśla, nie wychodzi poza ramy bloga.</li>
         </ul>
 
-        <img src="assets/img/rag-gpt4o.png" alt="Meme: Baza wektorowa zwykła vs Baza wektorowa z LangChain i GPT-4o" class="img-fluid my-4 rounded">
+        <img src="assets/img/png/rag-gpt4o.png" alt="Meme: Baza wektorowa zwykła vs Baza wektorowa z LangChain i GPT-4o" class="img-fluid my-4 rounded">
         
         <h4>Mój tech-stack dla tego projektu:</h4>
         <ul>
@@ -216,7 +216,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 25, 2026',
       excerpt: 'Ostatnio szukałem alternatywy dla gotowych rozwiązań typu EmailJS. Zazwyczaj wymagają one albo płatnej subskrypcji, albo stawiania dedykowanego serwera pocztowego. Pomyślałem: a co gdyby wykorzystać do tego n8n? 🤔',
       tags: ['n8n', 'automation', 'webdevelopment', 'frontend', 'nocode', 'javascript', 'selfhosted', 'productivity'],
-      image: 'assets/img/n8n-form-meme.png',
+      image: 'assets/img/png/n8n-form-meme.png',
       content: `
         <p>Czy jako Frontendowiec męczy Cię konfigurowanie backendu tylko po to, by obsłużyć prosty formularz kontaktowy? 📩</p>
         
@@ -232,7 +232,7 @@ def generate_answer_with_context(client, query, context):
             <li>3️⃣ Noda Gmail wysyła automatyczne podziękowanie do klienta oraz powiadomienie do mnie.</li>
         </ol>
         
-        <img src="assets/img/n8n-form-meme.png" alt="Meme: Konfigurowanie serwera pocztowego vs n8n do formularzy kontaktowych" class="img-fluid my-4 rounded">
+        <img src="assets/img/png/n8n-form-meme.png" alt="Meme: Konfigurowanie serwera pocztowego vs n8n do formularzy kontaktowych" class="img-fluid my-4 rounded">
 
         <h4>Dlaczego warto?</h4>
         <ul>
@@ -252,7 +252,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 18, 2026',
       excerpt: 'Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀 Zamiast tradycyjnego szukania po słowach kluczowych, mój blog rozumie teraz intencje użytkownika.',
       tags: ['Python', 'VectorDatabase', 'Qdrant', 'FastAPI', 'SemanticSearch', 'AI', 'Programowanie', 'MachineLearning', 'WebDevelopment'],
-      image: 'assets/img/semantic-search-meme.png',
+      image: 'assets/img/png/semantic-search-meme.png',
       content: `
         <p>Zainspirowałem się wyszukiwarką w "unknowNews" i postanowiłem stworzyć własne wyszukiwanie semantyczne. Łatwo nie było, ale efekt końcowy daje mnóstwo satysfakcji! 🚀</p>
         
@@ -265,7 +265,7 @@ def generate_answer_with_context(client, query, context):
           <li><strong>ngrok</strong> – aby bezpiecznie wystawić usługę na zewnątrz.</li>
         </ul>
         
-        <img src="assets/img/semantic-search-meme.png" alt="Meme: Wyszukiwanie tradycyjne vs semantyczne vs własna baza wektorowa" class="img-fluid my-4 rounded">
+        <img src="assets/img/png/semantic-search-meme.png" alt="Meme: Wyszukiwanie tradycyjne vs semantyczne vs własna baza wektorowa" class="img-fluid my-4 rounded">
 
         <p>To była cenna lekcja pokory. Technologia potrafi dać w kość, zwłaszcza przy konfiguracji sieciowej i "wystawianiu na świat", ale warto było przez to przejść dla końcowego efektu.</p>
         
@@ -280,7 +280,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Udział w Kursie Umiejętności Jutra 2.0, zorganizowanym przez Google i SGH Warsaw School of Economics, oraz zdobycie certyfikatu potwierdzającego moje nowe kompetencje, zaowocowały pomysłem stworzenia własnego agenta AI.',
       tags: ['GoogleADK', 'Automatyzacja', 'Python', 'SztucznaInteligencja', 'ContentMarketing', 'Innowacje', 'TelegramBot', 'UmiejętnościJutra', 'AI'],
-      image: 'assets/img/agent-tomek-google-adk.jpg',
+      image: 'assets/img/jpg/agent-tomek-google-adk.jpg',
       content: `
         <p>Jak stworzyłem „Agenta Tomka" – asystenta AI do automatyzacji Instagrama i notatek, bazując na Google ADK.</p>
         
@@ -292,7 +292,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Kluczowe rozwiązanie polega na wykorzystaniu Telegrama. Dzięki normalnej konwersacji jestem w stanie wydawać mu polecenia. Na przykład, przed publikacją posta na Instagramie, Agent Tomek pomaga mi stworzyć optymalne tagi i angażujący tytuł. Wszystko odbywa się w formie naturalnego dialogu, co uważam za dużo przyjemniejsze i szybsze niż korzystanie z natywnego interfejsu Instagrama.</p>
         
-        <img src="assets/img/agent-tomek-google-adk.jpg" alt="Meme: Programista vs Agent Tomek - negocjacje" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/agent-tomek-google-adk.jpg" alt="Meme: Programista vs Agent Tomek - negocjacje" class="img-fluid my-4 rounded">
 
         <p>Najzabawniejszym aspektem projektu było testowanie. Początkowo Agent Tomek bywał bardzo uparty – nie chciał słuchać moich poleceń! Wiele razy musiałem go prosić, by wykonał proste zadanie, np. usunął niepotrzebną frazę z tytułu czy opublikował post. Zdarzało się, że musiałem ponawiać komendę nawet pięć razy! Choć problem został finalnie rozwiązany, te pierwsze, komiczne „negocjacje" z asystentem wspominam z największym sentymentem.</p>
         
@@ -307,7 +307,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Brzmi absurdalnie, prawda? A jednak taki pomysł pojawił się u mnie – nie dlatego, że planuję zamienić balkon w kurnik, ale dlatego, że testowałem Claude AI od Anthropic do generowania stron internetowych.',
       tags: ['AI', 'Claude', 'Anthropic', 'WebDev', 'Eksperyment', 'Kreatywność', 'Absurd'],
-      image: 'assets/img/hodowla-kur-balkon.jpg',
+      image: 'assets/img/jpg/hodowla-kur-balkon.jpg',
       content: `
         <p>Czy zastanawiałeś się kiedyś nad hodowlą kur… na balkonie? 🐔🌿</p>
         
@@ -322,7 +322,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Nie zatrzymali się na absurdzie, tylko weszli głębiej w logikę pomysłu – a nawet zaczęli liczyć wyniki w kalkulatorze.</p>
         
-        <img src="assets/img/hodowla-kur-balkon.jpg" alt="Obrazek: Kury na balkonie" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/hodowla-kur-balkon.jpg" alt="Obrazek: Kury na balkonie" class="img-fluid my-4 rounded">
 
         <p>I to mnie rozbawiło, ale i zainspirowało.</p>
         
@@ -341,7 +341,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Udało mi się stworzyć aplikację do śledzenia nawyków, idealnie dopasowaną do moich potrzeb. 🚀 Cały proces był fascynującym doświadczeniem – pełnym wyzwań, nauki i nieoczekiwanych problemów.',
       tags: ['WebDevelopment', 'Coding', 'Projekt', 'Aplikacja', 'Programowanie', 'AI', 'VibeCoding'],
-      image: 'assets/img/vibe-coding-success.jpg',
+      image: 'assets/img/jpg/vibe-coding-success.jpg',
       content: `
         <p>✨ Moje pierwsze kroki w vibe codingu zakończyły się sukcesem! ✨</p>
         
@@ -355,7 +355,7 @@ def generate_answer_with_context(client, query, context):
             <li>🎨 zniknięciem funkcjonalności po zmianie wyglądu na styl iOS.</li>
         </ul>
         
-        <img src="assets/img/vibe-coding-success.jpg" alt="Meme: How it started vs How it's going with AI" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/vibe-coding-success.jpg" alt="Meme: How it started vs How it's going with AI" class="img-fluid my-4 rounded">
 
         <p>Zamiast się poddać, potraktowałem to jako okazję do nauki i doskonalenia umiejętności. 💡</p>
         
@@ -368,7 +368,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Nie wiem, czy też tak macie, ale poprawianie literówek potrafi doprowadzić mnie do szału. Zwłaszcza gdy wiem, co chcę napisać… a ekran uparcie pokazuje coś innego. 😅 Z mojej frustracji z dysleksją narodził się pomysł.',
       tags: ['AndroidDev', 'MobileDevelopment', 'Dysleksja', 'EdTech', 'Accessibility', 'PersonalProject', 'WłasnyProjekt'],
-      image: 'assets/img/android-dyslexia-app.jpg',
+      image: 'assets/img/jpg/android-dyslexia-app.jpg',
       content: `
         <p>💥 Moja Walka z Literówkami: Jak Dysleksja Popchnęła Mnie do Stworzenia Aplikacji na Androida</p>
         
@@ -378,7 +378,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Brzmi prosto? Tylko brzmi. 😅</p>
         
-        <img src="assets/img/android-dyslexia-app.jpg" alt="Meme: Expectation vs Reality - Ja po skompilowaniu aplikacji po raz pierwszy vs Aplikacja: [crash sound]" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/android-dyslexia-app.jpg" alt="Meme: Expectation vs Reality - Ja po skompilowaniu aplikacji po raz pierwszy vs Aplikacja: [crash sound]" class="img-fluid my-4 rounded">
 
         <h4>🔧 Droga od pomysłu do prototypu</h4>
         <p>Drugie podejście. Tym razem — Android.</p>
@@ -414,7 +414,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Słyszałem wiele pozytywnych opinii o narzędziach low-code, które rzekomo pozwalają bardzo szybko stworzyć ciekawe projekty. Ale, powiedzmy to szczerze: jako programista, podchodziłem do tematu jak pies do jeża.',
       tags: ['Automatyzacja', 'N8N', 'LowCode', 'Programowanie', 'DeveloperLife', 'IntegracjeAPI', 'Digitalizacja'],
-      image: 'assets/img/n8n-programista-opinion.jpg',
+      image: 'assets/img/jpg/n8n-programista-opinion.jpg',
       content: `
         <p>Od „Psa do Jeża” do Agenta Automatyzacji – Moja Prawda o N8N jako Programisty 🐾🦔</p>
         
@@ -422,7 +422,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Ale, powiedzmy to szczerze: jako programista, podchodziłem do tematu jak pies do jeża. Przerzucenie się na narzędzia wizualne, takie jak N8N, wydawało mi się stratą czasu w porównaniu do pisania czystego kodu.</p>
         
-        <img src="assets/img/n8n-programista-opinion.jpg" alt="Meme: One does not simply connect n8n to telegram without https on local machine" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/n8n-programista-opinion.jpg" alt="Meme: One does not simply connect n8n to telegram without https on local machine" class="img-fluid my-4 rounded">
 
         <h4>Pierwsze podejście? Porażka.</h4>
         <p>Próba uruchomienia N8N na lokalnej maszynie napotkała na problem z integracją Telegrama. Wymagało to HTTPS-a, co wymuszało instalację dodatkowych narzędzi. Zniechęciłem się i poddałem za pierwszym razem.</p>
@@ -455,7 +455,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'n8n to potężne narzędzie! Ostatnio szukałem pomysłu na kolejny mały projekt automatyzacyjny i postanowiłem rozwiązać swój wieczny problem: zapominanie o sprawdzeniu pogody.',
       tags: ['n8n', 'Automatyzacja', 'WeatherAPI', 'Telegram', 'SideProject', 'LowCode'],
-      image: 'assets/img/weather-assistant-n8n.jpg',
+      image: 'assets/img/jpg/weather-assistant-n8n.jpg',
       content: `
         <p>Jak w 5 minut stworzyć własnego Asystenta Pogodowego? 🌤️</p>
         
@@ -463,7 +463,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Udało mi się stworzyć prostą, ale efektywną automatyzację, która codziennie o 8:00 rano wysyła mi prognozę prosto na Telegram.</p>
         
-        <img src="assets/img/weather-assistant-n8n.jpg" alt="Meme: Jak wstajesz rano i widzisz powiadomienie z Telegrama, ale Ty sam sobie wysłałeś to powiadomienie" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/weather-assistant-n8n.jpg" alt="Meme: Jak wstajesz rano i widzisz powiadomienie z Telegrama, ale Ty sam sobie wysłałeś to powiadomienie" class="img-fluid my-4 rounded">
 
         <p>Wiem, że większość aplikacji to robi, ale satysfakcja z posiadania własnego, działającego rozwiązania, które nie wymaga skomplikowanej konfiguracji serwera, jest bezcenna!</p>
         
@@ -487,7 +487,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Od dawna marzyłem o tym, żeby mieć własną aplikację do śledzenia postępów na siłowni. Za pierwszym razem – brak czasu i motywacji. Za drugim podejściem, już z vibe codingiem wspieranym przez AI i odrobiną uporu… i jest! 🚀',
       tags: ['VibeCoding', 'AI', 'Angular', 'GoogleSheets', 'GymTracker', 'SideProject', 'WebDev'],
-      image: 'assets/img/gymtracker-vibe-coding.jpg',
+      image: 'assets/img/jpg/gymtracker-vibe-coding.jpg',
       content: `
         <p>👨💻💪 Drugie podejście do vibe codingu, ale wreszcie się udało!</p>
         
@@ -495,7 +495,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>👉 Tak powstał <strong>GymTracker</strong> – webowa aplikacja napisana w Angularze 20, z integracją z Google Sheets, która pozwala śledzić treningi, statystyki i postępy na wykresach.</p>
         
-        <img src="assets/img/gymtracker-vibe-coding.jpg" alt="Meme: AI Fixing the bug vs Programista z debuggerem" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/gymtracker-vibe-coding.jpg" alt="Meme: AI Fixing the bug vs Programista z debuggerem" class="img-fluid my-4 rounded">
 
         <p>Najfajniejsza część? Podczas pracy zdarzały się typowo programistyczne „przygody”. Wrzucam log błędu do AI, odpowiedź: „wszystko naprawione”. Odpalam ponownie… i dokładnie ten sam błąd 🙃 To był moment, w którym zrozumiałem, że AI to świetny partner, ale nie zrobi wszystkiego za nas.</p>
         
@@ -517,7 +517,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Podejście do Vibe Codingu, numer 3. Od dawna zastanawiałem się nad rosnącym problemem: cenzurą algorytmiczną na platformach takich jak YouTube. Inspiracją do działania był jeden z odcinków podcastu „Na Wschód od Bliskiego Wschodu”.',
       tags: ['AI', 'OpenAI', 'ContentCreators', 'YouTubeCreators', 'Algorytmy', 'MachineLearning', 'VibeCoding', 'Coding'],
-      image: 'assets/img/autocenzura-vibe-coding.jpg',
+      image: 'assets/img/jpg/autocenzura-vibe-coding.jpg',
       content: `
         <p>Autocenzura pod kontrolą: Czy Narzędzie Cenzurujące Słowa „Niewygodne” Ocali Twórców? 🤔</p>
         <p>Podejście do Vibe Codingu, numer 3.</p>
@@ -527,7 +527,7 @@ def generate_answer_with_context(client, query, context):
         <p>Jaka była idea?</p>
         <p>Chciałem, aby narzędzie identyfikowało słowa "niewygodne" (takie jak np. „kurde”, które mogłoby zostać błędnie zinterpretowane) i automatycznie zastępowało je dźwiękiem cenzury. W ten sposób treść pozostaje nienaruszona merytorycznie, a twórca nie traci cennych wyświetleń i przychodów.</p>
         
-        <img src="assets/img/autocenzura-vibe-coding.jpg" alt="Meme: Algorytm YouTube nie może ocenzurować słowa, jeśli nigdy go nie usłyszy" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/autocenzura-vibe-coding.jpg" alt="Meme: Algorytm YouTube nie może ocenzurować słowa, jeśli nigdy go nie usłyszy" class="img-fluid my-4 rounded">
 
         <p>Po kilkunastu iteracjach udało mi się osiągnąć zadowalające rezultaty.</p>
         
@@ -551,7 +551,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Na początku próbowałem podejść do tematu przez oficjalną aplikację na platformie Meta. Niestety, szybko się poddałem – proces konfiguracji okazał się bardziej skomplikowany, niż zakładałem. Drugie podejście zrobiłem w Pythonie – i tym razem się udało 🎉',
       tags: ['Python', 'Automation', 'SideProject', 'Instagram', 'GoogleSheets', 'Telegram', 'Coding', 'DevLife'],
-      image: 'assets/img/python-instagram-automation.jpg',
+      image: 'assets/img/jpg/python-instagram-automation.jpg',
       content: `
         <p>Miałem ostatnio pomysł na mały projekt po godzinach – prostą automatyzację publikowania postów. 🚀</p>
         
@@ -561,7 +561,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Bez tworzenia aplikacji w Meta, tylko przez symulację logowania w przeglądarce.</p>
         
-        <img src="assets/img/python-instagram-automation.jpg" alt="Meme: To chociaż prosta automatyzacja - This is fine dog with fire" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/python-instagram-automation.jpg" alt="Meme: To chociaż prosta automatyzacja - This is fine dog with fire" class="img-fluid my-4 rounded">
 
         <p>Efekt?</p>
         <ul>
@@ -578,7 +578,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Wszyscy chcemy wprowadzać pozytywne zmiany, ale często zderzamy się z jednym problemem: zapominaniem. Moja własna walka z wdrożeniem nawyku wdzięczności była tego najlepszym przykładem.',
       tags: ['Automatyzacja', 'Produktywność', 'Nawyki', 'n8n', 'TechForGood'],
-      image: 'assets/img/habits-automation.jpg',
+      image: 'assets/img/jpg/habits-automation.jpg',
       content: `
         <p>Zapominasz o dobrych nawykach? Kluczem jest automatyzacja! 🚀</p>
         
@@ -586,7 +586,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Moja własna walka z wdrożeniem nawyku wdzięczności była tego najlepszym przykładem. Nie chodziło o to, że nie miałem pomysłu na zmianę. Problem polegał na braku jasno zdefiniowanej, wymuszonej pory jej wykonania.</p>
         
-        <img src="assets/img/habits-automation.jpg" alt="Meme: Ja vs Moje Nawyki vs Pilne Zadania" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/habits-automation.jpg" alt="Meme: Ja vs Moje Nawyki vs Pilne Zadania" class="img-fluid my-4 rounded">
 
         <p>Zawsze odkładałem proste zapisywanie, za co jestem wdzięczny danego dnia. Skutek był ten sam: nawyk nie mógł się utrzymać.</p>
         
@@ -610,13 +610,13 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Zainspirowany wykładem Franciszka Bazylego Georgiew, postanowiłem pójść o krok dalej i stworzyć własne narzędzie. Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.',
       tags: ['Programowanie', 'OpenSource', 'SztucznaInteligencja', 'LLM', 'Rozwój', 'SideProject', 'TworzenieOprogramowania'],
-      image: 'assets/img/ai-journal.jpg',
+      image: 'assets/img/jpg/ai-journal.jpg',
       content: `
         <p>Zainspirowany wykładem Franciszek Bazyli Georgiew 高傅安 w ramach kursu Umiejętności Jutra, postanowiłem pójść o krok dalej i stworzyć własne narzędzie.</p>
         <p>Wierzę, że AI może realnie wspierać nas w codziennym rozwoju i refleksji nad sobą.</p>
         <p>Tak powstał projekt <strong>AI Journal</strong> – proste narzędzie do prowadzenia dziennika z pomocą sztucznej inteligencji, które w pełni realizuje tę ideę.</p>
         
-        <img src="assets/img/ai-journal.jpg" alt="AI Journal Meme: Ja prowadzący dziennik vs AI Journal" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/ai-journal.jpg" alt="AI Journal Meme: Ja prowadzący dziennik vs AI Journal" class="img-fluid my-4 rounded">
 
         <h4>🧠 Jak działa AI Journal?</h4>
         <p>AI Journal to intuicyjna aplikacja działająca jak chat. W tym interfejsie możesz codziennie zapisywać swoje przemyślenia, cele, trudności czy wątpliwości.</p>
@@ -644,7 +644,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Ostatnio stworzyłem prosty skrypt, który pozwala jednym skrótem klawiszowym (CTRL+Q) poprawiać literówki w zaznaczonym tekście – nie zmieniając przy tym słów. Idealny dla osób z dysleksją lub tych, którzy często robią literówki.',
       tags: ['Python', 'Scripting', 'Produktywność', 'Gemini', 'Google', 'OpenSource', 'Programowanie'],
-      image: 'assets/img/ctrl-q-typo-fix.jpg',
+      image: 'assets/img/jpg/ctrl-q-typo-fix.jpg',
       content: `
         <p>🚀 Mały skrypt, duża różnica!</p>
         
@@ -652,7 +652,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Działa w języku polskim i angielskim, a wszystko, czego potrzebujesz, to darmowy dostęp do Gemini od Google. Żadnych kosztów, a oszczędza mnóstwo czasu przy codziennym pisaniu.</p>
         
-        <img src="assets/img/ctrl-q-typo-fix.jpg" alt="Before vs After Typon Fix - CTRL+Q" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/ctrl-q-typo-fix.jpg" alt="Before vs After Typon Fix - CTRL+Q" class="img-fluid my-4 rounded">
 
         <p>📂 Kod udostępniłem na GitHubie, więc każdy może wypróbować: <a href="https://lnkd.in/d-vvM9nY" target="_blank">https://lnkd.in/d-vvM9nY</a></p>
         
@@ -665,7 +665,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 17, 2026',
       excerpt: 'Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha. Inspiracją był post Jakuba Mrugalskiego, opisujący niedoskonałości domyślnie wbudowanych systemów do tworzenia notatek głosowych.',
       tags: ['Programowanie', 'OpenAI', 'Whisper', 'AI', 'Produktywność', 'Narzędzia', 'Developer', 'VibeKodowania'],
-      image: 'assets/img/szeptucha-whisper.jpg',
+      image: 'assets/img/jpg/szeptucha-whisper.jpg',
       content: `
         <p>Z przyjemnością prezentuję projekt, który narodził się z frustracji i potrzeby. Nazwałem go Szeptucha.</p>
         
@@ -673,7 +673,7 @@ def generate_answer_with_context(client, query, context):
         
         <p>Postanowiłem stworzyć własne, skuteczne i ekonomiczne rozwiązanie: prosty program, który za pomocą skrótu klawiszowego automatycznie uruchamia transkrypcję mowy na tekst.</p>
         
-        <img src="assets/img/szeptucha-whisper.jpg" alt="Meme: Używanie wbudowanej funkcji Text To Speech w Windowsie vs Zbudowanie własnej 'Szeptuchy'" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/szeptucha-whisper.jpg" alt="Meme: Używanie wbudowanej funkcji Text To Speech w Windowsie vs Zbudowanie własnej 'Szeptuchy'" class="img-fluid my-4 rounded">
 
         <h4>W projekcie wykorzystałem płatną wersję modelu Whisper od OpenAI.</h4>
         
@@ -690,7 +690,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 16, 2026',
       excerpt: 'Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!',
       tags: ['n8n', 'Automatyzacja', 'Workflow', 'LowCode', 'Produktywność', 'OpenAI', 'Programowanie'],
-      image: 'assets/img/switomir-n8n.jpg',
+      image: 'assets/img/jpg/switomir-n8n.jpg',
       content: `
         <p>Zastanawiałem się, jak rozwinąć swój projekt w n8n, by stworzyć spersonalizowany i w pełni automatyczny poranny raport. Oto jak powstał "Świtomir" – mój Asystent Poranka!</p>
 
@@ -720,7 +720,7 @@ def generate_answer_with_context(client, query, context):
         <h4>🎯 Cel:</h4>
         <p>Jeden, spersonalizowany raport, codziennie, bez żadnej interakcji. Oczywiście, nie obyło się bez wpadki! Pierwszego dnia podczas testów obudziłem się bez powiadomienia. Okazało się, że popełniłem trywialny błąd w workflow. Taki to już jest n8n, man! 😉</p>
         
-        <img src="assets/img/switomir-n8n.jpg" alt="Świtomir n8n workflow" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/switomir-n8n.jpg" alt="Świtomir n8n workflow" class="img-fluid my-4 rounded">
         
         <p>A Ty, co ostatnio zautomatyzowałeś w n8n? Podziel się swoim projektem w komentarzu!</p>
       `
@@ -731,13 +731,13 @@ def generate_answer_with_context(client, query, context):
       date: 'January 15, 2026',
       excerpt: 'Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?',
       tags: ['SecondBrain', 'Automatyzacja', 'N8N', 'AI', 'Produktywność', 'LowCode', 'GoogleDocs', 'ContentMarketing'],
-      image: 'assets/img/second-brain-n8n.jpg',
+      image: 'assets/img/jpg/second-brain-n8n.jpg',
       content: `
         <p>Ostatnio zainspirował mnie Second Brain, czyli idea Drugiego Mózgu, prezentowana na wydarzeniu Mindstone prowadzonym przez Kamila Dąbrowska. Zamiast budować kolejny system do notatek, pomyślałem: dlaczego by nie dać „pamięci” mojemu agentowi do automatyzacji w N8N?</p>
         
         <p>Efekt? Stworzyłem osobistego asystenta do burzy mózgów, który faktycznie zna moje cele, priorytety i tożsamość. To krok dalej niż zwykłe promptowanie.</p>
         
-        <img src="assets/img/second-brain-n8n.jpg" alt="Meme: Agent AI używa Twoich celów z Second Brain" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/second-brain-n8n.jpg" alt="Meme: Agent AI używa Twoich celów z Second Brain" class="img-fluid my-4 rounded">
         
         <h4>Architektura pamięci dla Agenta</h4>
         <p>Aby agent AI mógł prowadzić ze mną merytoryczne dyskusje i proponować trafne rozwiązania, musiałem wyposażyć go w kontekst.</p>
@@ -763,13 +763,13 @@ def generate_answer_with_context(client, query, context):
       date: 'January 14, 2026',
       excerpt: 'Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.',
       tags: ['Automatyzacja', 'n8n', 'OpenAI', 'Productivity', 'BuildInPublic', 'NoCode', 'TechCommunity', 'Innovation'],
-      image: 'assets/img/mem2.jpg',
+      image: 'assets/img/jpg/mem2.jpg',
       content: `
         <p>Zauważyłem u siebie dziwną zależność – jestem najbardziej zdyscyplinowany, gdy mój kalendarz pęka w szwach. Gdy przychodzi wolny weekend, często dopada mnie paraliż decyzyjny i czas „przecieka mi przez palce”.</p>
         
         <p>Zamiast z tym walczyć, postanowiłem to zautomatyzować. 🤖</p>
         
-        <img src="assets/img/mem2.jpg" alt="Meme: Ja buduję system n8n żeby zaplanować spacer" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/mem2.jpg" alt="Meme: Ja buduję system n8n żeby zaplanować spacer" class="img-fluid my-4 rounded">
 
         <p>Stworzyłem <strong>Weekend Planner</strong> – osobistego asystenta, który dba o to, bym wycisnął z wolnego czasu to, co najlepsze, bez marnowania godziny na zastanawianie się „co by tu dzisiaj zrobić”.</p>
         
@@ -798,7 +798,7 @@ def generate_answer_with_context(client, query, context):
       date: 'January 13, 2026',
       excerpt: 'Kontynuując rozwój mojej strony-portfolio, zdecydowałem się na wdrożenie sekcji blogowej. Moim celem jest nie tylko prezentacja gotowych projektów, ale przede wszystkim dokumentowanie procesu ich powstawania.',
       tags: ['Angular', 'TypeScript', 'WebDevelopment', 'Frontend', 'Programming', 'PersonalBrand', 'Portfolio', 'OpenSource'],
-      image: 'assets/img/mem1.jpg',
+      image: 'assets/img/jpg/mem1.jpg',
       content: `
         <p>Kontynuując rozwój mojej strony-portfolio, zdecydowałem się na wdrożenie sekcji blogowej. Moim celem jest nie tylko prezentacja gotowych projektów, ale przede wszystkim dokumentowanie procesu ich powstawania i pogłębianie technicznych detali.</p>
         
@@ -813,7 +813,7 @@ def generate_answer_with_context(client, query, context):
         <h4>User Experience:</h4>
         <p>Dodałem funkcję wyszukiwania oraz dynamicznego filtrowania postów po tagach.</p>
         
-        <img src="assets/img/mem1.jpg" alt="Meme: Kiedy w końcu zaimplementujesz wielojęzyczność i wyszukiwanie" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/mem1.jpg" alt="Meme: Kiedy w końcu zaimplementujesz wielojęzyczność i wyszukiwanie" class="img-fluid my-4 rounded">
 
         <p>Obecnie pracuję nad uzupełnieniem bazy wpisów. Docelowo każdy projekt otrzyma rozbudowany opis, merytoryczne wnioski oraz bezpośrednie odnośniki do repozytoriów na GitHubie.</p>
         
@@ -828,13 +828,13 @@ def generate_answer_with_context(client, query, context):
       date: 'January 7, 2026',
       excerpt: 'Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił? Postanowiłem to zmienić, wykorzystując n8n.',
       tags: ['Automatyzacja', 'n8n', 'Productivity', 'English Learning'],
-      image: 'assets/img/n8n-meme.jpg',
+      image: 'assets/img/jpg/n8n-meme.jpg',
       content: `
         <p>Przez długi czas zmagałem się z jednym problemem: jak utrzymać nawyk nauki, gdy wieczorem brakuje już sił?</p>
         <p>Moje trzy filary – słuchanie, mówienie i powtórki w Anki – często lądowały na samym końcu listy "to-do". Robiłem je tuż przed snem, byle tylko odhaczyć punkt w kalendarzu. Efekt? Mała skuteczność i poczucie winy.</p>
         <p>Postanowiłem to zmienić, wykorzystując n8n.</p>
         
-        <img src="assets/img/n8n-meme.jpg" alt="Meme: Ja myślący że mam ochotę na angielski vs mój workflow w n8n" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/n8n-meme.jpg" alt="Meme: Ja myślący że mam ochotę na angielski vs mój workflow w n8n" class="img-fluid my-4 rounded">
 
         <p>Zamiast polegać na silnej woli, stworzyłem automatycznego asystenta na Telegramie, który dostarcza mi konkretne zadania w idealnych momentach dnia:</p>
         
@@ -862,13 +862,13 @@ def generate_answer_with_context(client, query, context):
       date: 'January 4, 2026',
       excerpt: 'Dziś nietypowo, bo czas na krótkie podsumowanie roku. Rok temu zacząłem dzielić się swoimi perypetiami przy hobbystycznych projektach. Efekt? Ponad 100 000 wyświetleń.',
       tags: ['Podsumowanie', 'Hobby', 'Projekty', 'Rozwój', 'Community', 'Mikroinfluencer'],
-      image: 'assets/img/results.jpg',
+      image: 'assets/img/jpg/results.jpg',
       content: `
         <p>Dziś nietypowo, bo czas na krótkie podsumowanie roku. Rok temu zacząłem dzielić się swoimi perypetiami przy hobbystycznych projektach.</p>
         
         <p>Efekt?</p>
         
-        <img src="assets/img/results.jpg" alt="Statystyki podsumowujące rok" class="img-fluid my-4 rounded">
+        <img src="assets/img/jpg/results.jpg" alt="Statystyki podsumowujące rok" class="img-fluid my-4 rounded">
 
         <ul>
           <li>Ponad 100 000 wyświetleń.</li>
