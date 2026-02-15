@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 .skills {
   background-color: var(--bg-card);
