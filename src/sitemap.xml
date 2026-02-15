@@ -2,132 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tomaszjader.com/</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tomaszjader.com/blog/budowanie-wlasnego-asystenta-glosowego-szeptucha-python</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tomaszjader.com/blog/jak-zbudowac-wlasny-system-rag</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/budowanie-wlasnego-systemu-rag-python</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/rag-gpt4o-qdrant-assistant</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/n8n-formularz-kontaktowy</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/wyszukiwanie-semantyczne-qdrant-python-fastapi</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/agent-tomek-google-adk-automatyzacja-instagrama</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/hodowla-kur-na-balkonie-claude-ai-eksperyment</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/moje-pierwsze-kroki-vibe-coding-sukces</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/moja-walka-z-literowkami-aplikacja-android</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/n8n-okiem-programisty-agent-automatyzacji</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/asystent-pogodowy-n8n-telegram-api</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/gymtracker-vibe-coding-drugie-podejscie</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/autocenzura-pod-kontrola-vibe-coding-3</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/automatyzacja-instagrama-python-google-sheets</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/automatyzacja-nawykow-n8n-wdziecznosc</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/ai-journal-dziennik-wspomagany-przez-llm</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/maly-skrypt-duza-roznica-ctrl-q-autokorekta</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/szeptucha-notatki-glosowe-whisper</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/poranny-automat-raportowy-switomir</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/second-brain-n8n-ai-agent</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/paradoks-produktywnosci-weekend-planner</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/czysty-kod-to-tylko-polowa-sukcesu</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/jak-przestalem-oszukiwac-samego-siebie-w-nauce-angielskiego</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tomaszjader.com/blog/moje-hobby-podsumowanie-roku</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>

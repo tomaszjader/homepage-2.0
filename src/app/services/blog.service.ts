@@ -11,6 +11,198 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'budowanie-wlasnego-asystenta-glosowego-szeptucha-python',
+      title: 'Budowanie własnego asystenta głosowego "Szeptucha" w Pythonie',
+      date: 'February 15, 2026',
+      excerpt: 'Wyobraź sobie narzędzie, które pozwala Ci dyktować notatki w dowolnym miejscu systemu Windows – w Wordzie, Notatniku, czy przeglądarce – za pomocą jednego skrótu klawiszowego. Takim narzędziem jest **Szeptucha**.',
+      tags: ['Python', 'VoiceAssistant', 'OpenAI', 'Whisper', 'Automation', 'Tutorial'],
+      image: 'assets/img/png/szeptucha-voice-assistant.png',
+      content: `
+        <p>Wyobraź sobie narzędzie, które pozwala Ci dyktować notatki w dowolnym miejscu systemu Windows – w Wordzie, Notatniku, czy przeglądarce – za pomocą jednego skrótu klawiszowego. Takim narzędziem jest <strong>Szeptucha</strong>.</p>
+
+        <p>W tym poradniku przeanalizujemy kod źródłowy projektu "Szeptucha" i wyjaśnimy, jak zbudować własnego asystenta głosowego, który:</p>
+        <ol>
+            <li>Nagrywa Twój głos po naciśnięciu skrótu (np. Ctrl+Alt).</li>
+            <li>Wyświetla eleganckie okno nagrywania "always-on-top".</li>
+            <li>Transkrybuje mowę na tekst przy użyciu modelu <strong>OpenAI Whisper</strong> (przez API lub lokalnie).</li>
+            <li>Automatycznie wkleja rozpoznany tekst w miejsce, gdzie znajduje się kursor.</li>
+        </ol>
+
+        <h2>Wymagania wstępne</h2>
+
+        <p>Aby uruchomić lub zbudować taki projekt, potrzebujesz zainstalowanego Pythona (3.8+) oraz kilku kluczowych bibliotek:</p>
+
+        <ul>
+            <li><strong>PyAudio</strong>: Do obsługi mikrofonu i nagrywania dźwięku.</li>
+            <li><strong>OpenAI</strong>: Do komunikacji z API Whisper (transkrypcja w chmurze).</li>
+            <li><strong>Faster-Whisper</strong>: Do transkrypcji lokalnej (opcjonalnie, wymaga więcej RAM/GPU).</li>
+            <li><strong>Pynput</strong>: Do obsługi globalnych skrótów klawiszowych i symulacji klawiatury.</li>
+            <li><strong>Tkinter</strong>: Do stworzenia interfejsu graficznego (jest w standardowej bibliotece Pythona).</li>
+            <li><strong>PyWin32</strong>: Do interakcji z oknami systemu Windows.</li>
+        </ul>
+
+        <p>Instalacja zależności:</p>
+        <pre><code class="language-bash">pip install pyaudio openai pynput pyperclip pywin32 numpy
+# Opcjonalnie dla lokalnego modelu:
+pip install faster-whisper
+</code></pre>
+
+        <h2>Architektura Systemu</h2>
+
+        <p>Projekt Szeptucha składa się z kilku niezależnych modułów, które współpracują ze sobą. Przeanalizujmy najważniejsze z nich.</p>
+
+        <h3>1. Nagrywanie Dźwięku (audio_recorder.py)</h3>
+
+        <p>Serce systemu to moduł odpowiedzialny za przechwytywanie dźwięku z mikrofonu. Wykorzystujemy bibliotekę <code>PyAudio</code> do strumieniowego pobierania danych i zapisywania ich do tymczasowego pliku WAV.</p>
+
+        <p>Kluczowe fragmenty kodu:</p>
+
+        <pre><code class="language-python">import pyaudio
+import wave
+import tempfile
+import threading
+
+class AudioRecorder:
+    def __init__(self):
+        self.audio = pyaudio.PyAudio()
+        self.frames = []
+        self.is_recording = False
+
+    def start_recording(self):
+        """Uruchamia nagrywanie w osobnym wątku."""
+        self.is_recording = True
+        self.frames = []
+        threading.Thread(target=self._record_loop).start()
+
+    def _record_loop(self):
+        """Pętla nagrywania działająca w tle."""
+        stream = self.audio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)
+        while self.is_recording:
+            data = stream.read(1024)
+            self.frames.append(data)
+        stream.stop_stream()
+        stream.close()
+
+    def stop_recording(self):
+        """Zatrzymuje nagrywanie i zapisuje plik."""
+        self.is_recording = False
+        # ... zapisywanie self.frames do pliku WAV za pomocą biblioteki wave ...
+        return "sciezka_do_pliku.wav"
+</code></pre>
+
+        <p>Dzięki użyciu osobnego wątku (<code>threading</code>), interfejs aplikacji nie zacina się podczas nagrywania.</p>
+
+        <h3>2. Transkrypcja Mowy (transcription_service.py)</h3>
+
+        <p>Szeptucha obsługuje dwa tryby: <strong>API</strong> (chmura) oraz <strong>Lokalny</strong>.</p>
+
+        <ul>
+            <li><strong>Tryb API</strong>: Wysyła plik audio do OpenAI. Jest szybki i lekki dla komputera, ale wymaga klucza API i połączenia z internetem.</li>
+            <li><strong>Tryb Lokalny</strong>: Używa modelu <code>faster-whisper</code> uruchamianego na Twoim komputerze. Działa offline, ale wymaga mocniejszego sprzętu.</li>
+        </ul>
+
+        <p>Fragment implementacji obsługi API:</p>
+
+        <pre><code class="language-python">from openai import OpenAI
+
+class TranscriptionService:
+    def __init__(self, api_key):
+        self.client = OpenAI(api_key=api_key)
+
+    def transcribe(self, file_path):
+        """Wysyła plik do API OpenAI Whisper."""
+        with open(file_path, "rb") as audio_file:
+            transcript = self.client.audio.transcriptions.create(
+                model="whisper-1",
+                file=audio_file,
+                language="pl" # Wymuszamy język polski
+            )
+        return transcript.text
+</code></pre>
+
+        <h3>3. Globalne Skróty Klawiszowe (hotkey_manager.py)</h3>
+
+        <p>Aby aplikacja była użyteczna, musi działać "w tle" i reagować na skrót klawiszowy (np. Ctrl+Alt) niezależnie od tego, w jakim oknie aktualnie pracujemy. Do tego służy biblioteka <code>pynput</code>.</p>
+
+        <pre><code class="language-python">from pynput import keyboard
+
+class HotkeyManager:
+    def __init__(self, callback):
+        self.callback = callback # Funkcja wywoływana po wciśnięciu skrótu
+
+    def start(self):
+        """Uruchamia nasłuchiwanie skrótów."""
+        # Definiujemy kombinację, np. '&lt;ctrl&gt;+&lt;alt&gt;'
+        self.listener = keyboard.GlobalHotKeys({
+            '&lt;ctrl&gt;+&lt;alt&gt;': self.callback
+        })
+        self.listener.start()
+</code></pre>
+
+        <h3>4. Interfejs Graficzny "Overlay" (recording_window.py)</h3>
+
+        <p>Szeptucha wyświetla małe, zawsze widoczne okienko podczas nagrywania. Wykorzystujemy <code>Tkinter</code> z flagami <code>overrideredirect</code> (brak ramek systemowych) i <code>topmost</code> (zawsze na wierzchu).</p>
+
+        <pre><code class="language-python">import tkinter as tk
+
+class RecordingWindow:
+    def show(self):
+        self.window = tk.Toplevel()
+        self.window.overrideredirect(True) # Brak paska tytułowego
+        self.window.attributes('-topmost', True) # Zawsze na wierzchu
+        
+        # Rysowanie wizualizacji fali dźwiękowej na Canvas...
+        self.canvas = tk.Canvas(self.window, bg='black')
+        self.canvas.pack()
+</code></pre>
+
+        <p>Moduł ten zawiera również logikę rysowania animowanej fali dźwiękowej (waveform) w oparciu o głośność nagrywanego dźwięku.</p>
+
+        <h3>5. Automatyczne Wklejanie Tekstu (text_processor.py)</h3>
+
+        <p>Ostatni krok to wklejenie tekstu. Zamiast bawić się w skomplikowane API systemowe do wprowadzania tekstu, Szeptucha stosuje sprytny trik:</p>
+        <ol>
+            <li>Kopiuje rozpoznany tekst do schowka (<code>pyperclip</code>).</li>
+            <li>Symuluje naciśnięcie kombinacji <code>Ctrl+V</code> (<code>pynput</code>).</li>
+        </ol>
+
+        <pre><code class="language-python">import pyperclip
+from pynput.keyboard import Controller, Key
+
+def paste_text(text):
+    # 1. Kopiuj do schowka
+    pyperclip.copy(text)
+    
+    # 2. Symuluj Ctrl+V
+    keyboard = Controller()
+    with keyboard.pressed(Key.ctrl):
+        keyboard.press('v')
+        keyboard.release('v')
+</code></pre>
+
+        <p>Dodatkowo, moduł ten sprawdza, czy aktywne okno w ogóle obsługuje wprowadzanie tekstu, analizując klasę okna za pomocą <code>win32gui</code>.</p>
+
+        <h2>Podsumowanie</h2>
+
+        <p>Szeptucha łączy kilka potężnych technologii w jedno proste narzędzie. Dzięki modularnej budowie łatwo można ją rozwijać, np. dodając obsługę innych modeli AI, tłumaczenie w czasie rzeczywistym czy komendy głosowe uruchamiające aplikacje.</p>
+
+        <p>Cały kod źródłowy projektu Szeptucha jest świetnym przykładem, jak tworzyć praktyczne narzędzia desktopowe w Pythonie, integrujące AI z codzienną pracą.</p>
+
+        <p><strong>Główne zalety takiego rozwiązania:</strong></p>
+        <ul>
+            <li><strong>Prywatność</strong> (w trybie lokalnym).</li>
+            <li><strong>Uniwersalność</strong> (działa w każdym polu tekstowym).</li>
+            <li><strong>Oszczędność czasu</strong> (dyktowanie jest szybsze niż pisanie).</li>
+        </ul>
+
+        <p>Zachęcam do eksperymentowania z kodem i dostosowania go do własnych potrzeb!</p>
+
+        <h2>Kod źródłowy</h2>
+
+        <p>Cały projekt jest dostępny na GitHubie: <a href="https://github.com/tomaszjader/szeptucha">https://github.com/tomaszjader/szeptucha</a>. Zapraszam do pobierania, testowania i gwiazdkowania!</p>
+      `
+    },
+    {
       slug: 'jak-zbudowac-wlasny-system-rag',
       title: 'Jak zbudować własny system RAG? 🛠️',
       date: 'February 09, 2026',
