@@ -11,6 +11,35 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'szeptucha-szczegolowy-poradnik-dostepny',
+      title: 'Szeptucha: Szczegółowy poradnik budowy asystenta głosowego już dostępny! 🛠️',
+      date: 'February 16, 2026',
+      excerpt: 'Jakiś czas temu podzieliłem się tutaj projektem „Szeptucha” – moim własnym narzędziem do notatek głosowych opartym na modelu Whisper od OpenAI. 🎙️ Post o tym, jak przestałem polegać na gotowych subskrypcjach...',
+      tags: ['SztucznaInteligencja', 'Whisper', 'OpenAI', 'Python', 'Produktywność', 'Automatyzacja', 'Programowanie', 'BuildNotBuy'],
+      image: 'assets/img/jpg/szeptucha-whisper.jpg',
+      content: `
+        <p>Jakiś czas temu podzieliłem się tutaj projektem „Szeptucha” – moim własnym narzędziem do notatek głosowych opartym na modelu Whisper od OpenAI. 🎙️</p>
+        
+        <p>Post o tym, jak przestałem polegać na gotowych subskrypcjach i napisałem własny system transkrypcji, odbił się szerokim echem (ponad 17 000 wyświetleń!). Zauważyłem, że temat budowania własnych, tanich narzędzi AI zamiast płacenia za drogie abonamenty bardzo Wam się spodobał.</p>
+        
+        <p>Dlatego postanowiłem pociągnąć ten wątek i przygotowałem coś konkretnego.</p>
+        
+        <p>Właśnie wrzuciłem na bloga szczegółowy poradnik, w którym krok po kroku opisuję, jak to rozwiązanie powstało „od kuchni”. Bez lania wody, same techniczne i praktyczne aspekty:</p>
+        
+        <ul>
+            <li>✅ Jak wykorzystać model Whisper do błyskawicznej transkrypcji.</li>
+            <li>✅ Jak spiąć wszystko prostym skryptem pod skrót klawiszowy.</li>
+            <li>✅ Dlaczego przy moim użytkowaniu takie rozwiązanie jest ekonomicznie bezkonkurencyjne.</li>
+        </ul>
+        
+        <p>Jeśli szukasz inspiracji do stworzenia własnego mikro-narzędzia, ten wpis jest dla Ciebie. 🛠️</p>
+        
+        <p>Link do poradnika znajdziesz tutaj: 👉 <a href="/blog/budowanie-wlasnego-asystenta-glosowego-szeptucha-python">Szeptucha - Szczegółowy Poradnik</a></p>
+        
+        <p>Dajcie znać w komentarzach, jakie inne narzędzia AI próbowaliście (lub chcielibyście) zastąpić własnymi skryptami!</p>
+      `
+    },
+    {
       slug: 'budowanie-wlasnego-asystenta-glosowego-szeptucha-python',
       title: 'Budowanie własnego asystenta głosowego "Szeptucha" w Pythonie',
       date: 'February 15, 2026',
