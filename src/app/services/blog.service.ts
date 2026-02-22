@@ -11,6 +11,100 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'adk-vs-langchain-wybor-frameworka-agenty-ai',
+      title: 'ADK vs. LangChain: Wybór frameworka dla agentów AI klasy Enterprise',
+      date: 'February 22, 2026',
+      excerpt: 'Era prostych chatbotów przemija. Dziś projektujemy autonomiczne agenty AI, które planują, rozumują i korzystają z zewnętrznych narzędzi. Wybór fundamentu dla takiego systemu to decyzja między stabilnością korporacyjną a elastycznością open-source.',
+      tags: ['AI', 'Enterprise', 'Agents', 'GoogleADK', 'LangChain', 'LangGraph', 'Architecture', 'Python'],
+      image: 'assets/img/png/adk-vs-langchain.png',
+      content: `
+        <p>Era prostych chatbotów przemija. Dziś projektujemy autonomiczne agenty AI, które planują, rozumują i korzystają z zewnętrznych narzędzi. Wybór fundamentu dla takiego systemu to decyzja między stabilnością korporacyjną a elastycznością open-source. Porównajmy dwa najsilniejsze rozwiązania: Google Agent Development Kit (ADK) oraz duet LangChain/LangGraph.</p>
+
+        <h3>Filozofia: Code-First kontra Grafy Stanowe</h3>
+        <p>Główna różnica leży w podejściu do kontroli nad modelem:</p>
+        <ul>
+            <li><strong>Google ADK (Podejście Inżynierskie):</strong> Stawia na zasadę code-first. Logika agenta i narzędzia są definiowane bezpośrednio w kodzie, co ułatwia testowanie, typowanie i integrację CI/CD. To rozwiązanie dla tych, którzy cenią rygor klasycznej inżynierii oprogramowania.</li>
+            <li><strong>LangChain/LangGraph (Podejście Elastyczne):</strong> Ewoluował z narzędzia do szybkiego prototypowania w stronę LangGraph – systemu opartego na stanowych grafach cyklicznych. Pozwala on budować złożone pętle rozumowania, gdzie agent może wracać do poprzednich kroków, by poprawić błędy.</li>
+        </ul>
+
+        <h3>Google ADK: Precyzyjna Orkiestracja i Ekosystem</h3>
+        <p>ADK świetnie zarządza poziomem autonomii poprzez różne typy agentów:</p>
+        <table class="table table-bordered my-4 text-white">
+            <thead class="bg-dark">
+                <tr>
+                    <th>Typ Agenta</th>
+                    <th>Charakterystyka</th>
+                    <th>Zastosowanie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LLM Agent</td>
+                    <td>Dynamiczny i kreatywny</td>
+                    <td>Planowanie i rozumowanie.</td>
+                </tr>
+                <tr>
+                    <td>Sequential</td>
+                    <td>Pełny determinizm</td>
+                    <td>Procesy krok po kroku (workflow).</td>
+                </tr>
+                <tr>
+                    <td>Parallel</td>
+                    <td>Praca równoległa</td>
+                    <td>Szybka analiza wielu źródeł danych.</td>
+                </tr>
+                <tr>
+                    <td>Loop</td>
+                    <td>Iteracyjne pętle</td>
+                    <td>Zadania powtarzalne do skutku.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Kluczowa zaleta:</strong> Choć zoptymalizowany pod Gemini i Google Cloud, ADK jest agnostyczny – dzięki LiteLLM obsłużysz nim także modele od OpenAI czy Anthropic.</p>
+
+        <h3>Zarządzanie narzędziami: Jak uniknąć chaosu?</h3>
+        <p>Gdy agent dostaje dostęp do 10+ narzędzi, pojawia się problem: koszty tokenów rosną, a precyzja wyboru spada. Jak radzą sobie z tym oba frameworki?</p>
+
+        <h4>Strategie Google ADK:</h4>
+        <ul>
+            <li><strong>Toolsety i Filtrowanie:</strong> Grupowanie narzędzi i dynamiczne udostępnianie tylko tych, które są potrzebne w danej sesji.</li>
+            <li><strong>Model Context Protocol (MCP):</strong> Natywne wsparcie dla "USB dla narzędzi AI" – pozwala łączyć się z zewnętrznymi serwerami udostępniającymi tysiące funkcji.</li>
+            <li><strong>Metacognitive Prompting:</strong> Agent najpierw tworzy plan, a dopiero potem "wstrzykuje" do kontekstu definicje konkretnych narzędzi.</li>
+        </ul>
+
+        <h4>Strategie LangChain/LangGraph:</h4>
+        <ul>
+            <li><strong>Wzorzec Routera:</strong> System klasyfikuje zapytanie i kieruje je do wyspecjalizowanego sub-agenta z ograniczonym zestawem narzędzi (np. tylko do bazy danych).</li>
+            <li><strong>Durable Execution:</strong> Dzięki "checkpointerom" stan agenta jest zapisywany w bazie (np. Redis). Jeśli system padnie, agent podejmie pracę dokładnie tam, gdzie przerwał.</li>
+        </ul>
+
+        <h3>Persystencja: Pamięć o użytkowniku</h3>
+        <p><strong>ADK:</strong> Wykorzystuje SessionService i VertexAIMemoryBankService. Pozwala to nie tylko na zapis historii rozmowy w SQL, ale też na "pamiętanie" preferencji użytkownika między różnymi, oddalonymi w czasie sesjami.</p>
+        <p><strong>LangGraph:</strong> Skupia się na trwałym zapisie stanu grafu. Każdy węzeł może modyfikować centralny obiekt State, co daje pełną kontrolę nad przepływem informacji.</p>
+
+        <h3>Werdykt: Co wybrać?</h3>
+
+        <h4>Wybierz Google ADK, jeśli:</h4>
+        <ul>
+            <li>Tworzysz rozwiązanie SaaS/Enterprise wewnątrz Google Cloud.</li>
+            <li>Wymagasz silnego determinizmu (logika biznesowa nie może się zmieniać).</li>
+            <li>Potrzebujesz natywnej i bezpiecznej integracji z Google Workspace (Gmail, Kalendarz).</li>
+            <li>Cenisz czysty, testowalny kod ponad wizualne budowanie łańcuchów.</li>
+        </ul>
+
+        <h4>Wybierz LangChain/LangGraph, jeśli:</h4>
+        <ul>
+            <li>Stawiasz na szybkie prototypowanie i korzystasz z niszowych bibliotek open-source.</li>
+            <li>Budujesz rozwiązanie Multi-cloud (nie chcesz przywiązania do jednego dostawcy).</li>
+            <li>Twój proces wymaga skomplikowanych pętli zwrotnych i dynamicznego sterowania przepływem.</li>
+            <li>Potrzebujesz zaawansowanej analityki ścieżek rozumowania (LangSmith).</li>
+        </ul>
+
+        <h3>Podsumowanie</h3>
+        <p>Google ADK to "inżynierski młot" dla stabilnych systemów korporacyjnych, gdzie ryzyko błędu musi być minimalne. LangChain to "szwajcarski scyzoryk" dla innowatorów, którzy potrzebują maksymalnej elastyczności w eksperymentowaniu z nowymi paradygmatami AI.</p>
+      `
+    },
+    {
       slug: 'szeptucha-szczegolowy-poradnik-dostepny',
       title: 'Szeptucha: Szczegółowy poradnik budowy asystenta głosowego już dostępny! 🛠️',
       date: 'February 16, 2026',
