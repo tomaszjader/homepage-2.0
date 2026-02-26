@@ -1232,7 +1232,6 @@ def generate_answer_with_context(client, query, context):
     return this.posts.find(post => post.slug === slug);
   }
 
-  // search functionality
   searchPosts(query: string, limit: number = 3): Observable<any> {
     const url = this.isDevMode()
       ? "/search"

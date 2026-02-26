@@ -48,17 +48,17 @@
     display: inline-flex;
     align-items: center;
     padding: 12px 24px;
-    background-color: rgba(55, 65, 81, 0.5); // bg-gray-700 with opacity
+    background-color: rgba(55, 65, 81, 0.5);
     color: #f3f4f6;
-    border: 1px solid #4b5563; // border-gray-600
+    border: 1px solid #4b5563;
     border-radius: 9999px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s;
 
     &:hover {
-      background-color: var(--bg-tertiary); // bg-gray-700
-      border-color: var(--accent-blue); // blue-400
+      background-color: var(--bg-tertiary);
+      border-color: var(--accent-blue);
       color: var(--text-primary);
     }
 
@@ -74,10 +74,10 @@
 }
 
 .blog-card {
-  background-color: var(--bg-tertiary); // bg-gray-800
+  background-color: var(--bg-tertiary);
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--border-secondary); // border-gray-700
+  border: 1px solid var(--border-secondary);
   transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
   cursor: pointer;
@@ -87,7 +87,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    border-color: #4b5563; // border-gray-600
+    border-color: #4b5563;
   }
 
   &__content {
@@ -99,7 +99,7 @@
 
   &__date {
     font-size: 0.875rem;
-    color: var(--text-secondary); // text-gray-400
+    color: var(--text-secondary);
     margin-bottom: 12px;
   }
 
@@ -112,7 +112,7 @@
   }
 
   &__excerpt {
-    color: var(--text-muted); // text-gray-300
+    color: var(--text-muted);
     margin-bottom: 24px;
     line-height: 1.6;
     flex-grow: 1;
@@ -121,7 +121,7 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    color: var(--accent-blue); // blue-400
+    color: var(--accent-blue);
     font-weight: 500;
     background: none;
     border: none;
@@ -131,7 +131,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--accent-blue-hover); // blue-300
+      color: var(--accent-blue-hover);
     }
 
     span {
