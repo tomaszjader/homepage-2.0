@@ -11,6 +11,301 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'context-engineering-w-praktyce-agenty-llm',
+      title: 'Context engineering w praktyce: jak budować agentów LLM bez przepełniania kontekstu',
+      date: 'March 1, 2026',
+      excerpt: 'Modele językowe, takie jak GPT-4, nie „rozumieją” świata. Przewidują kolejne tokeny na podstawie danych, które dostają w kontekście. Dlatego w systemach produkcyjnych nie wygrywa ten, kto napisze najładniejszy prompt. Wygrywa ten, kto najlepiej zaprojektuje całe środowisko informacyjne modelu.',
+      tags: ['AI', 'ContextEngineering', 'LLM', 'LangChain', 'AgentArchitecture', 'Python', 'RAG'],
+      image: 'assets/img/png/context_engineering_llm_agents.png',
+      content: `
+        <p>Modele językowe, takie jak GPT-4, nie „rozumieją” świata. Przewidują kolejne tokeny na podstawie danych, które dostają w kontekście.</p>
+
+        <p>Dlatego w systemach produkcyjnych nie wygrywa ten, kto napisze najładniejszy prompt. Wygrywa ten, kto najlepiej zaprojektuje całe środowisko informacyjne modelu.</p>
+
+        <p>Tym właśnie jest context engineering.</p>
+
+        <p>W tym artykule:</p>
+        <ul>
+            <li>wyjaśnię, czym naprawdę jest context engineering,</li>
+            <li>pokażę problem przepełnienia kontekstu w agentach,</li>
+            <li>przejdziemy krok po kroku przez architekturę rozwiązania,</li>
+            <li>zbudujemy działający przykład w Pythonie,</li>
+            <li>podzielimy kod na fragmenty i omówimy każdy z nich.</li>
+        </ul>
+
+        <p><strong>Framework użyty w przykładzie:</strong> LangChain</p>
+
+        <h3>Czym jest context engineering?</h3>
+
+        <p>Context engineering to świadome projektowanie i kontrolowanie wszystkiego, co trafia do okna kontekstowego modelu:</p>
+        <ul>
+            <li>promptu,</li>
+            <li>instrukcji systemowych,</li>
+            <li>historii rozmowy,</li>
+            <li>dokumentów (RAG),</li>
+            <li>wyników narzędzi,</li>
+            <li>formatu odpowiedzi,</li>
+            <li>ograniczeń.</li>
+        </ul>
+
+        <p>Model działa wyłącznie na tym, co znajduje się w aktualnym kontekście.<br>Nie ma pamięci w klasycznym sensie.</p>
+
+        <h4>Prompt engineering vs context engineering</h4>
+        <table class="table table-bordered my-4 text-white">
+            <thead class="bg-dark">
+                <tr>
+                    <th>Prompt engineering</th>
+                    <th>Context engineering</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Optymalizuje pojedynczy prompt</td>
+                    <td>Projektuje cały system</td>
+                </tr>
+                <tr>
+                    <td>Skupia się na treści zapytania</td>
+                    <td>Zarządza całym wejściem modelu</td>
+                </tr>
+                <tr>
+                    <td>Często manualne</td>
+                    <td>Często architektoniczne</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Context engineering to projektowanie architektury, nie tylko tekstu.</p>
+
+        <h3>Problem: przepełnienie kontekstu w agentach</h3>
+
+        <p>W systemach agentowych:</p>
+        <ul>
+            <li>model planuje,</li>
+            <li>wykonuje kroki,</li>
+            <li>wywołuje narzędzia,</li>
+            <li>analizuje wyniki,</li>
+            <li>zapisuje historię.</li>
+        </ul>
+
+        <p>Każdy krok zwiększa liczbę tokenów.<br>Po kilkunastu iteracjach:</p>
+        <ul>
+            <li>rosną koszty,</li>
+            <li>spada jakość,</li>
+            <li>przekraczamy limit kontekstu.</li>
+        </ul>
+
+        <p><strong>Kluczowa zasada:</strong><br>Model nie potrzebuje historii. Potrzebuje aktualnego stanu.</p>
+
+        <h3>Architektura rozwiązania</h3>
+
+        <p>Zamiast przekazywać całą historię, budujemy system z:</p>
+        <ul>
+            <li>plannerem,</li>
+            <li>executorem,</li>
+            <li>kompresorem stanu,</li>
+            <li>pamięcią wektorową (RAG).</li>
+        </ul>
+
+        <p><strong>Schemat:</strong></p>
+        <pre>User
+  ↓
+Planner (LLM)
+  ↓
+Executor (LLM + tools)
+  ↓
+State Compressor
+  ↓
+Vector Memory (RAG)</pre>
+
+        <p>Każdy komponent widzi tylko to, czego potrzebuje.</p>
+
+        <h3>Implementacja krok po kroku</h3>
+
+        <p>Poniżej minimalna, ale poprawna architektonicznie implementacja.</p>
+
+        <h4>1️⃣ Konfiguracja modelu</h4>
+        <p>Zaczynamy od inicjalizacji modelu.</p>
+        <pre><code class="language-python">from langchain.chat_models import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="gpt-4",
+    temperature=0
+)</code></pre>
+        <p>Dlaczego <code>temperature=0</code>?<br>Bo w systemach produkcyjnych chcemy przewidywalności.</p>
+
+        <h4>2️⃣ Pamięć długoterminowa (Vector Store)</h4>
+        <p>Oddzielamy pamięć roboczą od trwałej.</p>
+        <pre><code class="language-python">from langchain.vectorstores import FAISS
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.docstore.document import Document
+
+embeddings = OpenAIEmbeddings()
+vector_store = FAISS.from_documents([], embeddings)
+
+def save_to_memory(text: str):
+    vector_store.add_documents([Document(page_content=text)])
+
+def retrieve_memory(query: str):
+    docs = vector_store.similarity_search(query, k=3)
+    return "\\n".join([d.page_content for d in docs])</code></pre>
+        <p>Co tu się dzieje?</p>
+        <ul>
+            <li>Fakty zapisujemy w bazie wektorowej.</li>
+            <li>Nie trzymamy ich w oknie kontekstowym.</li>
+            <li>Pobieramy je tylko wtedy, gdy są potrzebne.</li>
+        </ul>
+        <p>To klasyczny wzorzec RAG.</p>
+
+        <h4>3️⃣ Planner — oddzielny kontekst</h4>
+        <p>Planner nie widzi historii. Widzi tylko cel.</p>
+        <pre><code class="language-python">from langchain.schema import SystemMessage, HumanMessage
+
+def create_plan(goal: str) -> str:
+    response = llm([
+        SystemMessage(content="Jesteś planerem. Twórz krótki plan kroków."),
+        HumanMessage(content=f"Cel: {goal}")
+    ])
+    return response.content</code></pre>
+        <p>Dlaczego osobny kontekst?<br>Bo planowanie i wykonanie to różne zadania poznawcze.</p>
+
+        <h4>4️⃣ Executor — izolacja kroków</h4>
+        <p>Każdy krok wykonywany jest w świeżym kontekście.</p>
+        <pre><code class="language-python">def execute_step(step: str, state_summary: str) -> str:
+    context = f"""
+    Aktualny stan:
+    {state_summary}
+
+    Wykonaj krok:
+    {step}
+
+    Zwróć tylko kluczowe fakty.
+    """
+
+    response = llm([HumanMessage(content=context)])
+    return response.content</code></pre>
+        <p>Executor dostaje tylko:</p>
+        <ul>
+            <li>aktualny stan,</li>
+            <li>pojedynczy krok,</li>
+            <li>ewentualnie dane z pamięci.</li>
+        </ul>
+        <p>Nie widzi całej historii.</p>
+
+        <h4>5️⃣ Rolling summary — kompresja stanu</h4>
+        <p>Po każdym kroku kompresujemy stan.</p>
+        <pre><code class="language-python">def compress_state(previous_summary: str, new_info: str) -> str:
+    prompt = f"""
+    Poprzedni stan:
+    {previous_summary}
+
+    Nowe informacje:
+    {new_info}
+
+    Zaktualizuj krótki stan zadania.
+    """
+
+    response = llm([HumanMessage(content=prompt)])
+    return response.content</code></pre>
+        <p>Zamiast rosnącej historii mamy:</p>
+        <ul>
+            <li>cel,</li>
+            <li>kluczowe ustalenia,</li>
+            <li>otwarte wątki.</li>
+        </ul>
+        <p>Redukcja kontekstu nawet o 70–90%.</p>
+
+        <h4>6️⃣ Główna pętla agenta</h4>
+        <p>Łączymy wszystko w jedną strukturę.</p>
+        <pre><code class="language-python">def run_agent(goal: str):
+    print("Cel:", goal)
+
+    plan = create_plan(goal)
+    steps = plan.split("\\n")
+
+    state_summary = "Zadanie rozpoczęte."
+
+    for step in steps:
+        if not step.strip():
+            continue
+
+        # Pobranie faktów z pamięci długoterminowej
+        memory_context = retrieve_memory(step)
+
+        # Wykonanie kroku w izolowanym kontekście
+        result = execute_step(step, state_summary + "\\n" + memory_context)
+
+        # Kompresja stanu
+        state_summary = compress_state(state_summary, result)
+
+        # Zapis do pamięci wektorowej
+        save_to_memory(result)
+
+    print("Finalny stan:")
+    print(state_summary)
+
+
+if __name__ == "__main__":
+    run_agent("Zbadaj rynek kursów AI i podsumuj trendy.")</code></pre>
+
+        <p>Co ten system demonstruje?</p>
+        <ul>
+            <li>✔ Oddzielenie planowania od wykonania</li>
+            <li>✔ Izolację kontekstu</li>
+            <li>✔ Kompresję historii</li>
+            <li>✔ Oddzielenie pamięci roboczej od trwałej</li>
+            <li>✔ Kontrolę wzrostu tokenów</li>
+        </ul>
+        <p>To podstawy produkcyjnego context engineering.</p>
+
+        <h3>Najważniejsze wzorce projektowe</h3>
+        <ol>
+            <li>
+                <strong>State instead of history</strong><br>
+                Nie przekazuj modelowi tego, co się wydarzyło. Przekazuj aktualny stan zadania.
+            </li>
+            <li>
+                <strong>Selektywne przekazywanie wyników narzędzi</strong><br>
+                Nie wrzucaj pełnych odpowiedzi API. Parsuj je i przekazuj tylko istotne fakty.
+            </li>
+            <li>
+                <strong>Segmentacja zadań</strong><br>
+                Rozbijaj złożone problemy na podzadania z osobnym kontekstem.
+            </li>
+            <li>
+                <strong>Kontrola chain-of-thought</strong><br>
+                W produkcji zapisuj wynik, nie pełne rozumowanie.
+            </li>
+        </ol>
+
+        <h3>Pełny kod projektu</h3>
+        <p>Pełna wersja przykładu (z:</p>
+        <ul>
+            <li>kontrolą liczby tokenów,</li>
+            <li>structured output (JSON),</li>
+            <li>retry policy,</li>
+            <li>monitoringiem długości kontekstu,</li>
+            <li>tańszym modelem do kompresji,</li>
+            <li>asynchroniczną obsługą narzędzi)</li>
+        </ul>
+        <p>możesz umieścić w repozytorium, np.:<br>📂 <a href="https://github.com/tomaszjader/context-engineering-agent" target="_blank">https://github.com/tomaszjader/context-engineering-agent</a></p>
+
+        <h3>Podsumowanie</h3>
+        <p>Context engineering to nie kosmetyka promptów. To projektowanie środowiska informacyjnego modelu.</p>
+        <p>Jeśli budujesz:</p>
+        <ul>
+            <li>chatboty,</li>
+            <li>agentów,</li>
+            <li>systemy analityczne,</li>
+            <li>copilots,</li>
+            <li>narzędzia automatyzujące pracę,</li>
+        </ul>
+        <p>to jakość Twojego systemu zależy bardziej od architektury kontekstu niż od samego modelu.</p>
+        <p>Modele będą coraz większe. Okna kontekstowe będą rosły.</p>
+        <p>Ale zasada pozostanie ta sama:</p>
+        <p><strong>Model nie potrzebuje wszystkiego. Potrzebuje dokładnie tego, co jest istotne.</strong></p>
+      `
+    },
+    {
       slug: 'budowa-agentow-ai-to-powazne-wyzwanie',
       title: 'Budowa agentów AI to już nie tylko "prompt engineering". To poważne wyzwanie architektoniczne. 🏗️',
       date: 'February 23, 2026',
