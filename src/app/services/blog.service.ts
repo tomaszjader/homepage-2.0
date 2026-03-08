@@ -11,6 +11,205 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'kompletny-przewodnik-po-serwerach-mcp-model-context-protocol',
+      title: 'Kompletny Przewodnik po Serwerach MCP (Model Context Protocol)',
+      date: 'March 8, 2026',
+      excerpt: 'W dobie dynamicznego rozwoju sztucznej inteligencji, jednym z największych wyzwań jest łączenie modeli językowych (LLM) z zewnętrznymi danymi i narzędziami. Odpowiedzią na to wyzwanie jest wchodzący na salony MCP (Model Context Protocol).',
+      tags: ['AI', 'SystemArchitecture', 'MCP', 'LLM', 'Python', 'Integrations'],
+      image: 'assets/img/png/mcp-servers-guide.png',
+      content: `
+        <p>W dobie dynamicznego rozwoju sztucznej inteligencji, jednym z największych wyzwań jest łączenie modeli językowych (LLM) z zewnętrznymi danymi i narzędziami. Odpowiedzią na to wyzwanie jest <strong>MCP (Model Context Protocol)</strong>. W tym artykule przyjrzymy się bliżej, czym jest MCP, jak z niego korzystać oraz jakie są kluczowe różnice między tradycyjnym podejściem a tym nowym standardem.</p>
+
+        <h2>Co to jest MCP?</h2>
+
+        <p><strong>Model Context Protocol (MCP)</strong> to otwarty standard opracowany w celu bezpiecznego i ujednoliczonego łączenia inteligentnych asystentów AI z zewnętrznymi źródłami danych i narzędziami. Pozwala on modelom językowym na dynamiczne odkrywanie i używanie funkcji we współpracujących aplikacjach w zautomatyzowany i przewidywalny sposób.</p>
+
+        <p>Architektura MCP zazwyczaj obejmuje role:</p>
+        <ul>
+            <li><strong>Klienci (MCP Clients)</strong>: Aplikacje (np. Claude Desktop, Cursor, czy terminale ułatwiające dostęp do AI), w których użytkownik prowadzi konwersację z modelem LLM. Klient inicjuje komunikację, wysyłając zapytania – to na nim spada obowiązek uwzględniania i zaprezentowania modelowi dostępnych zasobów i narzędzi.</li>
+            <li><strong>Serwery (MCP Servers)</strong>: Lekkie, uniwersalne węzły integracyjne dostarczające konkretne możliwości (np. odczyt baz danych, sprawdzanie pogody, interakcja z API).</li>
+        </ul>
+
+        <h2>Różnica między lokalnym Klientem MCP a Serwerem MCP</h2>
+
+        <p>W środowisku MCP funkcjonują pojęcia klientów i serwerów. Należy tu rozróżnić dwie główne perspektywy:</p>
+
+        <ol>
+            <li><strong>Lokalny Klient MCP (Local MCP Host)</strong>:<br> To aplikacja na komputerze użytkownika (np. aplikacja desktopowa Claude, Cursor, rozszerzenia do IDE), z którą użytkownik wchodzi w bezpośrednią interakcję. Pełni ona rolę mostu – pośredniczy w wysyłaniu zapytań (do modelu LLM w chmurze lub lokalnie) oraz dba o wywoływanie narzędzi w ramach otrzymanego planu działania. Klient lokalny uruchamia swoje połączenia z jednym lub wieloma serwerami MCP.</li>
+            <li><strong>Serwer MCP</strong>:<br> To program, posiadający dostęp do Twoich lokalnych stref bezpieczeństwa (np. systemu plików) bądź zewnętrznych usług IT. Zadaniem serwera jest "wystawienie" tych narzędzi do dyspozycji Klienta w ustandaryzowany sposób. Serwery działają najczęściej lokalnie z klientem (wówczas wymieniają paczki danych przez strumienie systemowe <code>stdio</code>), ale mogą też być hostowane zdalnie (używając zazwyczaj technologii komunikacyjnych zbliżonych do HTTP – na przykład Server-Sent Events).</li>
+        </ol>
+
+        <h2>Czym różni się Serwer MCP od standardowego REST API?</h2>
+
+        <p>Początkujący programiści często zadają pytanie: <em>„Mamy już protokół HTTP i REST API – dlaczego powstało MCP?”</em> Głębokie różnice stają się widoczne, jeśli spojrzymy na filozofię samego dostępu:</p>
+
+        <table class="table table-bordered my-4 text-white">
+            <thead class="bg-dark">
+                <tr>
+                    <th>Cecha</th>
+                    <th>REST API</th>
+                    <th>Serwer MCP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Przeznaczenie i Interakcja</strong></td>
+                    <td>Komunikacja ogólnego przeznaczenia (front-end z back-endem, maszyna z maszyną). Wymaga jawnego instruowania (kodowania).</td>
+                    <td>Komunikacja "AI do narzędzia". Zoptymalizowane specjalnie pod kątem samodzielnej nawigacji modeli LLM.</td>
+                </tr>
+                <tr>
+                    <td><strong>Odkrywalność (Discovery)</strong></td>
+                    <td>Wymaga specyfikacji (jak Swagger, OpenAPI), których przegląd nie jest naturalną pętlą wykonawczą.</td>
+                    <td>Model językowy dostaje gotowe listy w ustandaryzowanych schematach JSON. Klient AI odpytuje serwer: "pokaż mi co masz w ofercie i czego potrzebujesz argumentem".</td>
+                </tr>
+                <tr>
+                    <td><strong>Mechanizm Transportu</strong></td>
+                    <td>Bazuje na HTTP/HTTPS. Aby wystawić usługę, zazwyczaj używamy portów sieciowych, co napotyka problemy z zaporami sieciowymi.</td>
+                    <td>MCP domyślnie opiera swoją wymianę przy użyciu strumieni <code>stdio</code> (Standard I/O). Odpalamy lokalną usługę tak jak wykonanie lokalnego programu, obchodząc ewentualne zapory. Zdalne połączenie jest oparte o SSE z żądaniami POST, zaprojektowane specjalnie dla protokołu JSON-RPC.</td>
+                </tr>
+                <tr>
+                    <td><strong>Elastyczność Zestawu Danych</strong></td>
+                    <td>Czyste wywołania i odpowiedzi.</td>
+                    <td>Serwer MCP domyślnie kategoryzuje swoją ofertę na "Zasoby", "Narzędzia" i "Prompty" (czytaj więcej w dalszej części).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Inne kluczowe standardy ujęte w ekosystemie MCP</h2>
+
+        <p>Dobry przewodnik po MCP wyróżnia trzy podstawowe "prymitywy" (tzw. building blocks), które Serwer dostarcza Agentowi (Modelowi AI):</p>
+
+        <ol>
+            <li><strong>Zasoby (Resources)</strong>: Podobne do plików na wirtualnym dysku działające w trybie "tylko odczytu". Pozwalają serwerowi udostępnić dane do kontekstu modelu w formie ścieżek URI, np. wpisy z logów, schematy bazy danych, połączone notatki czy dokumentacja.</li>
+            <li><strong>Narzędzia (Tools)</strong>: Najważniejsze elementy wykonywalne. Są to po prostu funkcje, za pomocą których model LLM może podjąć działania (np. wysłanie e-maila, usunięcie pliku lub integracja z zaawansowanym API zewnętrznym jak pogoda). Tylko używając narzędzi, sztuczna inteligencja zyskuje sprawczość wykraczającą poza udzielanie statycznych odpowiedzi.</li>
+            <li><strong>Szablony Promptów (Prompts)</strong>: Serwer MCP może dostarczać interaktywne szablony, z których mogą skorzystać np. ustandaryzowane menu klientów w interfejsach graficznych. Te predefiniowane środowiska pozwalają asystentom wiedzieć "gdzie zacząć", gdy weryfikują konkretne zestawy logów, czy tworzą PR-y o ustandaryzowanej procedurze oceny.</li>
+        </ol>
+
+        <p>Drugim nieodłącznym elementem z zakresu wiedzy MCP staje się <strong>Bezpieczeństwo (Security &amp; Sandboxing)</strong>. Standaryzacja wymusza zasadę <strong>opt-in</strong> przy korzystaniu z narzędzi o potencjalnych zjawiskach destrukcyjnych lub operacjach wysłania zapytania na zewnątrz do API (serwer pyta użytkownika klienta, czy autoryzuje on wywołanie narzedzia przez bota).</p>
+
+        <h2>Przykład w praktyce: Serwer dostarczający informacje o pogodzie</h2>
+
+        <p>Aby unaocznić strukturę, weźmy uproszczony kod źródłowy serwera w języku Python. Demonstruje on serce podejścia do narzędzi, używając popularnej bilbioteki <code>FastMCP</code> (opartej zresztą na frameworku <code>FastAPI</code> lub bliźniaczych rozwiązaniach):</p>
+
+<pre><code class="language-python">from mcp.server.fastmcp import FastMCP
+import httpx
+
+# 1. Inicjalizacja serwera - określenie nazwy usługi.
+mcp = FastMCP("Weather")
+
+# 2. Definiowanie narzędzia MCP:
+# Dekorator @mcp.tool() konwertuje typową funkcję Pythona na funkcjonalne narzędzie dla Modelu Językowego.
+@mcp.tool()
+async def get_weather(latitude: float, longitude: float) -> str:
+    """
+    Pobiera aktualną pogodę na podstawie szerokości i długości geograficznej.
+    LLM używa tego opisu by zdecydować kiedy użyć narzędzia.
+    """
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m,wind_speed_10m"
+    
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url)
+        response.raise_for_status()
+        data = response.json()
+        
+        current = data.get("current", {})
+        temp = current.get("temperature_2m", "brak danych")
+        wind = current.get("wind_speed_10m", "brak danych")
+        
+        return f"Temperatura: {temp}°C, Prędkość wiatru: {wind} km/h"
+
+# 3. Uruchamianie bramy komunikacyjnej
+if __name__ == "__main__":
+    mcp.run() # Serwer oczekuje na zapytania w kanale I/O (stdio)
+</code></pre>
+
+        <p>Warto zwrócić uwagę na kluczowe elementy:</p>
+        <ul>
+            <li>Przekazane tu <code>dockstringi</code> (<code>"""Pobiera aktualną pogodę..."""</code>) oraz pełne typowanie argumentów wejściowych (<code>latitude: float</code>) są traktowane na wagę złota. Posłużą one klientowi do zaprezentowania tych definicji AI – stając się swoistą instrukcją obsługi narzędzia "kiedy go użyć i jakie warunki musi spełniać argument".</li>
+            <li>Od strony programistycznej odpada nam ręczne parsowanie formatów JSON – implementator (framework powiązany z MCP) martwi się całą brudną robotą związaną z komunikacją i błędami, mapując to po prostu do typowanych argumentów funkcji języka, w którym programujesz.</li>
+        </ul>
+
+        <h2>Porównanie: Narzędzia MCP a Narzędzia w frameworkach LangChain / Google Agent SDK</h2>
+
+        <p>Wielu programistów pracujących z modelami językowymi spotkało się już z pojęciem "narzędzi" (Tools) w frameworkach aplikacyjnych, takich jak <strong>LangChain</strong> czy <strong>Google Agent SDK</strong>. Mimo że w obu tych przypadkach główny cel jest ten sam – wyposażenie asystenta AI w zdolność działania w realnym świecie – podejście i architektura zasadniczo się od siebie różnią.</p>
+
+        <h3>Cechy wspólne</h3>
+        <ol>
+            <li><strong>Cel operacyjny:</strong> Obie koncepcje mają udostępnić modelowi (LLM) możliwość działania, a nie tylko generowania tekstu. Np. przeszukiwanie bazy danych, czytanie plików, modyfikację systemów zewnętrznych.</li>
+            <li><strong>Mechanizm sterowania:</strong> Model otrzymuje do dyspozycji interfejsy narzędzi w postaci opisu tekstowego (tzw. <em>docstring</em>) oraz ustandaryzowanego formatu wejścia (schematu w formacie JSON Schema). Na tej podstawie AI samo weryfikuje, kiedy należy zawołać narzędzie.</li>
+            <li><strong>Funkcjonalność pod spodem:</strong> To Ty określasz, co robi dany kawałek kodu (piszesz rzeczywistą funkcję do pobierania pogody czy wsadzania rzędu do bazy).</li>
+        </ol>
+
+        <h3>Kluczowe różnice</h3>
+
+        <table class="table table-bordered my-4 text-white">
+            <thead class="bg-dark">
+                <tr>
+                    <th>Cecha</th>
+                    <th>Narzędzia LangChain / Google Agent SDK</th>
+                    <th>Narzędzia protokołu MCP (Serwery)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Integracja</strong></td>
+                    <td>Silnie sprzężone z kodem w logice Twojego agenta. Narzędzie, skrypt i LLM dzielą przeważnie to samo środowisko (jeden połączony proces i jeden język programowania np. Python).</td>
+                    <td>Narzędzia działają jako odosobnione serwery mikrousługowe, oddzielone twardo od samego klienta, środowiska, a nawet języka programowania. Serwer np. w Pythonie i klient agentowy chociażby w Typescript uruchomiony na innej maszynie.</td>
+                </tr>
+                <tr>
+                    <td><strong>Skalowalność i Przenośność</strong></td>
+                    <td>Aby przenieść narzędzie z LangChain np. do Google Agent SDK, trzeba zazwyczaj tworzyć wrappery, adaptery lub przepisać znaczną część interfejsów połączeniowych od zera.</td>
+                    <td>Prawdziwe rozwiązanie "Włącz i korzystaj" (Plug &amp; Play). Wyobraź sobie, że piszesz jedno narzędzie w serwerze MCP – może ono zostać pobrane jako gotowa wtyczka i natychmiast zadziała w Cursos, Claude, Agent SDK (obsługującym protokół) czy własnej aplikacji w dowolnej technologii – bez zmiany kodu operacyjnego narzędzia.</td>
+                </tr>
+                <tr>
+                    <td><strong>Role systemowe</strong></td>
+                    <td>Wewnątrz skryptu modelu językowego (funkcja natywna).</td>
+                    <td>Protokół klient-serwer na bazie formatu JSON-RPC (przez SSE czy też strumienie <em>stdio</em>).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Przykłady</h3>
+
+        <p>Przyjrzyjmy się, jak implementacja w modelu LangChain (czy jemu podobnym) różniłaby się na tle podejścia z użyciem MCP.</p>
+
+        <p><strong>Podejście klasyczne – LangChain w kodzie aplikacji agentowej:</strong><br>
+        Wywołanie narzędzia jest ścisłą połączoną częścią inicjalizacji całego potoku modelu LLM.</p>
+<pre><code class="language-python">from langchain.tools import tool
+from langchain.agents import initialize_agent, AgentType
+
+# 1. Definicja narzędzia ściśle w kodzie LangChain
+@tool
+def get_weather(latitude: float, longitude: float) -> str:
+    """Pobiera aktualną pogodę na podstawie szerokości i długości geograficznej."""
+    # (Tutaj ukryta jest implementacja wywołania np. Requesta HTTP)
+    return "20°C"
+
+# 2. Narzędzie jest mocno powiązane z agentem i modelem językowym w jednym potoku wykonawczym Python.
+agent = initialize_agent([get_weather], llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION)
+</code></pre>
+
+        <p><strong>Podejście MCP – Rozdzielenie warstw (Własna funkcja klienta udostępnia logikę serwera):</strong><br>
+        W architekturze MCP narzędzie działa na swoim serwerze (tak jak widziałeś uprzednio we własnym pliku <code>weather_mcp.py</code> w frameworku <strong>FastMCP</strong>). Aplikacja nie musi znać wewnętrznego kodu wywołań. Klienci komunikują mechanizm dostępu, wysyłając zapytanie o całą pulę ofert serwera poprzez czysty format wiadomości:</p>
+
+        <p><strong>Zapytanie od lokalnego agenta klienta do serwera MCP (często na niewidocznym dla programisty kanale transakcyjnym I/O):</strong></p>
+<pre><code class="language-json">{
+  "jsonrpc": "2.0",
+  "method": "tools/list",
+  "id": 1,
+  "params": {}
+}
+</code></pre>
+
+        <p>Serwer po prostu oddaje manifest narzędzia jako abstrakcyjny obiekt, a do lokalnego agenta przypinamy po prostu samą nazwę programu bądź komendę uruchomieniową w configu – reszta procesu i protokołowanie dzieje się sama w pełni zautomatyzowanie, dając modelowi LLM kontrolę.<br>
+        MCP przesuwa tym samym koncepcję narzędzi w agentach AI od "zintegrowanych lokalnych instrukcji" do otwartych standardów oddzielnych "klocków" na podobieństwo usług internetowych.</p>
+
+        <h2>Podsumowanie</h2>
+
+        <p>Możliwość zintegrowania każdego repozytorium systemowego i skryptu operacyjnego bezpośrednio pod naturalne zjawiska i interfejsy AI otwiera ogromne pole potencjału na automatyzację pracy. Model Context Protocol porządkuje ten dynamiczny obszar integracji, pozwalając na płynną, szybką analizę Twojego środowiska czy usług i oddzielając silnik asystenta od fizycznych barier wykonawczych. Ustanawia nowy most pomiędzy narzędziami (Tools) frameworków z przeszłości i przyszłości.</p>
+      `
+    },
+    {
       slug: 'context-engineering-w-praktyce-agenty-llm',
       title: 'Context engineering w praktyce: jak budować agentów LLM bez przepełniania kontekstu',
       date: 'March 1, 2026',
