@@ -11,6 +11,147 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'function-calling-vs-mcp-vs-natywne-narzedzia',
+      title: 'Function Calling vs MCP vs Natywne Narzędzia: Jak LLM komunikują się ze światem?',
+      date: 'March 15, 2026',
+      excerpt: 'W dzisiejszym świecie rozbudowanych aplikacji opartych o LLM (Large Language Models), same modele generujące tekst to za mało. Aby agenci AI byli naprawdę użyteczni, muszą potrafić wchodzić w interakcje z otaczającym ich światem: systemami plików, API czy bazami danych. Do tego właśnie służy wywoływanie narzędzi (tool calling). W tym artykule przyjrzymy się trzem głównym podejściom do integracji narzędzi z modelami sztucznej inteligencji: Function Calling, protokołowi MCP oraz natywnym narzędziom we frameworkach.',
+      tags: ['AI', 'LLM', 'FunctionCalling', 'MCP', 'LangChain', 'Architecture', 'Integrations'],
+      image: 'assets/img/png/llm-integrations-mcp-function-calling.png',
+      content: `
+        <p>W dzisiejszym świecie rozbudowanych aplikacji opartych o LLM (Large Language Models), same modele generujące tekst to za mało. Aby agenci AI byli naprawdę użyteczni, muszą potrafić wchodzić w interakcje z otaczającym ich światem: systemami plików, API czy bazami danych. Do tego właśnie służy wywoływanie narzędzi (tool calling).</p>
+
+        <p>W tym artykule przyjrzymy się trzem głównym podejściom do integracji narzędzi z modelami sztucznej inteligencji: <strong>Function Calling</strong>, protokołowi <strong>MCP (Model Context Protocol)</strong> oraz <strong>natywnym narzędziom we frameworkach</strong> takich jak LangChain czy Google Agent Development Kit. Zbadamy ich zalety i podpowiemy, kiedy najlepiej zastosować każde z nich.</p>
+
+        <h2>1. Function Calling: Niskopoziomowy standard branżowy</h2>
+
+        <p>Function Calling to mechanizm wbudowany bezpośrednio w natywne interfejsy API dostawców modeli (np. OpenAI, Anthropic, Gemini). Polega on na dostarczeniu modelowi schematu funkcji (najczęściej jako JSON Schema). Model, zamiast zwracać zwykły tekst odpowiedzi, analizuje polecenie i zwraca ustrukturyzowane informacje (nazwę funkcji i jej optymalne parametry). Zasadniczo model mówi aplikacji: <em>"Hej, aby to wykonać, powinieneś uruchomić u siebie tę funkcję z takimi argumentami"</em>. Faktyczne wykonanie kodu leży po stronie Twojej aplikacji.</p>
+
+        <p><strong>Przykład kodu (OpenAI API w Pythonie):</strong></p>
+<pre><code class="language-python">import json
+from openai import OpenAI
+
+client = OpenAI()
+
+# 1. Definicja narzędzia (JSON Schema)
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "Pobiera aktualną pogodę dla podanego miasta",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {"type": "string", "description": "Miasto, np. Warszawa"},
+                },
+                "required": ["location"],
+            },
+        }
+    }
+]
+
+# 2. Wywołanie modelu
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Jaka jest pogoda w Krakowie?"}],
+    tools=tools,
+    tool_choice="auto"
+)
+
+# 3. Model decyduje o wywołaniu funkcji i zwraca argumenty
+tool_call = response.choices[0].message.tool_calls[0]
+print(f"Model chce wywołać funkcję: {tool_call.function.name}")
+print(f"Z argumentami: {tool_call.function.arguments}") 
+# Twoja aplikacja teraz wykonuje logikę pod spodem i zwraca wynik modelowi!
+</code></pre>
+
+        <p><strong>Kluczowe zalety Function Calling:</strong></p>
+        <ul>
+            <li><strong>Pełna kontrola:</strong> Masz całkowitą władzę nad logiką wykonania oraz nad tym, co i w jaki sposób dzieje się w Twoim backendzie.</li>
+            <li><strong>Brak zależności trzecich:</strong> Integrujesz się bezpośrednio z API dostawcy LLM, nie narzucając sobie konkretnego frameworka dla architektury agenta.</li>
+            <li><strong>Elastyczność projektowa:</strong> Możesz mapować wywołania LLM na absolutnie wszystko, co tylko da się zapisać przy pomocy kodu aplikacji.</li>
+        </ul>
+
+        <p><strong>Kiedy wybrać Function Calling?</strong><br>
+        To idealne rozwiązanie, gdy masz już własną dojrzałą architekturę backendową, zależy Ci na pełnej kontroli i niezależności, a wdrażane przez Ciebie funkcje są bardzo unikalną, specyficzną logiką biznesową, dla której nie warto wdrażać obcych frameworków.</p>
+
+        <h2>2. MCP (Model Context Protocol): Nowa era standaryzacji</h2>
+
+        <p>MCP to protokół o otwartym kodzie źródłowym, wprowadzony m.in. przez Anthropic, który zmienia podejście do łączenia asystentów AI z naszymi narzędziami. Zamiast pisać własny ruter i system podpinania pojedynczych funkcji pod konkretny wariant integracji z LLM, uruchamiamy tzw. Serwer MCP, który działa jako pomost pomiędzy modelem AI, a źródłem danych czy narzędziem.</p>
+
+        <p><strong>Przykład kodu (Serwer MCP przy użyciu biblioteki FastMCP w Pythonie):</strong></p>
+<pre><code class="language-python">from mcp.server.fastmcp import FastMCP
+
+# Inicjalizacja serwera MCP
+mcp = FastMCP("Weather Server")
+
+# Narzędzie udostępniane przez serwer
+@mcp.tool()
+async def get_weather_by_city(city: str) -> str:
+    """Pobiera informacje o pogodzie dla danego miasta"""
+    # ... tu następuje wywołanie zewnetrznego API pogodowego ...
+    return f"Pogoda w {city}: Słonecznie, 22°C"
+
+# Uruchomienie serwera stdio - teraz każdy klient MCP (np. Claude Desktop) może się połączyć!
+if __name__ == "__main__":
+    mcp.run()
+</code></pre>
+
+        <p><strong>Kluczowe zalety MCP:</strong></p>
+        <ul>
+            <li><strong>Raz napisane, używane wszędzie:</strong> Jeśli stworzysz serwer MCP dla danego narzędzia, każdy klient/asystent obsługujący MCP (jak Claude Desktop, Cursor AI, czy frameworki AI) natychmiast potrafi z tymi danymi rozmawiać. Bez pisania tzw. "kleju" w kodzie pod klienta.</li>
+            <li><strong>Kwestie bezpieczeństwa:</strong> Model (klient) prosi o dostęp poprzez ustandaryzowany protokół, a serwer MCP utrzymuje kontrolę nad lokalnymi poświadczeniami i bezpieczeństwem infrastruktury.</li>
+        </ul>
+
+        <p><strong>Kiedy MCP jest lepsze od Function Callingu?</strong><br>
+        MCP staje się znacznie lepsze od tradycyjnego Function Calling, gdy chcesz udostępnić te same zaawansowane zasoby wewnątrz firmy (bazy danych, środowiska produkcyjne) dla różnych, niepowiązanych ze sobą aplikacji AI. Stosujesz wtedy jeden, zaufany standard komunikacji zamiast wielokrotnie replikować definicje API dla każdego LLM'a.</p>
+
+        <h2>3. Natywne Narzędzia z Frameworków (LangChain, LlamaIndex)</h2>
+
+        <p>Frameworki do budowania agentów AI oferują kompletnie inną – znacznie wyższą – warstwę abstrakcji. Ekosystemy te podchodzą do spraw inaczej: dostarczają potężne pakiety gotowych klas narzędzi („tools”), z których budowę agenta realizuje się z mniejszym nakładem programistycznym.</p>
+
+        <p><strong>Przykład kodu (Wbudowane narzędzia w bibliotece LangChain):</strong></p>
+<pre><code class="language-python">from langchain_openai import ChatOpenAI
+from langchain.agents import load_tools, initialize_agent, AgentType
+
+llm = ChatOpenAI(temperature=0)
+
+# 1. Ładowanie gotowych narzędzi z frameworka (np. Wikipedia i wyszukiwarka)
+tools = load_tools(["wikipedia", "ddg-search"], llm=llm)
+
+# 2. Inicjalizacja agenta bez ręcznego mapowania schematów
+agent = initialize_agent(
+    tools, 
+    llm, 
+    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, 
+    verbose=True
+)
+
+# 3. Agent sam orkiestruje wywołania narzędzi krok po kroku!
+agent.run("Kto zdobył Oscara za najlepszy film w 2024 roku? Użyj Wikipedii lub wyszukiwarki.")
+</code></pre>
+
+        <p><strong>Kluczowe zalety natywnych narzędzi:</strong></p>
+        <ul>
+            <li><strong>"Gotowce" zamiast pisania od nowa:</strong> Czekają tam na nas setki integracji, np.: Google Search, uruchamianie skryptów Python, środowiska Docker, powiązania z SQL itp.</li>
+            <li><strong>Szybkie prototypowanie (Rapid Development):</strong> Kod wymagany do podpięcia np. wyszukiwarki zajmuje dwie linijki. Framework sam przetłumaczy definicję dla LLM i wymusi poprawny Function Calling pod spodem warstwy abstrakcji.</li>
+            <li><strong>Wbudowana orkiestracja:</strong> Od razu pracujesz w architekturze zdolnej do dynamicznego planowania kroków (np. ReAct/Tool Calling Agent). Ekosystem zapewnia pamięć agentowi potrzebną mu do pętli decyzyjnej.</li>
+        </ul>
+
+        <p><strong>Kiedy natywne narzędzia we frameworkach wypadają najlepiej?</strong><br>
+        Są poszukiwaną opcją, gdy potrzebujesz bardzo szybkiego wdrożenia zaawansowanego agenta w oparciu o popularne procesy: RAG, web-scraping czy wyszukiwanie w internecie. Wykorzystanie np. LangChain zapobiega odkrywaniu koła na nowo gdy chcemy ułożyć proste "klocki Lego" logicznie ze sobą w całość.</p>
+
+        <hr>
+
+        <h3>Podsumowanie na szybko:</h3>
+        <ul>
+            <li>Chcesz zbudować solidny, zoptymalizowany kod i masz absolutną kontrolę nad wykonaniem logiki API? Wybierz <strong>Function Calling</strong>.</li>
+            <li>Potrzebujesz standaryzowanej, uniwersalnej metody na wystawienie Twojego lokalnego środowiska lub systemów dla różnorodnych asystentów zewnętrznych (desktopowych i IDE)? Stwórz <strong>Serwer MCP</strong>.</li>
+            <li>Twoim głównym celem jest zbudowanie Agenta korzystającego z gotowych narzędzi (Wikipedia, Scrapery, Bazy Wejktorowe) w kilka minut bez pisania implementacji logiki pętli orkiestracji? Użyj <strong>Frameworków takich jak LangChain</strong>.</li>
+        </ul>
+      `
+    },
+    {
       slug: 'kompletny-przewodnik-po-serwerach-mcp-model-context-protocol',
       title: 'Kompletny Przewodnik po Serwerach MCP (Model Context Protocol)',
       date: 'March 8, 2026',
