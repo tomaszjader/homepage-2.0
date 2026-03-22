@@ -11,6 +11,62 @@ import { BlogPost } from '../interfaces/blog-post.interface';
 export class BlogService {
   private posts: BlogPost[] = [
     {
+      slug: 'skille-w-swiecie-llm-czym-sa-i-jak-je-tworzyc',
+      title: 'Skille w Świecie LLM: Czym Są i Jak Je Tworzyć?',
+      date: 'March 22, 2026',
+      excerpt: 'Wraz z ewolucją modeli językowych (LLM) z prostych chatbotów w kierunku autonomicznych agentów, pojawiła się potrzeba standaryzacji ich możliwości. Rozwiązaniem tego problemu są Skille (umiejętności) – modułowe, wielorazowe komponenty...',
+      tags: ['AI', 'LLM', 'Skills', 'Agents', 'Architecture'],
+      image: 'assets/img/png/llm-skills-blog-cover.png',
+      content: `
+        <p>Wraz z ewolucją modeli językowych (LLM) z prostych chatbotów w kierunku autonomicznych agentów, pojawiła się potrzeba standaryzacji ich możliwości. Rozwiązaniem tego problemu są <strong>Skille</strong> (umiejętności) – modułowe, wielorazowe komponenty, które pozwalają agentom AI na wykonywanie specjalistycznych zadań w sposób przewidywalny i powtarzalny.</p>
+
+        <h2>Czym właściwie jest "Skill"?</h2>
+
+        <p>W tradycyjnym podejściu do LLM, instrukcje przesyłane są w długich, jednorazowych promptach systemowych. Skille zmieniają ten paradygmat. Skill to zamknięta paczka zawierająca:</p>
+        <ul>
+            <li><strong>Instrukcje</strong>: Specyficzne wytyczne dla danego obszaru (np. "Jak analizować dane sprzedażowe").</li>
+            <li><strong>Schematy danych</strong>: Definicje struktur, z którymi agent będzie pracował (np. SQL, JSON).</li>
+            <li><strong>Logikę biznesową</strong>: Zasady i polityki, których agent musi przestrzegać.</li>
+            <li><strong>Narzędzia</strong>: Opcjonalnie dodatkowe skrypty lub API, z których agent może korzystać.</li>
+        </ul>
+
+        <h2>Architektura "Progressive Disclosure"</h2>
+
+        <p>W dużych systemach agentowych nie jest możliwe (ani efektywne) ładowanie wszystkich instrukcji na raz – zajmowałoby to zbyt dużo miejsca w tzw. oknie kontekstowym (context window) i rozpraszało model. Zamiast tego stosuje się wzorzec <strong>Progresywnego Ujawniania (Progressive Disclosure)</strong>, który widzimy w this projekcie:</p>
+
+        <ol>
+            <li><strong>Middleware (Odkrywanie)</strong>: Agent otrzymuje tylko krótkie opisy dostępnych skilli (np. "Analiza Sprzedaży", "Zarządzanie Zapasami").</li>
+            <li><strong>On-Demand (Ładowanie na żądanie)</strong>: Dopiero gdy agent uzna, że dany skill jest potrzebny do wykonania zadania użytkownika, używa narzędzia <code>load_skill</code>, aby załadować pełną treść instrukcji.</li>
+        </ol>
+
+        <p>Dzięki temu agent pozostaje "lekki" i skoncentrowany, sięgając po wiedzę ekspercką tylko wtedy, gdy jest ona niezbędna.</p>
+
+        <h2>skill.sh – Ekosystem dla Agentów</h2>
+
+        <p>W odpowiedzi na potrzebę standaryzacji powstała inicjatywa <strong><a href="https://skill.sh" target="_blank">skill.sh</a></strong> (często powiązana z <code>agentskills.io</code>). Jest to otwarty katalog i standard tworzenia umiejętności dla agentów AI, wspierany m.in. przez Vercel. Kloczowe cechy tego ekosystemu to:</p>
+        <ul>
+            <li><strong>Repozytorium Umiejętności</strong>: Miejsce, gdzie programiści mogą dzielić się gotowymi skillami (np. do obsługi Stripe, GitHub czy AWS).</li>
+            <li><strong>Standard SKILL.md</strong>: Każdy skill posiada plik dokumentacji, który jest zoptymalizowany pod kątem odczytu przez LLM.</li>
+            <li><strong>Łatwa Instalacja</strong>: Możliwość dodawania skilli do projektu za pomocą prostych komend CLI, np. <code>npx skills add &lt;user/repo&gt;</code>.</li>
+        </ul>
+
+        <h2>Jak stworzyć własnego skilla?</h2>
+
+        <p>Tworzenie skilla w tym projekcie jest bardzo proste i sprowadza się do kilku kroków (pełen kod źródłowy orkiestracji znajdziesz w repozytorium <strong><a href="https://github.com/tomaszjader/skills" target="_blank">tomaszjader/skills</a></strong>):</p>
+
+        <ol>
+            <li><strong>Zdefiniuj Cel</strong>: Zastanów się, w czym Twój agent ma stać się ekspertem.</li>
+            <li><strong>Stwórz plik Markdown</strong>: W folderze <code>skills_data/</code> utwórz nowy plik (np. <code>finanse.md</code>).</li>
+            <li><strong>Napisz Instrukcje</strong>: W treści pliku opisz dokładnie schematy baz danych, reguły biznesowe i kroki, które agent powinien podjąć. Pamiętaj o używaniu jasnych nagłówków – LLM bardzo dobrze radzi sobie ze strukturą Markdown.</li>
+            <li><strong>Dodaj Metadane</strong>: W <code>domain/skills.py</code> dodaj krótki opis nowego skilla, aby middleware mógł go zaproponować agentowi w prompcie systemowym.</li>
+        </ol>
+
+        <h2>Podsumowanie</h2>
+
+        <p>Skille to przyszłość budowania zaawansowanych systemów AI. Pozwalają one na tworzenie agentów, którzy nie tylko "wiedzą dużo o wszystkim", ale potrafią stać się precyzyjnymi specjalistami w konkretnych dziedzinach, gdy tylko zajdzie taka potrzeba. Dzięki platformom takim jak <code>skill.sh</code>, budowanie i dzielenie się tymi możliwościami staje się standardem w świecie nowoczesnego programowania AI.</p>
+      `
+    },
+    {
       slug: 'function-calling-vs-mcp-vs-natywne-narzedzia',
       title: 'Function Calling vs MCP vs Natywne Narzędzia: Jak LLM komunikują się ze światem?',
       date: 'March 15, 2026',
